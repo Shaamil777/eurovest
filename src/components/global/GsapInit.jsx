@@ -1,9 +1,11 @@
 "use client";
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function GsapInit() {
+  const pathname = usePathname();
   useEffect(() => {
     // Only run on the client side
     if (typeof window === 'undefined') return;
@@ -53,11 +55,33 @@ export default function GsapInit() {
       el.style.visibility = 'visible';
     });
     
+    // Custom tp-clip-anim and tp-anim-img
+    const clipElements = gsap.utils.toArray('.tp-clip-anim');
+    clipElements.forEach((el) => {
+      const animImg = el.querySelector('.tp-anim-img');
+      if (animImg) {
+        gsap.fromTo(animImg,
+          { opacity: 0, scale: 1.2 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1.5,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+    });
+    
     // Cleanup on unmount
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
