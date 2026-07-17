@@ -19,74 +19,13 @@ export default function Header() {
                                 <div className="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li className="has-dropdown active menu-thumb">
-                                                <a href="index.html">
+                                            <li className="active">
+                                                <a href="/">
                                                     Home 
                                                 </a>
-                                                <ul className="submenu has-homemenu">
-                                                    <li>
-                                                        <div className="homemenu-items">
-                                                            <div className="homemenu">
-                                                                <div className="homemenu-thumb">
-                                                                    <img src="/assets/img/header/home-1.jpg" alt="img" />
-                                                                    <div className="demo-button">
-                                                                        <a href="index.html" className="theme-btn">
-                                                                            Multi Page <i className="fa-solid fa-arrow-right"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="homemenu-content text-center">
-                                                                    <h4 className="homemenu-title">
-                                                                      Home 01
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div className="homemenu">
-                                                                <div className="homemenu-thumb mb-15">
-                                                                    <img src="/assets/img/header/home-2.jpg" alt="img" />
-                                                                    <div className="demo-button">
-                                                                        <a href="index-2.html" className="theme-btn">
-                                                                            Multi Page <i className="fa-solid fa-arrow-right"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="homemenu-content text-center">
-                                                                    <h4 className="homemenu-title">
-                                                                        Home 02
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div className="homemenu">
-                                                                <div className="homemenu-thumb mb-15">
-                                                                    <img src="/assets/img/header/home-3.jpg" alt="img" />
-                                                                    <div className="demo-button">
-                                                                        <a href="index-3.html" className="theme-btn">
-                                                                           Multi Page <i className="fa-solid fa-arrow-right"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="homemenu-content text-center">
-                                                                    <h4 className="homemenu-title">
-                                                                      Home 03
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="has-dropdown active d-xl-none">
-                                                <a href="index.html" className="border-none">
-                                                Home
-                                                </a>
-                                                <ul className="submenu">
-                                                    <li><a href="index.html">Home 01</a></li>
-                                                    <li><a href="index-2.html">Home 02</a></li>
-                                                    <li><a href="index-3.html">Home 03</a></li>
-                                                </ul>
                                             </li>
                                             <li>
-                                                <a href="about.html">About Us</a>
+                                                <a href="/about">About Us</a>
                                             </li>
                                             <li className="has-dropdown">
                                                 <a href="news-details.html">
@@ -119,27 +58,14 @@ export default function Header() {
                                                     <li><a href="coming-soon.html">Coming Soon</a></li>
                                                 </ul>
                                             </li>
+
                                             <li>
-                                                <a href="country-details.html">
-                                                    VISA
-                                                </a>
-                                                <ul className="submenu">
-                                                    <li><a href="country-list.html">Visa List</a></li>
-                                                    <li><a href="country-details.html">Visa Details</a></li>
-                                                </ul>
-                                            </li>
-                                           <li>
-                                                <a href="news-details.html">
+                                                <a href="/blog">
                                                     Blog
                                                 </a>
-                                                <ul className="submenu">
-                                                    <li><a href="news-grid.html">Blog Grid</a></li>
-                                                    <li><a href="news.html">Blog Standard</a></li>
-                                                    <li><a href="news-details.html">Blog Details</a></li>
-                                                </ul>
                                             </li>
                                             <li>
-                                                <a href="contact.html">Contact Us</a>
+                                                <a href="/contact">Contact Us</a>
                                             </li>
                                         </ul>
                                     </nav>

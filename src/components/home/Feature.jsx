@@ -59,7 +59,7 @@ export default function Feature() {
                         <div className="col-lg-6">
                             <div className="feature-image">
                                 <img src="/assets/img/home-1/feature/shape.png" alt="img" />
-                                <h6>UK.United Kingdom</h6>
+                                
                             </div>
                         </div>
                     </div>
