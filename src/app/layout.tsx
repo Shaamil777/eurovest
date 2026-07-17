@@ -20,8 +20,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <OffcanvasMenu />
         <SearchModal />
         
-        <HeaderTop />
-        <Header />
+        <div style={{ position: 'sticky', top: 0, zIndex: 99999 }}>
+            {/* <HeaderTop /> */}
+            <Header />
+        </div>
         
         {/* This is where your page.tsx content goes */}
         {children} 

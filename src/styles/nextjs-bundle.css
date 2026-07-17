@@ -3469,18 +3469,18 @@ Version: 1.0.0
 
 
 :root {
-  --body: #fff;
-  --black: #000;
-  --white: #fff;
-  --theme: #E13833;
-  --theme-2: #0048B4;
-  --header: #151A26;
-  --text: #535761;
-  --text-2: #0B4E3D;
+  --body: #FDFDFD;
+  --black: #061B39;
+  --white: #FDFDFD;
+  --theme: #B58524;
+  --theme-2: #061B39;
+  --header: #061B39;
+  --text: #6C6D6F;
+  --text-2: #061B39;
   --border: #C9C9C9;
   --border-2: #CBCCCF;
   --bg: #F8F8F9;
-  --bg-2: #153888;
+  --bg-2: #061B39;
   --box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.13);
 }
 

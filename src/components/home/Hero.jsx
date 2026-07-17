@@ -8,14 +8,12 @@ const heroSlides = [
         subtitle: "Global Education Simplified",
         title: "From Application to Visa – We’ve Got You Covered",
         description: "We guide you through every step of the education visa process, from initial application to final approval, ensuring a smooth, hassle-free journey.",
-        // image: "/assets/img/home-1/hero/test.png"
     },
     {
         id: 2,
         subtitle: "Your Dream Destination Awaits",
         title: "Unlock Your Future with Top Universities Worldwide",
         description: "Let us help you find the right path to success, offering expert advice and full support for your international education journey.",
-        // image: "/assets/img/home-1/hero/test.png"
     }
 ];
 
@@ -32,12 +30,12 @@ export default function Hero() {
     return (
         <>
         {/* Hero Section Start  */}
-        <section className="hero-section hero-1 fix bg-cover" style={{ backgroundImage: `url("/assets/img/home-1/hero/bg.jpg")`, minHeight: '850px', display: 'flex', alignItems: 'center' }}>
+        <section className="hero-section hero-1 fix bg-cover" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/home-1/hero/hero-bg-2.JPG")`, minHeight: '850px', display: 'flex', alignItems: 'center', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
             <div className="left-shape">
-                <img src="/assets/img/home-1/hero/sape-2.png" alt="img" />
+                {/* <img src="/assets/img/home-1/hero/sape-2.png" alt="img" /> */}
             </div>
             <div className="hero-shape">
-                <img src="/assets/img/home-1/hero/shape.png" alt="img" />
+                <img src="/assets/img/home-1/hero/hero-img.png" alt="img" style={{ maxWidth: '1250px', width: '100%', height: 'auto', transform: 'translateX(-120px)' }} />
             </div>
             <div className="top-shape">
                 <img src="/assets/img/home-1/hero/shape-3.png" alt="img" />
@@ -87,20 +85,7 @@ export default function Hero() {
                             </motion.div>
                         </AnimatePresence>
                     </div>
-                    {/* <div className="col-lg-6">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={`img-${activeIndex}`}
-                                initial={{ x: 100, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                exit={{ x: -100, opacity: 0 }}
-                                transition={{ duration: 0.9, ease: "easeInOut" }}
-                                className="hero-image"
-                            >
-                                <img src={heroSlides[activeIndex].image} alt="img" style={{ opacity: 1, transform: 'translateX(-18%)' }} /> 
-                            </motion.div>   
-                        </AnimatePresence>
-                    </div> */}
+                    
                 </div>
             </div>
         </section>
