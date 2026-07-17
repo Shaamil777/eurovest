@@ -28,34 +28,54 @@ export default function Header() {
                                                 <a href="/about">About Us</a>
                                             </li>
                                             <li className="has-dropdown">
-                                                <a href="news-details.html">
-                                                    Pages
+                                                <a href="/service">
+                                                    Services
                                                 </a>
                                                 <ul className="submenu">
                                                     <li className="has-dropdown">
-                                                        <a href="service-details.html">
-                                                            Service
+                                                        <a href="#">
+                                                            Citizenship by Investment
                                                             <i className="fas fa-angle-right"></i>
                                                         </a>
                                                         <ul className="submenu">
-                                                            <li><a href="service.html">Service</a></li>
-                                                            <li><a href="service-details.html">Service Details</a></li>
+                                                            <li><a href="#">Option 1</a></li>
+                                                            <li><a href="#">Option 2</a></li>
+                                                            <li><a href="#">Option 3</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="has-dropdown">
-                                                        <a href="project-details.html">
-                                                            Country List
+                                                        <a href="#">
+                                                            Residency by Investment
                                                             <i className="fas fa-angle-right"></i>
                                                         </a>
                                                         <ul className="submenu">
-                                                            <li><a href="country-list.html">Country List</a></li>
-                                                            <li><a href="country-details.html">Country Details</a></li>
+                                                            <li><a href="#">Option 1</a></li>
+                                                            <li><a href="#">Option 2</a></li>
+                                                            <li><a href="#">Option 3</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="pricing.html">Our Pricing</a></li>
-                                                    <li><a href="appointment.html">Appointment</a></li>
-                                                    <li><a href="404.html">404 Page</a></li>
-                                                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                    <li className="has-dropdown">
+                                                        <a href="#">
+                                                            Canada
+                                                            <i className="fas fa-angle-right"></i>
+                                                        </a>
+                                                        <ul className="submenu">
+                                                            <li><a href="#">Option 1</a></li>
+                                                            <li><a href="#">Option 2</a></li>
+                                                            <li><a href="#">Option 3</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li className="has-dropdown">
+                                                        <a href="#">
+                                                            United Kingdom
+                                                            <i className="fas fa-angle-right"></i>
+                                                        </a>
+                                                        <ul className="submenu">
+                                                            <li><a href="#">Option 1</a></li>
+                                                            <li><a href="#">Option 2</a></li>
+                                                            <li><a href="#">Option 3</a></li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
                                             </li>
 
