@@ -1,13 +1,33 @@
 "use client";
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Controller, Autoplay, EffectFade } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const heroSlides = [
+    {
+        id: 1,
+        subtitle: "Global Education Simplified",
+        title: "From Application to Visa – We’ve Got You Covered",
+        description: "We guide you through every step of the education visa process, from initial application to final approval, ensuring a smooth, hassle-free journey.",
+        image: "/assets/img/home-1/hero/man.png"
+    },
+    {
+        id: 2,
+        subtitle: "Your Dream Destination Awaits",
+        title: "Unlock Your Future with Top Universities Worldwide",
+        description: "Let us help you find the right path to success, offering expert advice and full support for your international education journey.",
+        image: "/assets/img/home-1/hero/man.png"
+    }
+];
 
 export default function Hero() {
-    const [firstSwiper, setFirstSwiper] = useState(null);
-    const [secondSwiper, setSecondSwiper] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % heroSlides.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <>
@@ -26,101 +46,64 @@ export default function Hero() {
                 <img src="/assets/img/home-1/hero/shape-4.png" alt="img" />
             </div>
             <div className="pagi-item">
-                <div className="dot-number">
-                    <span className="dot-num">
-                        <span>01</span>
-                    </span>
-                    <span className="dot-num">
-                        <span>02</span>
-                    </span>
+                <div className="dot-number" style={{ display: 'flex', gap: '10px' }}>
+                    {heroSlides.map((_, idx) => (
+                        <span 
+                            key={idx}
+                            className={`dot-num`}
+                            onClick={() => setActiveIndex(idx)}
+                            style={{ cursor: 'pointer', opacity: idx === activeIndex ? 1 : 0.4, transition: 'opacity 0.3s' }}
+                        >
+                            <span>0{idx + 1}</span>
+                        </span>
+                    ))}
               </div>
             </div>
             <div className="container-fluid">
                 <div className="row align-items-center">
                     <div className="col-lg-6">
-                       <Swiper 
-                         className="hero-slider"
-                         modules={[Controller, Autoplay, EffectFade]}
-                         onSwiper={setFirstSwiper}
-                         controller={{ control: secondSwiper }}
-                         autoplay={{ delay: 5000, disableOnInteraction: false }}
-                         effect="fade"
-                         loop={true}
-                       >
-                            <SwiperSlide>
-                                 <div className="hero-content">
-                                    <h6>Global Education Simplified</h6>
-                                    <h1>
-                                        From Application to Visa – We’ve Got You Covered 
-                                        <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" className="video-btn video-popup">
-                                        <i className="fa-solid fa-play"></i>
-                                        </a>
-                                    </h1>
-                                    <p>
-                                        We guide you through every step of the education visa process, from initial application to final approval, ensuring a smooth, hassle-free journey.
-                                    </p>
-                                    <div className="hero-button">
-                                        <a href="contact.html" className="theme-btn">
-                                            Apply now
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                        <a href="contact.html" className="theme-btn style-2">
-                                            Book Free Consultation
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                    </div>
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeIndex}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.5 }}
+                                className="hero-content"
+                            >
+                                <h6>{heroSlides[activeIndex].subtitle}</h6>
+                                <h1>{heroSlides[activeIndex].title}</h1>
+                                <p>{heroSlides[activeIndex].description}</p>
+                                <div className="hero-button">
+                                    <a href="contact.html" className="theme-btn">
+                                        Apply now
+                                        <i className="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                    <a href="contact.html" className="theme-btn style-2">
+                                        Book Free Consultation
+                                        <i className="fa-solid fa-arrow-right"></i>
+                                    </a>
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                 <div className="hero-content">
-                                    <h6>Global Education Simplified</h6>
-                                    <h1>
-                                        From Application to Visa – We’ve Got You Covered 
-                                        <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" className="video-btn video-popup">
-                                        <i className="fa-solid fa-play"></i>
-                                        </a>
-                                    </h1>
-                                    <p>
-                                        We guide you through every step of the education visa process, from initial application to final approval, ensuring a smooth, hassle-free journey.
-                                    </p>
-                                    <div className="hero-button">
-                                        <a href="contact.html" className="theme-btn">
-                                            Apply now
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                        <a href="contact.html" className="theme-btn style-2">
-                                            Book Free Consultation
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                       </Swiper>
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
                     <div className="col-lg-6">
-                        <Swiper 
-                            className="image-slider"
-                            modules={[Controller]}
-                            onSwiper={setSecondSwiper}
-                            controller={{ control: firstSwiper }}
-                            loop={true}
-                        >
-                                <SwiperSlide>
-                                    <div className="hero-image">
-                                        <img src="/assets/img/home-1/hero/man.png" alt="img" />
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="hero-image">
-                                        <img src="/assets/img/home-1/hero/man.png" alt="img" />
-                                    </div>
-                                </SwiperSlide>
-                        </Swiper>
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeIndex}
+                                initial={{ x: 100, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                exit={{ x: -100, opacity: 0 }}
+                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                                className="hero-image"
+                            >
+                                <img src={heroSlides[activeIndex].image} alt="img" /> 
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
                 </div>
             </div>
         </section>
-
         </>
     );
 }

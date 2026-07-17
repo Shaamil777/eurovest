@@ -1,6 +1,33 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const testimonials = [
+    {
+        id: 1,
+        text: "The team provided exceptional guidance throughout my immigration process. Their expertise, personalized support, and attention to detail ensured a smooth, stress-free experience and successful visa approval.",
+        name: "Mohammed Ali,",
+        visa: "Family Visa"
+    },
+    {
+        id: 2,
+        text: "I was struggling with the complex documentation required for my student visa. They simplified everything and helped me secure my visa in record time!",
+        name: "Sarah Jenkins,",
+        visa: "Student Visa"
+    }
+];
 
 export default function Testimonial() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handlePrev = () => {
+        setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    };
+
+    const handleNext = () => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    };
+
     return (
         <>
          {/* Testimonial Section3 Start  */}
@@ -27,59 +54,39 @@ export default function Testimonial() {
                         </div>
                         <div className="col-lg-8">
                             <div className="testimonial-content">
-                                <div className="swiper testimonial-slider-3">
-                                    <div className="swiper-wrapper">
-                                        <div className="swiper-slide">
-                                            <div className="content">
-                                                <div className="star">
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
+                                <div style={{ overflow: 'hidden' }}>
+                                    <AnimatePresence mode="wait">
+                                        <motion.div
+                                            key={currentIndex}
+                                            initial={{ opacity: 0, x: 50 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            exit={{ opacity: 0, x: -50 }}
+                                            transition={{ duration: 0.4 }}
+                                            className="content"
+                                        >
+                                            <div className="star">
+                                                <i className="fa-solid fa-star"></i>
+                                                <i className="fa-solid fa-star"></i>
+                                                <i className="fa-solid fa-star"></i>
+                                                <i className="fa-solid fa-star"></i>
+                                                <i className="fa-solid fa-star"></i>
+                                            </div>
+                                            <h3>“{testimonials[currentIndex].text}”</h3>
+                                            <div className="info-item">
+                                                <div className="icon">
+                                                    <i className="fa-solid fa-quote-right"></i>
                                                 </div>
-                                                <h3>
-                                                    “The team provided exceptional guidance throughout my immigration process. Their expertise, personalized support, and attention to detail ensured a smooth, stress-free experience and successful visa approval.”
-                                                </h3>
-                                                <div className="info-item">
-                                                    <div className="icon">
-                                                        <i className="fa-solid fa-quote-right"></i>
-                                                    </div>
-                                                    <div className="content">
-                                                        <h5>Mohammed Ali,</h5>
-                                                        <span>Family Visa</span>
-                                                    </div>
+                                                <div className="content">
+                                                    <h5>{testimonials[currentIndex].name}</h5>
+                                                    <span>{testimonials[currentIndex].visa}</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="swiper-slide">
-                                            <div className="content">
-                                                <div className="star">
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                </div>
-                                                <h3>
-                                                    “The team provided exceptional guidance throughout my immigration process. Their expertise, personalized support, and attention to detail ensured a smooth, stress-free experience and successful visa approval.”
-                                                </h3>
-                                                <div className="info-item">
-                                                    <div className="icon">
-                                                        <i className="fa-solid fa-quote-right"></i>
-                                                    </div>
-                                                    <div className="content">
-                                                        <h5>Mohammed Ali,</h5>
-                                                        <span>Family Visa</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        </motion.div>
+                                    </AnimatePresence>
                                 </div>
-                                <div className="array-buttons-3">
-                                    <button className="array-prev"><i className="fa-solid fa-arrow-left"></i></button>
-                                    <button className="array-next"><i className="fa-solid fa-arrow-right"></i></button>
+                                <div className="array-buttons-3 mt-4">
+                                    <button className="array-prev" onClick={handlePrev}><i className="fa-solid fa-arrow-left"></i></button>
+                                    <button className="array-next" onClick={handleNext}><i className="fa-solid fa-arrow-right"></i></button>
                                 </div>
                             </div>
                         </div>

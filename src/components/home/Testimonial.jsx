@@ -1,9 +1,6 @@
 "use client";
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/autoplay';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonialData = [
     {
@@ -37,73 +34,90 @@ const testimonialData = [
 ];
 
 export default function Testimonial() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        handleResize(); // Initial check
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % testimonialData.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const visibleItems = isMobile 
+        ? [testimonialData[currentIndex]] 
+        : [testimonialData[currentIndex], testimonialData[(currentIndex + 1) % testimonialData.length]];
+
     return (
         <>
-        {/* Testimonial Section Start  */}
-        <section className="testimonial-section section-padding pb-0 fix">
-            <div className="container">
-                <div className="section-title text-center">
-                    <span className="sub-title wow fadeInUp">What Our Students Say</span>
-                    <h2 className="split-text-right split-text-in-right">
-                        Student Reviews & Testimonials
-                    </h2>
-                </div>
-                <div className="testimonial-wrapper">
-                    <div className="row g-4">
-                        <div className="col-lg-4">
-                            <div className="testimonia-image tp-clip-anim p-relative">
-                                <img src="/assets/img/home-1/testimonial/01.jpg" alt="img" className="tp-anim-img" data-animate="true" />
-                                <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" className="video-btn video-popup">
-                                <i className="fa-solid fa-play"></i></a>
-                                <h5>Real stories</h5>
+            {/* Testimonial Section Start  */}
+            <section className="testimonial-section section-padding pb-0 fix">
+                <div className="container">
+                    <div className="section-title text-center">
+                        <span className="sub-title wow fadeInUp">What Our Students Say</span>
+                        <h2 className="split-text-right split-text-in-right">
+                            Student Reviews & Testimonials
+                        </h2>
+                    </div>
+                    <div className="testimonial-wrapper">
+                        <div className="row g-4">
+                            <div className="col-lg-4">
+                                <div className="testimonia-image tp-clip-anim p-relative h-100">
+                                    <img src="/assets/img/home-1/testimonial/01.jpg" alt="img" className="tp-anim-img w-100 h-100" style={{ objectFit: 'cover' }} data-animate="true" />
+                                    <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" className="video-btn video-popup">
+                                        <i className="fa-solid fa-play"></i></a>
+                                    <h5>Real stories</h5>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-lg-8">
-                            <div className="swiper testimonial-slider">
-                                <Swiper
-                                    modules={[Autoplay]}
-                                    spaceBetween={30}
-                                    breakpoints={{
-                                        320: { slidesPerView: 1 },
-                                        768: { slidesPerView: 2 },
-                                    }}
-                                    autoplay={{
-                                        delay: 3000,
-                                        disableOnInteraction: false,
-                                    }}
-                                    loop={true}
-                                >
-                                    {testimonialData.map((item) => (
-                                        <SwiperSlide key={item.id}>
-                                            <div className="testimonial-box">
-                                                <div className="star">
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                    <i className="fa-solid fa-star"></i>
-                                                </div>
-                                                <p>“{item.text}”</p>
-                                                <div className="info-item">
-                                                    <div className="client-image">
-                                                        <img src={item.image} alt="img" style={{ borderRadius: '50%', width: '60px', height: '60px', objectFit: 'cover' }} />
+                            <div className="col-lg-8">
+                                <div className="row h-100" style={{ overflow: 'hidden' }}>
+                                    <AnimatePresence mode="popLayout">
+                                        {visibleItems.map((item) => (
+                                            <motion.div
+                                                key={item.id}
+                                                initial={{ opacity: 0, x: 50 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                exit={{ opacity: 0, x: -50 }}
+                                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                                                className="col-md-6 col-12 mb-4"
+                                            >
+                                                <div className="testimonial-box h-100">
+                                                    <div>
+                                                        <div className="star">
+                                                            <i className="fa-solid fa-star"></i>
+                                                            <i className="fa-solid fa-star"></i>
+                                                            <i className="fa-solid fa-star"></i>
+                                                            <i className="fa-solid fa-star"></i>
+                                                            <i className="fa-solid fa-star"></i>
+                                                        </div>
+                                                        <p>“{item.text}”</p>
                                                     </div>
-                                                    <div className="content">
-                                                        <h5>{item.name}</h5>
-                                                        <span>{item.location}</span>
+                                                    <div className="info-item mt-auto pt-3">
+                                                        <div className="client-image">
+                                                            <img src={item.image} alt="img" style={{ borderRadius: '50%', width: '60px', height: '60px', objectFit: 'cover' }} />
+                                                        </div>
+                                                        <div className="content">
+                                                            <h5>{item.name}</h5>
+                                                            <span>{item.location}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
+                                            </motion.div>
+                                        ))}
+                                    </AnimatePresence>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
+            </section>
         </>
     );
 }
