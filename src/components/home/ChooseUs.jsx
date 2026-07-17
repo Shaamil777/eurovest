@@ -38,108 +38,122 @@ const ChooseUs = () => {
   ];
 
   return (
-    <section className="choose-us-section py-5 bg-white">
+    <section className="choose-us-section section-padding bg-white">
       <div className="container">
         
         {/* Header Section */}
-        <div className="text-center mb-5">
-          <div className="d-inline-block px-3 py-1 mb-3 rounded-pill" style={{ backgroundColor: '#eff6ff', color: '#3b82f6', fontWeight: '600', fontSize: '14px' }}>
-            Why Choose Us
-          </div>
-          <h2 style={{ fontSize: '42px', fontWeight: '800', color: '#10203f', textTransform: 'uppercase', lineHeight: '1.2' }}>
-            YOUR TRUSTED PARTNER <br/>
-            FOR <span style={{ color: '#E31C23' }}>IMMIGRATION</span>
-          </h2>
-          <p className="mx-auto mt-3 text-muted" style={{ maxWidth: '600px', fontSize: '16px' }}>
-            We are committed to making your journey smooth, successful, and stress-free with our expert guidance and support.
-          </p>
-          
-          {/* Airplane Separator */}
-          <div className="d-flex align-items-center justify-content-center mt-4">
-            <div style={{ width: '30px', height: '1px', backgroundColor: '#e5e7eb', marginRight: '10px' }} />
-            <div style={{ width: '4px', height: '4px', backgroundColor: '#E31C23', borderRadius: '50%', marginRight: '15px' }} />
-            <i className="fa-solid fa-plane" style={{ color: '#3b82f6', fontSize: '20px', transform: 'rotate(-45deg)' }}></i>
-            <div style={{ width: '4px', height: '4px', backgroundColor: '#E31C23', borderRadius: '50%', marginLeft: '15px' }} />
-            <div style={{ width: '30px', height: '1px', backgroundColor: '#e5e7eb', marginLeft: '10px' }} />
-          </div>
+        <div className="section-title text-center">
+            <span className="sub-title wow fadeInUp">Why Choose Us</span>
+            <h2 className="split-text-right split-text-in-right">
+                Your Trusted Partner For <br /> <span>Immigration</span>
+            </h2>
+            <p className="text wow fadeInUp" data-wow-delay=".3s" style={{ maxWidth: '600px', margin: '0 auto', marginTop: '15px' }}>
+              We are committed to making your journey smooth, successful, and stress-free with our expert guidance and support.
+            </p>
         </div>
 
         {/* Cards Section */}
         <div className="row g-4 mt-2">
           {cards.map((card) => (
-            <div className="col-xl-3 col-lg-4 col-md-6" key={card.id}>
-              <div 
-                className="p-4 bg-white h-100"
-                style={{
-                  borderRadius: '16px',
-                  boxShadow: "0 10px 40px rgba(0,0,0,0.06)",
-                  position: "relative",
-                  overflow: "hidden",
-                  textAlign: "center",
-                  transition: "all 0.3s ease"
-                }}
-              >
-                
-                {/* Decorative Bottom Left Curve */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: '-30px',
-                  left: '-30px',
-                  width: '100px',
-                  height: '100px',
-                  borderRadius: '50%',
-                  backgroundColor: card.lightBg,
-                  zIndex: 0
-                }} />
-
-                {/* Decorative Number Bottom Right */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: '10px',
-                  right: '20px',
-                  fontSize: '60px',
-                  fontWeight: '800',
-                  color: card.lightBg,
-                  lineHeight: '1',
-                  zIndex: 0,
-                  opacity: 0.7
-                }}>
-                  {card.id}
-                </div>
-
-                {/* Icon Circle */}
-                <div 
-                  className="mx-auto mt-2 mb-4 d-flex align-items-center justify-content-center rounded-circle"
-                  style={{
-                    width: '80px',
-                    height: '80px',
-                    backgroundColor: card.lightBg,
-                    color: card.color,
-                    fontSize: '32px',
-                    position: 'relative',
-                    zIndex: 1
-                  }}
-                >
+            <div className={`col-xl-3 col-lg-4 col-md-6 wow fadeInUp`} data-wow-delay={`0.${card.id.charAt(1)}s`} key={card.id}>
+              <div className="choose-card h-100">
+                <div className="icon-box" style={{ color: card.color, backgroundColor: card.lightBg }}>
                   <i className={card.icon}></i>
                 </div>
-                
-                {/* Title */}
-                <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#10203f', position: 'relative', zIndex: 1, marginBottom: '15px' }}>
-                  {card.title}
-                </h4>
-                
-                {/* Underline */}
-                <div className="mx-auto mb-3" style={{ width: '30px', height: '3px', backgroundColor: card.color, borderRadius: '2px', position: 'relative', zIndex: 1 }} />
-                
-                {/* Description */}
-                <p className="text-muted" style={{ fontSize: '14px', position: 'relative', zIndex: 1, lineHeight: '1.6' }}>
-                  {card.description}
-                </p>
-                
+                <h4>{card.title}</h4>
+                <p>{card.description}</p>
+                <div className="watermark">{card.id}</div>
               </div>
             </div>
           ))}
         </div>
+        
+        <style jsx="true">{`
+          .choose-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+          }
+          .choose-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: transparent;
+          }
+          .choose-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #E31C23;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+            z-index: 2;
+          }
+          .choose-card:hover::before {
+            transform: scaleX(1);
+          }
+          .choose-card .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+          }
+          .choose-card:hover .icon-box {
+            background: #162e5b !important;
+            color: #ffffff !important;
+          }
+          .choose-card .icon-box i {
+             transition: transform 0.4s ease;
+          }
+          .choose-card:hover .icon-box i {
+             transform: scale(1.1);
+          }
+          .choose-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #10203f;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+          }
+          .choose-card:hover h4 {
+            color: #E31C23;
+          }
+          .choose-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 0;
+            font-size: 15px;
+          }
+          .choose-card .watermark {
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            font-size: 100px;
+            font-weight: 800;
+            color: rgba(22, 46, 91, 0.03);
+            line-height: 1;
+            z-index: -1;
+            transition: all 0.4s ease;
+          }
+          .choose-card:hover .watermark {
+            color: rgba(227, 28, 35, 0.05);
+            transform: scale(1.1);
+          }
+        `}</style>
 
       </div>
     </section>
