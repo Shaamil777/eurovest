@@ -19,7 +19,13 @@ export default function Brand() {
         {/* Brand Section Start  */}
         <div className="brand-section fix" style={{ padding: '60px 0' }}>
             <div className="container">
-                 <div className="brand-wrapper style-1">
+                 <motion.div 
+                     initial={{ opacity: 0 }}
+                     whileInView={{ opacity: 1 }}
+                     transition={{ duration: 1.2, ease: "easeOut" }}
+                     viewport={{ once: true, margin: "-50px" }}
+                     className="brand-wrapper style-1"
+                 >
                     <div className="brand-item" style={{ overflow: 'hidden', width: '100%' }}>
                         <motion.div
                             initial={{ x: 0 }}
@@ -37,7 +43,7 @@ export default function Brand() {
                             ))}
                         </motion.div>
                     </div>
-                 </div>
+                 </motion.div>
             </div>
         </div>
         </>

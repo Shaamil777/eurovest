@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 // import Link from 'next/link'; // Uncomment if using next/link for <a> tags
 
 export default function Service() {
@@ -38,13 +39,32 @@ export default function Service() {
         <div className="service-section section-padding fix">
             <div className="container">
                 <div className="section-title text-center">
-                    <span className="sub-title wow fadeInUp">Our Expert Services</span>
-                    <h2 className="split-text-right split-text-in-right">
+                    <motion.span 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="sub-title"
+                    >
+                        Our Expert Services
+                    </motion.span>
+                    <motion.h2 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="split-text-right split-text-in-right"
+                    >
                         Comprehensive Visa Solutions
-                    </h2>
+                    </motion.h2>
                 </div>
             </div>
-             <div className="service-wrapper">
+             <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="service-wrapper"
+            >
                 <div className="container">
                     <div className="service-item">
                          <div className="image-hover d-none d-md-block bg-cover" style={{ backgroundImage: `url("/assets/img/home-1/hover-bg.jpg")` }}></div>
@@ -62,8 +82,14 @@ export default function Service() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="service-wrapper active">
+            </motion.div>
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="service-wrapper active"
+            >
                 <div className="container">
                     <div className="service-item">
                          <div className="image-hover d-none d-md-block bg-cover" style={{ backgroundImage: `url("/assets/img/home-1/hover-bg.jpg")` }}></div>
@@ -81,8 +107,14 @@ export default function Service() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="service-wrapper">
+            </motion.div>
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="service-wrapper"
+            >
                 <div className="container">
                     <div className="service-item">
                          <div className="image-hover d-none d-md-block bg-cover" style={{ backgroundImage: `url("/assets/img/home-1/hover-bg.jpg")` }}></div>
@@ -100,8 +132,14 @@ export default function Service() {
                         </div>
                     </div>
                 </div>
-            </div>
-             <div className="service-wrapper">
+            </motion.div>
+             <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="service-wrapper"
+            >
                 <div className="container">
                     <div className="service-item">
                          <div className="image-hover d-none d-md-block bg-cover" style={{ backgroundImage: `url("/assets/img/home-1/hover-bg.jpg")` }}></div>
@@ -119,7 +157,7 @@ export default function Service() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
 
         </>

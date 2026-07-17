@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 // import Link from 'next/link'; // Uncomment if using next/link for <a> tags
 
 export default function About() {
@@ -14,16 +16,34 @@ export default function About() {
                     <div className="row g-4">
                         <div className="col-lg-6">
                             <div className="about-image">
-                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&h=700&q=80" alt="img" className="wow img-custom-anim-left" style={{ objectFit: 'cover', borderRadius: '15px' }} />
-                                <div className="about-image-2">
-                                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&h=400&q=80" alt="img" className="wow img-custom-anim-right" style={{ objectFit: 'cover', borderRadius: '15px' }} />
-                                </div>
+                                <motion.img 
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ duration: 0.8 }}
+                                    viewport={{ once: true }}
+                                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&h=700&q=80" 
+                                    alt="img" 
+                                    className="img-custom-anim-left" 
+                                    style={{ objectFit: 'cover', borderRadius: '15px', width: '100%', height: 'auto' }} 
+                                />
+                                <motion.div 
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ duration: 0.8, delay: 0.3 }}
+                                    viewport={{ once: true }}
+                                    className="about-image-2"
+                                >
+                                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&h=400&q=80" alt="img" className="img-custom-anim-right" style={{ objectFit: 'cover', borderRadius: '15px' }} />
+                                </motion.div>
                                 <div className="bg-shape">
                                     <img src="/assets/img/home-1/about/Vector.png" alt="img" />
                                 </div>
-                                <div className="plane-shape">
+                                <motion.div 
+                                    
+                                    className="plane-shape"
+                                >
                                     <img src="/assets/img/home-1/about/plane.png" alt="img" />
-                                </div>
+                                </motion.div>
                                  <div className="top-shape">
                                     <img src="/assets/img/home-1/about/shape.png" alt="img" />
                                 </div>
@@ -32,15 +52,40 @@ export default function About() {
                         <div className="col-lg-6">
                             <div className="about-content">
                                 <div className="section-title mb-0">
-                                    <span className="sub-title wow fadeInUp">About Our Consultancy</span>
-                                    <h2 className="split-text-right split-text-in-right">
+                                    <motion.span 
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        viewport={{ once: true }}
+                                        className="sub-title"
+                                    >
+                                        About Our Consultancy
+                                    </motion.span>
+                                    <motion.h2 
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ delay: 0.2 }}
+                                        viewport={{ once: true }}
+                                        className="split-text-right split-text-in-right"
+                                    >
                                         Turning Study Abroad <span>Dreams</span> Into Reality
-                                    </h2>
+                                    </motion.h2>
                                 </div>
-                                <p className="text wow fadeInUp" data-wow-delay=".3s">
+                                <motion.p 
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ delay: 0.3 }}
+                                    viewport={{ once: true }}
+                                    className="text"
+                                >
                                     We guide students with expert visa consulting, ensuring a smooth process from application to approval, turning study abroad aspirations into life-changing opportunities for a brighter future.
-                                </p>
-                                <div className="row g-4 mt-3 mb-4 wow fadeInUp" data-wow-delay=".5s">
+                                </motion.p>
+                                <motion.div 
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ delay: 0.4 }}
+                                    viewport={{ once: true }}
+                                    className="row g-4 mt-3 mb-4"
+                                >
                                     <div className="col-md-6 d-flex align-items-start">
                                         <div className="d-flex justify-content-center align-items-center rounded-circle me-3" style={{ width: '50px', height: '50px', flexShrink: 0 }}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#162e5b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
@@ -77,12 +122,17 @@ export default function About() {
                                             <p className="mb-0 text-muted" style={{ fontSize: '14px', lineHeight: '1.5' }}>Collaboration with top universities and colleges</p>
                                         </div>
                                     </div>
-                                </div>
+                                </motion.div>
                                 <hr className="mb-4" style={{ borderTop: '1px dashed #d1d5db', opacity: 1 }} />
-                                <a href="about.html" className="theme-btn wow fadeInUp" data-wow-delay=".5s">
+                                <motion.a 
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    href="about.html" 
+                                    className="theme-btn"
+                                >
                                     Get Started
                                     <i className="fa-solid fa-arrow-right"></i>
-                                </a>
+                                </motion.a>
                             </div>
                         </div>
                     </div>

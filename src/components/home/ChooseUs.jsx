@@ -57,10 +57,10 @@ const ChooseUs = () => {
           {cards.map((card) => (
             <div className={`col-xl-3 col-lg-4 col-md-6 d-flex wow fadeInUp`} data-wow-delay={`0.${card.id.charAt(1)}s`} key={card.id}>
               <div className="premium-choose-card w-100">
-                <div className="card-inner h-100 d-flex flex-column">
+                <div className="card-inner h-100">
                   
                   <div className="icon-wrapper" style={{ '--glow-color': card.shadow, '--icon-color': card.color }}>
-                    <div className="icon-circle">
+                    <div className="icon-circle mx-auto">
                       <i className={card.icon}></i>
                     </div>
                   </div>
@@ -119,6 +119,11 @@ const ChooseUs = () => {
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
           }
 
           .premium-choose-card:hover .card-inner {
@@ -127,8 +132,10 @@ const ChooseUs = () => {
           }
 
           .icon-wrapper {
-            margin-bottom: 30px;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
           }
 
           .icon-circle {
@@ -160,7 +167,6 @@ const ChooseUs = () => {
             font-size: 22px;
             font-weight: 700;
             color: #10203f;
-            margin-bottom: 15px;
             transition: color 0.3s ease;
             position: relative;
             z-index: 2;
@@ -174,7 +180,6 @@ const ChooseUs = () => {
             color: #64748b;
             line-height: 1.7;
             font-size: 15px;
-            margin-bottom: 25px;
             position: relative;
             z-index: 2;
           }

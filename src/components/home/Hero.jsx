@@ -8,14 +8,14 @@ const heroSlides = [
         subtitle: "Global Education Simplified",
         title: "From Application to Visa – We’ve Got You Covered",
         description: "We guide you through every step of the education visa process, from initial application to final approval, ensuring a smooth, hassle-free journey.",
-        image: "/assets/img/home-1/hero/man.png"
+        // image: "/assets/img/home-1/hero/test.png"
     },
     {
         id: 2,
         subtitle: "Your Dream Destination Awaits",
         title: "Unlock Your Future with Top Universities Worldwide",
         description: "Let us help you find the right path to success, offering expert advice and full support for your international education journey.",
-        image: "/assets/img/home-1/hero/man.png"
+        // image: "/assets/img/home-1/hero/test.png"
     }
 ];
 
@@ -32,7 +32,7 @@ export default function Hero() {
     return (
         <>
         {/* Hero Section Start  */}
-        <section className="hero-section hero-1 fix bg-cover" style={{ backgroundImage: `url("/assets/img/home-1/hero/bg.jpg")` }}>
+        <section className="hero-section hero-1 fix bg-cover" style={{ backgroundImage: `url("/assets/img/home-1/hero/bg.jpg")`, minHeight: '850px', display: 'flex', alignItems: 'center' }}>
             <div className="left-shape">
                 <img src="/assets/img/home-1/hero/sape-2.png" alt="img" />
             </div>
@@ -87,20 +87,20 @@ export default function Hero() {
                             </motion.div>
                         </AnimatePresence>
                     </div>
-                    <div className="col-lg-6">
+                    {/* <div className="col-lg-6">
                         <AnimatePresence mode="wait">
                             <motion.div
-                                key={activeIndex}
+                                key={`img-${activeIndex}`}
                                 initial={{ x: 100, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 exit={{ x: -100, opacity: 0 }}
-                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                                transition={{ duration: 0.9, ease: "easeInOut" }}
                                 className="hero-image"
                             >
-                                <img src={heroSlides[activeIndex].image} alt="img" /> 
-                            </motion.div>
+                                <img src={heroSlides[activeIndex].image} alt="img" style={{ opacity: 1, transform: 'translateX(-18%)' }} /> 
+                            </motion.div>   
                         </AnimatePresence>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
