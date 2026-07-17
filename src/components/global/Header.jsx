@@ -94,18 +94,12 @@ export default function Header() {
                         </div>
                         <div className="header-right d-flex align-items-center mt-0">
                             <div className="header-call-item">
-                                <a href="#" className="main-header__search search-toggler">
-                                <i className="fa-regular fa-magnifying-glass"></i>
-                            </a>
+
                                 <a href="contact.html" className="theme-btn">
                                     Apply now
                                     <i className="fa-solid fa-arrow-right"></i>
                                 </a>
-                                <div className="header__hamburger my-auto">
-                                <div className="sidebar__toggle">
-                                    <i className="fa-solid fa-bars-staggered"></i>
-                                </div>
-                            </div>
+
                             </div>
                         </div>
                     </div>

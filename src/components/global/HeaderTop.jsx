@@ -13,11 +13,11 @@ export default function HeaderTop() {
                             <li className="style-2">
                                 <span>Help Line</span>
                                 <i className="fa-solid fa-phone"></i>
-                                <a href="tel:+093783575222">+09 378 357 5222</a>
+                                <a href="tel:+093783575222">+91 00000 00000</a>
                             </li>
                             <li>
                                 <i className="fa-solid fa-location-dot"></i>
-                                69 Street, 5th AvenueLA, United States
+                                123 streets, Calicut, India
                             </li>
                              <li>
                                 <i className="fa-solid fa-envelope"></i>

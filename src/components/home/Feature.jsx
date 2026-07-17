@@ -58,7 +58,17 @@ export default function Feature() {
                         </div>
                         <div className="col-lg-6">
                             <div className="feature-image">
-                                <img src="/assets/img/home-1/feature/shape.png" alt="img" />
+                                <img 
+                                    src="/assets/img/home-1/feature/shape.png" 
+                                    alt="img" 
+                                    style={{ 
+                                        animation: "none", 
+                                        transform: "scale(1.5) translateX(30%)", 
+                                        transformOrigin: "center right",
+                                        maxWidth: "none",
+                                        display: "block"
+                                    }} 
+                                />
                                 
                             </div>
                         </div>
