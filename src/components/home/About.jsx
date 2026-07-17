@@ -5,7 +5,7 @@ export default function About() {
     return (
         <>
          {/* About Section Start  */}
-        <section className="about-section section-padding fix pb-0">
+        <section className="about-section section-padding" style={{ overflowX: 'hidden' }}>
             <div className="top-shape">
                 <img src="/assets/img/home-1/about/globe.png" alt="img" />
             </div>
@@ -14,9 +14,9 @@ export default function About() {
                     <div className="row g-4">
                         <div className="col-lg-6">
                             <div className="about-image">
-                                <img src="/assets/img/home-1/about/about-1.jpg" alt="img" className="wow img-custom-anim-left" />
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&h=700&q=80" alt="img" className="wow img-custom-anim-left" style={{ objectFit: 'cover', borderRadius: '15px' }} />
                                 <div className="about-image-2">
-                                    <img src="/assets/img/home-1/about/about-02.jpg" alt="img" className="wow img-custom-anim-right" />
+                                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&h=400&q=80" alt="img" className="wow img-custom-anim-right" style={{ objectFit: 'cover', borderRadius: '15px' }} />
                                 </div>
                                 <div className="bg-shape">
                                     <img src="/assets/img/home-1/about/Vector.png" alt="img" />

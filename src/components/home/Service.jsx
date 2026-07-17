@@ -1,7 +1,37 @@
-import React from 'react';
+"use client";
+import React, { useEffect } from 'react';
 // import Link from 'next/link'; // Uncomment if using next/link for <a> tags
 
 export default function Service() {
+    useEffect(() => {
+        const serviceItems = document.querySelectorAll('.service-item');
+        
+        const listeners = [];
+
+        serviceItems.forEach((item) => {
+            const image = item.querySelector('.image-hover');
+            const listener = (e) => {
+                if (image) {
+                    const rect = item.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    image.style.top = `${y}px`;
+                    image.style.left = `${x}px`;
+                    image.style.transform = 'translate(-50%, -50%)';
+                }
+            };
+            item.addEventListener('mousemove', listener);
+            listeners.push({ item, listener });
+        });
+
+        return () => {
+            listeners.forEach(({ item, listener }) => {
+                item.removeEventListener('mousemove', listener);
+            });
+        };
+    }, []);
+
     return (
         <>
          {/* Service Section Start  */}
