@@ -233,7 +233,13 @@ body {
   
   /* Reduce gap between individual services */
   .service-wrapper {
-    margin-bottom: 10px !important;
+    margin-bottom: 0px !important;
+    padding: 5px 0 !important;
+  }
+  
+  /* Reset the active state margin-top that causes uneven gaps */
+  .service-wrapper.active {
+    margin-top: 0 !important;
   }
 
   /* Make the Service list items look beautiful on mobile */
