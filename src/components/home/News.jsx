@@ -44,19 +44,19 @@ export default function News() {
             <div className="container">
                 <div className="section-title-area">
                     <div className="section-title">
-                        <span className="sub-title wow fadeIn" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Visa Tips & Guides</span>
-                        <h2 className="wow fadeIn">
+                        <span className="sub-title" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Visa Tips & Guides</span>
+                        <h2 className="">
                           <span> IMMIGRATION NEWS </span>& VISA GUIDES
                         </h2>
                     </div>
-                    <a href="news.html" className="theme-btn wow fadeIn" data-wow-delay=".3s">
+                    <a href="news.html" className="theme-btn">
                         view all articies
                         <i className="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
                 <div className="row">
                     {newsData.map((item) => (
-                        <div key={item.id} className="col-xl-4 col-lg-6 col-md-6 wow fadeIn" data-wow-delay={item.delay}>
+                        <div key={item.id} className="col-xl-4 col-lg-6 col-md-6">
                             <div className="news-card-item">
                                 <div className="news-image">
                                     <img src={item.image} alt="img" />

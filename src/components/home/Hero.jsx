@@ -36,36 +36,16 @@ export default function Hero() {
             <div className="left-shape">
                 {/* <img src="/assets/img/home-1/hero/sape-2.png" alt="img" /> */}
             </div>
-            <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
-                className="hero-shape"
-            >
+            <div className="hero-shape">
                 <img src="/assets/img/home-1/hero/hero-img.webp" alt="img" style={{ maxWidth: '1250px', width: '100%', height: 'auto', transform: 'translateX(-120px)' }} />
-            </motion.div>
-            <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
-                className="top-shape"
-            >
+            </div>
+            <div className="top-shape">
                 <img src="/assets/img/home-1/hero/shape-3.png" alt="img" />
-            </motion.div>
-            <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
-                className="right-shape"
-            >
+            </div>
+            <div className="right-shape">
                 <img src="/assets/img/home-1/hero/shape-4.png" alt="img" />
-            </motion.div>
-            <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
-                className="pagi-item"
-            >
+            </div>
+            <div className="pagi-item">
                 <div className="dot-number" style={{ display: 'flex', gap: '10px' }}>
                     {heroSlides.map((_, idx) => (
                         <span 
@@ -78,33 +58,15 @@ export default function Hero() {
                         </span>
                     ))}
               </div>
-            </motion.div>
+            </div>
             <div className="container-fluid">
                 <div className="row align-items-center">
                     <div className="col-lg-6">
-                                <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeIndex}
-                                initial="hidden"
-                                animate="visible"
-                                exit="exit"
-                                variants={{
-                                    hidden: { opacity: 0 },
-                                    visible: { 
-                                        opacity: 1,
-                                        transition: { staggerChildren: 0, delayChildren: 0 }
-                                    },
-                                    exit: { 
-                                        opacity: 0,
-                                        transition: { duration: 0.8 }
-                                    }
-                                }}
-                                className="hero-content"
-                            >
-                                <motion.h6 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }}>{heroSlides[activeIndex].subtitle}</motion.h6>
-                                <motion.h1 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }}>{heroSlides[activeIndex].title}</motion.h1>
-                                <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }}>{heroSlides[activeIndex].description}</motion.p>
-                                <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }} className="hero-button">
+                            <div className="hero-content">
+                                <h6>{heroSlides[activeIndex].subtitle}</h6>
+                                <h1>{heroSlides[activeIndex].title}</h1>
+                                <p>{heroSlides[activeIndex].description}</p>
+                                <div className="hero-button">
                                     <a href="contact.html" className="theme-btn">
                                         Get Free Consultation
                                         <i className="fa-solid fa-arrow-right"></i>
@@ -113,9 +75,8 @@ export default function Hero() {
                                         Explore Services
                                         <i className="fa-solid fa-arrow-right"></i>
                                     </a>
-                                </motion.div>
-                            </motion.div>
-                        </AnimatePresence>
+                                </div>
+                            </div>
                     </div>
                     
                 </div>

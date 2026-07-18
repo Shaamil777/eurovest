@@ -35,8 +35,8 @@ export default function Testimonial() {
             <div className="container">
                 <div className="section-title-area">
                     <div className="section-title mb-0">
-                        <span className="sub-title-2 wow fadeIn">What Our Clients Say</span>
-                        <h2 className="wow fadeIn">
+                        <span className="sub-title-2">What Our Clients Say</span>
+                        <h2 className="">
                             Immigration Success Stories
                         </h2>
                     </div>

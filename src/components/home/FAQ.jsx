@@ -44,45 +44,29 @@ export default function Faq() {
                         <div className="col-lg-5">
                             <div className="faq-content">
                                 <div className="section-title mb-0">
-                                    <motion.span 
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.8, delay: 0.1 }}
-                                        viewport={{ once: true }}
+                                    <span 
                                         className="sub-title"
                                         style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}
                                     >
                                         Visa FAQs
-                                    </motion.span>
-                                    <motion.h2 
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.2, duration: 0.8 }}
-                                        viewport={{ once: true }}
+                                    </span>
+                                    <h2 
                                     >
                                         Got Questions? We’ve Got <span>Answers</span>
-                                    </motion.h2>
+                                    </h2>
                                 </div>
-                                <motion.p 
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.3, duration: 0.8 }}
-                                    viewport={{ once: true }}
+                                <p 
                                     className="text mt-3 mb-4"
                                 >
                                     We understand students often have many questions about studying abroad. Our experts provide clear and accurate information to help you navigate the process.
-                                </motion.p>
-                                <motion.a 
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.4, duration: 0.8 }}
-                                    viewport={{ once: true }}
+                                </p>
+                                <a 
                                     href="/contact" 
                                     className="theme-btn"
                                 >
                                     contact us
                                     <i className="fa-solid fa-arrow-right"></i>
-                                </motion.a>
+                                </a>
                             </div>
                         </div>
                         <div className="col-lg-7">
@@ -90,12 +74,8 @@ export default function Faq() {
                                 {faqs.map((faq, index) => {
                                     const isActive = activeIndex === index;
                                     return (
-                                        <motion.div 
+                                        <div 
                                             key={index}
-                                            initial={{ opacity: 0 }}
-                                            whileInView={{ opacity: 1 }}
-                                            transition={{ duration: 0.8, delay: index * 0.1 }}
-                                            viewport={{ once: true }}
                                             style={{
                                                 borderBottom: '1px solid #eaeaea',
                                                 overflow: 'hidden'
@@ -154,7 +134,7 @@ export default function Faq() {
                                                     </motion.div>
                                                 )}
                                             </AnimatePresence>
-                                        </motion.div>
+                                        </div>
                                     );
                                 })}
                             </div>

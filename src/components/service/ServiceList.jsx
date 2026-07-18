@@ -7,8 +7,8 @@ export default function ServiceList() {
         <section className="service-section section-padding fix section-bg-1">
             <div className="container">
                 <div className="section-title text-center">
-                    <span className="sub-title-2 wow fadeIn">What We Offer</span>
-                    <h2 className="wow fadeIn">
+                    <span className="sub-title-2">What We Offer</span>
+                    <h2 className="">
                         Our Immigration Services
                     </h2>
                 </div>

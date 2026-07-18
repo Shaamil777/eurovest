@@ -72,45 +72,29 @@ export default function Service() {
         <div className="service-section section-padding fix">
             <div className="container">
                 <div className="section-title text-center">
-                    <motion.span 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.1 }}
-                        viewport={{ once: true }}
+                    <span 
                         className="sub-title"
                         style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}
                     >
                         Our Expert Services
-                    </motion.span>
-                    <motion.h2 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.8 }}
-                        viewport={{ once: true }}
+                    </span>
+                    <h2 
                         className=""
                     >
                         Comprehensive <span style={{ color: 'var(--theme)' }}>Immigration & Visa </span>Services
-                    </motion.h2>
-                    <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3, duration: 0.8 }}
-                        viewport={{ once: true }}
+                    </h2>
+                    <p 
                         className="mt-3"
                         style={{ maxWidth: '800px', margin: '0 auto', color: '#64748b' }}
                     >
                         From work permits and visitor visas to business investment and immigration consulting, we provide trusted visa solutions for individuals, families, and businesses worldwide.
-                    </motion.p>
+                    </p>
                 </div>
             </div>
             
             {servicesData.map((service, index) => (
-                <motion.div 
+                <div 
                     key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: service.delay }}
-                    viewport={{ once: true, margin: "-50px" }}
                     className={`service-wrapper ${service.isActive ? 'active' : ''}`}
                 >
                     <div className="container">
@@ -130,7 +114,7 @@ export default function Service() {
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             ))}
         </div>
 
