@@ -5,7 +5,7 @@ export default function BreadcrumbBlog() {
     return (
         <>
         {/*  Breadcrumb-Wrapper Section Start  */}
-        <section className="breadcrumb-wrapper fix bg-cover" style={{ backgroundImage: `url(assets/img/inner-page/breadcrumb.jpg)` }}>
+        <section className="breadcrumb-wrapper fix bg-cover top-[20px]" style={{ backgroundImage: `url(assets/img/inner-page/breadcrumb.jpg)` }}>
             <div className="shape">
                 <img src="assets/img/inner-page/shape.png" alt="img" />
             </div>

@@ -57,7 +57,7 @@ body {
   display: none !important;
 }
 
-/* Global Button Override - Modern Solid */
+/* Global Button Override - Modern Premium */
 .theme-btn, .theme-btn.style-2, .hero-1 .hero-content .hero-button .theme-btn, .hero-1 .hero-content .hero-button .theme-btn.style-2 {
   background-color: var(--color-blue) !important;
   color: #ffffff !important;
@@ -65,19 +65,39 @@ body {
   padding: 15px 30px !important;
   border: none !important;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-weight: 600 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+}
+
+.theme-btn::before, .theme-btn.style-2::before, .hero-1 .hero-content .hero-button .theme-btn::before, .hero-1 .hero-content .hero-button .theme-btn.style-2::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0% !important;
+  height: 100% !important;
+  background-color: var(--color-gold) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  z-index: -1 !important;
+  border-radius: 8px !important;
+}
+
+.theme-btn:hover::before, .theme-btn.style-2:hover::before, .hero-1 .hero-content .hero-button .theme-btn:hover::before, .hero-1 .hero-content .hero-button .theme-btn.style-2:hover::before {
+  width: 100% !important;
 }
 
 .theme-btn:hover, .theme-btn.style-2:hover, .hero-1 .hero-content .hero-button .theme-btn:hover, .hero-1 .hero-content .hero-button .theme-btn.style-2:hover {
-  background-color: var(--color-gold) !important;
   color: #ffffff !important;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15) !important;
-  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 24px rgba(181, 133, 36, 0.4) !important;
+  transform: translateY(-4px) scale(1.02) !important;
   border: none !important;
+  background-color: var(--color-blue) !important; /* Keep base blue so the pseudo element covers it */
 }
 
 .theme-btn i, .theme-btn.style-2 i, .hero-1 .hero-content .hero-button .theme-btn i, .hero-1 .hero-content .hero-button .theme-btn.style-2 i {

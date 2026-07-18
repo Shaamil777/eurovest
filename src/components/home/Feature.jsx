@@ -29,7 +29,7 @@ const destinations = [
     {
         id: 'pt',
         name: 'Portugal',
-        desc: 'D7 Visa, Golden Visa, Work Permit, Residency',
+        desc: 'D2 Visa, Work Permit, Residency, Business Visa',
         flag: 'pt',
     },
     {

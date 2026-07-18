@@ -77,11 +77,12 @@ export default function Testimonial() {
                                     <AnimatePresence mode="popLayout">
                                         {visibleItems.map((item) => (
                                             <motion.div
+                                                layout
                                                 key={item.id}
-                                                initial={{ opacity: 0, x: 50 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                exit={{ opacity: 0, x: -50 }}
-                                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                                                initial={{ opacity: 0, x: 100, scale: 0.9 }}
+                                                animate={{ opacity: 1, x: 0, scale: 1 }}
+                                                exit={{ opacity: 0, x: -100, scale: 0.9 }}
+                                                transition={{ duration: 0.6, type: "spring", bounce: 0.2 }}
                                                 className="col-lg-4 col-md-6 col-12 mb-4"
                                             >
                                                 <div className="testimonial-box h-100">
