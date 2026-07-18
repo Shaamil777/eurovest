@@ -2,6 +2,32 @@ import React from 'react';
 // import Link from 'next/link';
 
 export default function NewsStandard() {
+    const noProfileImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E";
+
+    const blogPosts = [
+        {
+            id: 1,
+            date: "11 March 2025",
+            title: "How to Avoid Common Mistakes in Visa Applications",
+            author: "Admin",
+            image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&h=400&q=80"
+        },
+        {
+            id: 2,
+            date: "11 March 2025",
+            title: "The Role of Immigration Consultants in Your Journey",
+            author: "Admin",
+            image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&h=400&q=80"
+        },
+        {
+            id: 3,
+            date: "11 March 2025",
+            title: "Latest Immigration Policy Updates You Should Know",
+            author: "Admin",
+            image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&h=400&q=80"
+        }
+    ];
+
     return (
         <>
       {/* News Section Start  */}
@@ -10,105 +36,36 @@ export default function NewsStandard() {
                 <div className="news-standard-wrapper">
                     <div className="row g-4">
                         <div className="col-lg-8 col-12">
-                            <div className="news-standard-post">
-                                <div className="news-image">
-                                    <img src="assets/img/home-1/news/news-13.jpg" alt="img" />
+                            {blogPosts.map((item, index) => (
+                                <div key={item.id} className={`news-card-item ${index !== blogPosts.length - 1 ? 'mb-4' : 'mb-0'}`}>
+                                    <div className="news-image">
+                                        <img src={item.image} alt="img" />
+                                        <div className="news-layer-wrapper">
+                                            <div className="news-layer-image" style={{ backgroundImage: `url("${item.image}")` }}></div>
+                                            <div className="news-layer-image" style={{ backgroundImage: `url("${item.image}")` }}></div>
+                                            <div className="news-layer-image" style={{ backgroundImage: `url("${item.image}")` }}></div>
+                                            <div className="news-layer-image" style={{ backgroundImage: `url("${item.image}")` }}></div>
+                                        </div>
+                                    </div>
+                                    <div className="news-content">
+                                        <div className="list">
+                                            <span>{item.date}</span>
+                                        </div>
+                                        <h3>
+                                            <a href="news-details.html">
+                                                {item.title}
+                                            </a>
+                                        </h3>
+                                        <div className="news-bottom">
+                                            <div className="info-item">
+                                                <img src={noProfileImg} alt="img" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
+                                                <span>By {item.author}</span>
+                                            </div>
+                                            <a href="news-details.html" className="link-btn">View Articles<i className="fa-solid fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="news-content">
-                                    <ul className="news-list">
-                                         <li>
-                                            <i className="fa-solid fa-user"></i>
-                                           By Admin
-                                        </li>
-                                        <li>
-                                            <i className="fa-solid fa-calendar-days"></i>
-                                            11 March 2025
-                                        </li>
-                                        <li>
-                                            <i className="fa-solid fa-comments"></i>
-                                           0 Comments
-                                        </li>
-                                    </ul>
-                                    <h3>
-                                        <a href="news-details.html">
-                                            How to Avoid Common Mistakes in Visa Applications
-                                        </a>
-                                    </h3>
-                                    <p>
-                                        A business consultant provides expert guidance, strategic planning, and problem-solving support—helping startups avoid mistakes, grow faster, and operate more efficiently from day one.
-                                    </p>
-                                    <a href="news-details.html" className="theme-btn">
-                                        VIEW MORE
-                                        <i className="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="news-standard-post">
-                                <div className="news-image">
-                                    <img src="assets/img/home-1/news/news-14.jpg" alt="img" />
-                                </div>
-                                <div className="news-content">
-                                    <ul className="news-list">
-                                         <li>
-                                            <i className="fa-solid fa-user"></i>
-                                           By Admin
-                                        </li>
-                                        <li>
-                                            <i className="fa-solid fa-calendar-days"></i>
-                                            11 March 2025
-                                        </li>
-                                        <li>
-                                            <i className="fa-solid fa-comments"></i>
-                                           0 Comments
-                                        </li>
-                                    </ul>
-                                    <h3>
-                                        <a href="news-details.html">
-                                            The Role of Immigration Consultants in Your Journey
-                                        </a>
-                                    </h3>
-                                    <p>
-                                        Immigration consultants play a vital role in guiding applicants, simplifying complex processes, offering expert advice, and ensuring successful outcomes for study, work, or permanent residency abroad.
-                                    </p>
-                                    <a href="news-details.html" className="theme-btn">
-                                        VIEW MORE
-                                        <i className="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="news-standard-post mb-0">
-                                <div className="news-image">
-                                    <img src="assets/img/home-1/news/news-15.jpg" alt="img" />
-                                </div>
-                                <div className="news-content">
-                                    <ul className="news-list">
-                                         <li>
-                                            <i className="fa-solid fa-user"></i>
-                                           By Admin
-                                        </li>
-                                        <li>
-                                            <i className="fa-solid fa-calendar-days"></i>
-                                            11 March 2025
-                                        </li>
-                                        <li>
-                                            <i className="fa-solid fa-comments"></i>
-                                           0 Comments
-                                        </li>
-                                    </ul>
-                                    <h3>
-                                        <a href="news-details.html">
-                                           Latest Immigration Policy Updates You Should Know
-                                        </a>
-                                    </h3>
-                                    <p>
-                                       Stay informed with the latest immigration policy updates, ensuring you understand new rules, visa requirements, and opportunities that impact your study, work, or migration journey abroad.
-                                    </p>
-                                    <a href="news-details.html" className="theme-btn">
-                                        VIEW MORE
-                                        <i className="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                         <div className="col-lg-4 col-12">
                             <div className="main-sideber">
@@ -120,20 +77,7 @@ export default function NewsStandard() {
                                         </form>
                                     </div>
                                 </div>
-                                <div className="news-sideber-box">
-                                    <div className="wid-title">
-                                        <h3>Cetegories</h3>
-                                    </div>
-                                    <div className="news-widget-categories">
-                                        <ul>
-                                            <li><a href="news-details.html"><i className="fa-solid fa-chevrons-right"></i> Permanent Residency (PR)</a><span>(04)</span></li>
-                                            <li><a href="news-details.html"><i className="fa-solid fa-chevrons-right"></i> Immigration Policy Updates</a><span>(09)</span></li>
-                                            <li><a href="news-details.html"><i className="fa-solid fa-chevrons-right"></i> Scholarships & Grants</a><span>(00)</span></li>
-                                            <li><a href="news-details.html"><i className="fa-solid fa-chevrons-right"></i> Citizenship & Naturalization</a><span>(04)</span></li>
-                                             <li><a href="news-details.html"><i className="fa-solid fa-chevrons-right"></i> Visa Interview Preparation</a><span>(01)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                
                                 <div className="news-sideber-box">
                                     <div className="wid-title">
                                         <h3>Recent Post</h3>
@@ -192,21 +136,7 @@ export default function NewsStandard() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="news-sideber-box mb-0">
-                                    <div className="wid-title">
-                                        <h3>Tag Cloud</h3>
-                                    </div>
-                                    <div className="news-widget-categories">
-                                        <div className="tagcloud">
-                                            <a href="news-details.html">WorkVisa</a>
-                                            <a href="news-details.html">FamilyVisa</a>
-                                            <a href="news-details.html">StudentVisa</a>
-                                            <a href="news-details.html">VisaUpdates</a>
-                                            <a href="news-details.html">TravelVisa</a>     
-                                            <a href="news-details.html">StudyAbroad</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
