@@ -43,7 +43,7 @@ export default function About() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                                     viewport={{ once: true }}
-                                    src="/assets/img/home-1/about/about1.JPG" 
+                                    src="/assets/img/home-1/about/about1.webp" 
                                     alt="img" 
                                     className="img-custom-anim-left" 
                                     style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', minHeight: '450px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', position: 'relative', zIndex: 2 }} 

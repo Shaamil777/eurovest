@@ -32,7 +32,7 @@ export default function Hero() {
     return (
         <>
         {/* Hero Section Start  */}
-        <section className="hero-section hero-1 top-[12px] fix bg-cover" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/home-1/hero/hero-bg-2.JPG")`, minHeight: '850px', display: 'flex', alignItems: 'center', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
+        <section className="hero-section hero-1 top-[12px] fix bg-cover" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/home-1/hero/hero-bg-2.webp")`, minHeight: '850px', display: 'flex', alignItems: 'center', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="left-shape">
                 {/* <img src="/assets/img/home-1/hero/sape-2.png" alt="img" /> */}
             </div>
@@ -42,7 +42,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
                 className="hero-shape"
             >
-                <img src="/assets/img/home-1/hero/hero-img.png" alt="img" style={{ maxWidth: '1250px', width: '100%', height: 'auto', transform: 'translateX(-120px)' }} />
+                <img src="/assets/img/home-1/hero/hero-img.webp" alt="img" style={{ maxWidth: '1250px', width: '100%', height: 'auto', transform: 'translateX(-120px)' }} />
             </motion.div>
             <motion.div 
                 initial={{ opacity: 0 }}

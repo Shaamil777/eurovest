@@ -49,7 +49,7 @@ export default function Header() {
                             zIndex: 0
                         }}></div>
 
-                        <div className="header-left" style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
+                        <div className="header-left" style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', alignItems: 'center', flexGrow: 1 }}>
                             <div className="logo" style={{ width: '280px', paddingLeft: '40px' }}>
                                 <a href="/" className="header-logo-2">
                                     <img src="/assets/img/logo/white-logo.svg" alt="logo-img" style={{ maxWidth: '160px' }} />
@@ -176,6 +176,9 @@ export default function Header() {
                 .logo {
                     width: 200px !important;
                     padding-left: 0px !important;
+                }
+                .header-left {
+                    justify-content: space-between !important;
                 }
                 .slanted-bg {
                     width: 220px !important;
