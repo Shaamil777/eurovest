@@ -9,7 +9,7 @@ export default function News() {
             <div className="container">
                 <div className="section-title-area">
                     <div className="section-title">
-                        <span className="sub-title wow fadeInUp">Visa Tips & Guides</span>
+                        <span className="sub-title wow fadeInUp" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Visa Tips & Guides</span>
                         <h2 className="split-text-right split-text-in-right">
                            Latest Insights & Updates
                         </h2>

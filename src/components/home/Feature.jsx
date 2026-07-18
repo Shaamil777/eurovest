@@ -12,7 +12,7 @@ export default function Feature() {
                         <div className="col-lg-6">
                             <div className="feature-content">
                                 <div className="section-title mb-0">
-                                    <span className="sub-title bg-2 wow fadeInUp">UK. United Kingdom</span>
+                                    <span className="sub-title bg-2 wow fadeInUp" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Explore Destinations</span>
                                     <h2 className="text-white split-text-right split-text-in-right">
                                         Visa & vISAWAY Services To uk
                                     </h2>

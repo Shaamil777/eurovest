@@ -6,32 +6,32 @@ const ChooseUs = () => {
     {
       id: '01',
       icon: "fa-solid fa-user-tie",
-      title: "Expert Guidance",
-      description: "Our consultants provide accurate advice and personalized solutions for your immigration needs.",
+      title: "Expert Visa Guidance",
+      description: "Experienced immigration consultants providing accurate visa advice and personalized solutions.",
       color: "#3b82f6", 
       shadow: "rgba(59, 130, 246, 0.25)"
     },
     {
       id: '02',
       icon: "fa-solid fa-hand-holding-heart",
-      title: "Personalized Support",
-      description: "We understand your goals and offer tailored support at every step of your journey.",
+      title: "Trusted Immigration Experts",
+      description: "Professional immigration support tailored to your visa and relocation goals.",
       color: "#ef4444", 
       shadow: "rgba(239, 68, 68, 0.25)"
     },
     {
       id: '03',
       icon: "fa-solid fa-stopwatch",
-      title: "Transparent Process",
-      description: "We believe in clear communication and complete transparency throughout the entire process.",
+      title: "Transparent Visa Process",
+      description: "Clear communication, accurate documentation, and hassle-free visa processing.",
       color: "#22c55e", 
       shadow: "rgba(34, 197, 94, 0.25)"
     },
     {
       id: '04',
       icon: "fa-solid fa-globe",
-      title: "Global Reach",
-      description: "Strong network with top institutions and immigration authorities around the world.",
+      title: "Global Immigration Network",
+      description: "Worldwide immigration services backed by trusted international partnerships.",
       color: "#a855f7", 
       shadow: "rgba(168, 85, 247, 0.25)"
     }
@@ -43,12 +43,12 @@ const ChooseUs = () => {
         
         {/* Header Section */}
         <div className="section-title text-center">
-            <span className="sub-title wow fadeInUp">Why Choose Us</span>
+            <span className="sub-title wow fadeInUp" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Why Choose Us</span>
             <h2 className="split-text-right split-text-in-right">
                 Your Trusted Partner For <br /> <span>Immigration</span>
             </h2>
             <p className="text wow fadeInUp" data-wow-delay=".3s" style={{ maxWidth: '600px', margin: '0 auto', marginTop: '15px' }}>
-              We are committed to making your journey smooth, successful, and stress-free with our expert guidance and support.
+              We deliver trusted immigration services, visa consulting, and personalized guidance to make your journey abroad smooth, transparent, and successful.
             </p>
         </div>
 
@@ -56,8 +56,8 @@ const ChooseUs = () => {
         <div className="row g-4 mt-4">
           {cards.map((card) => (
             <div className={`col-xl-3 col-lg-4 col-md-6 d-flex wow fadeInUp`} data-wow-delay={`0.${card.id.charAt(1)}s`} key={card.id}>
-              <div className="premium-choose-card w-100">
-                <div className="card-inner h-100">
+              <div className="premium-choose-card w-100 h-100 d-flex flex-column">
+                <div className="card-inner h-100 flex-grow-1">
                   
                   <div className="icon-wrapper" style={{ '--glow-color': card.shadow, '--icon-color': card.color }}>
                     <div className="icon-circle mx-auto">
@@ -96,7 +96,7 @@ const ChooseUs = () => {
             position: absolute;
             inset: 0;
             border-radius: 16px;
-            background: linear-gradient(135deg, rgba(227, 28, 35, 0.1) 0%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(135deg, rgba(6, 27, 57, 0.1) 0%, rgba(255,255,255,0) 100%);
             opacity: 0;
             transition: opacity 0.4s ease;
             z-index: -1;
@@ -173,7 +173,7 @@ const ChooseUs = () => {
           }
 
           .premium-choose-card:hover .card-title {
-            color: #E31C23;
+            color: rgb(6, 27, 57);
           }
 
           .card-desc {
@@ -182,6 +182,11 @@ const ChooseUs = () => {
             font-size: 15px;
             position: relative;
             z-index: 2;
+            transition: color 0.3s ease;
+          }
+
+          .premium-choose-card:hover .card-desc {
+            color: rgb(6, 27, 57);
           }
 
           .learn-more {
@@ -204,7 +209,7 @@ const ChooseUs = () => {
           }
 
           .premium-choose-card:hover .learn-more {
-            color: #E31C23;
+            color: rgb(6, 27, 57);
           }
 
           .premium-choose-card:hover .learn-more i {
@@ -225,7 +230,7 @@ const ChooseUs = () => {
           }
 
           .premium-choose-card:hover .watermark-number {
-            color: rgba(227, 28, 35, 0.06);
+            color: rgba(6, 27, 57, 0.06);
             transform: scale(1.1) translate(-10px, -10px);
           }
         `}</style>

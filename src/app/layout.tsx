@@ -1,3 +1,4 @@
+import './globals.css';
 import '../styles/nextjs-bundle.css'; // The mega CSS file we made!
 import Preloader from '@/components/global/Preloader';
 import HeaderTop from '@/components/global/HeaderTop';

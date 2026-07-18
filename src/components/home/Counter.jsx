@@ -11,7 +11,7 @@ export default function Counter() {
             </div>
             <div className="container">
                 <div className="section-title text-center">
-                    <span className="sub-title bg-2 wow fadeInUp">Did You Know</span>
+                    <span className="sub-title bg-2 wow fadeInUp" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Did You Know</span>
                     <h2 className="text-white split-text-right split-text-in-right">
                        Our Achievements in Numbers
                     </h2>

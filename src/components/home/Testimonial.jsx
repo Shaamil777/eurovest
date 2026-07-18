@@ -61,9 +61,9 @@ export default function Testimonial() {
             <section className="testimonial-section section-padding pb-0 fix">
                 <div className="container">
                     <div className="section-title text-center">
-                        <span className="sub-title wow fadeInUp">What Our Students Say</span>
+                        <span className="sub-title wow fadeInUp" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Client Success Stories</span>
                         <h2 className="split-text-right split-text-in-right">
-                            Student Reviews & Testimonials
+                            CLIENT REVIEWS & <span>SUCCESS STORIES</span>
                         </h2>
                     </div>
                     <div className="testimonial-wrapper">

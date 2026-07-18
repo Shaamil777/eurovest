@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 :root {
+  /* Main Theme Colors */
+  --color-blue: #061B39;
+  --color-gold: #B58524;
+  --color-grey-text: #6C6D6F;
+  --color-grey-bg: #F8F8F9;
+  --color-border: #C9C9C9;
+  
+  /* System Background & Foreground */
   --background: #FDFDFD;
-  --foreground: #061B39;
+  --foreground: var(--color-blue);
 }
 
 @theme inline {
@@ -14,7 +22,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #061B39;
+    --background: var(--color-blue);
     --foreground: #FDFDFD;
   }
 }
@@ -24,3 +32,95 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Fix forced text capitalization across all sections */
+p, h1, h2, h3, h4, h5, h6, a, li {
+  text-transform: none !important;
+}
+
+/* Ensure buttons and specific decorative labels retain their styled casing */
+.theme-btn, .btn, .learn-more {
+  text-transform: uppercase !important;
+}
+
+/* Make all section subtitles (badges) use the exact same uniform design */
+.sub-title {
+  color: white !important;
+  background-color: rgb(6, 27, 57) !important;
+  padding: 5px 20px !important;
+  border-radius: 30px !important;
+  display: inline-block !important;
+}
+
+/* Remove overlay gradient from the video section */
+.video-section::before {
+  display: none !important;
+}
+
+/* Global Button Override - Modern Solid */
+.theme-btn, .theme-btn.style-2, .hero-1 .hero-content .hero-button .theme-btn, .hero-1 .hero-content .hero-button .theme-btn.style-2 {
+  background-color: var(--color-blue) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 15px 30px !important;
+  border: none !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 600 !important;
+}
+
+.theme-btn:hover, .theme-btn.style-2:hover, .hero-1 .hero-content .hero-button .theme-btn:hover, .hero-1 .hero-content .hero-button .theme-btn.style-2:hover {
+  background-color: var(--color-gold) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15) !important;
+  transform: translateY(-2px) !important;
+  border: none !important;
+}
+
+.theme-btn i, .theme-btn.style-2 i, .hero-1 .hero-content .hero-button .theme-btn i, .hero-1 .hero-content .hero-button .theme-btn.style-2 i {
+  width: auto !important;
+  height: auto !important;
+  line-height: normal !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-radius: 0 !important;
+  margin-left: 10px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.theme-btn:hover i, .theme-btn.style-2:hover i, .hero-1 .hero-content .hero-button .theme-btn:hover i, .hero-1 .hero-content .hero-button .theme-btn.style-2:hover i {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  transform: translateX(5px) !important;
+}
+
+/* Custom Footer Classes */
+.footer-link {
+  color: #999999;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #ffffff;
+}
+
+.footer-bottom-link {
+  color: #666666;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-bottom-link:hover {
+  color: #ffffff;
+}
+
+.newsletter-btn:hover {
+  background-color: #444 !important;
+}
+
