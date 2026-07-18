@@ -18,42 +18,50 @@ export default function ChooseUs2() {
                     </p>
                 </div>
 
+                <style>{`
+                    @media (min-width: 992px) {
+                        .custom-border-lg {
+                            border-left: 1px solid var(--bs-light);
+                            border-right: 1px solid var(--bs-light);
+                        }
+                    }
+                `}</style>
                 <div className="row justify-content-center mt-2">
                     {/* Point 1 */}
                     <div className="col-lg-4 col-md-6 text-center mb-4 px-4">
-                        <div className="d-flex justify-content-center align-items-center mb-3">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#162e5b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="me-2">
+                        <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center mb-3">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#162e5b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mb-2 mb-sm-0 me-sm-2">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <h4 className="mb-0" style={{ fontSize: '1.25rem', fontWeight: '700', color: '#10203f' }}>Expert Immigration Consultants</h4>
                         </div>
-                        <p className="text-muted mb-0" style={{ fontSize: '1.05rem' }}>
+                        <p className="text-muted mb-0 mx-auto" style={{ fontSize: '1.05rem', maxWidth: '350px' }}>
                            Experienced consultants providing accurate guidance for every visa application.
                         </p>
                     </div>
                     
                     {/* Point 2 */}
-                    <div className="col-lg-4 col-md-6 text-center mb-4 px-4 border-start border-end border-light">
-                        <div className="d-flex justify-content-center align-items-center mb-3">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#162e5b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="me-2">
+                    <div className="col-lg-4 col-md-6 text-center mb-4 px-4 custom-border-lg">
+                        <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center mb-3">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#162e5b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mb-2 mb-sm-0 me-sm-2">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <h4 className="mb-0" style={{ fontSize: '1.25rem', fontWeight: '700', color: '#10203f' }}>Personalized Visa Solutions</h4>
                         </div>
-                        <p className="text-muted mb-0" style={{ fontSize: '1.05rem' }}>
+                        <p className="text-muted mb-0 mx-auto" style={{ fontSize: '1.05rem', maxWidth: '350px' }}>
                             Tailored immigration services designed around your goals and requirements.
                         </p>
                     </div>
                     
                     {/* Point 3 */}
                     <div className="col-lg-4 col-md-6 text-center mb-4 px-4">
-                        <div className="d-flex justify-content-center align-items-center mb-3">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#162e5b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="me-2">
+                        <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center mb-3">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#162e5b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mb-2 mb-sm-0 me-sm-2">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <h4 className="mb-0" style={{ fontSize: '1.25rem', fontWeight: '700', color: '#10203f' }}>Transparent Process</h4>
                         </div>
-                        <p className="text-muted mb-0" style={{ fontSize: '1.05rem' }}>
+                        <p className="text-muted mb-0 mx-auto" style={{ fontSize: '1.05rem', maxWidth: '350px' }}>
                            Clear communication, reliable updates, and complete support from start to finish.
                         </p>
                     </div>
