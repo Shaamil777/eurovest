@@ -30,83 +30,61 @@ export default function Header() {
                 transition: 'box-shadow 0.3s ease-in-out'
             }}
          >
-            <div className="container-fluid">
+            <div className="container-fluid" style={{ paddingLeft: 0 }}>
                 <div className="mega-menu-wrapper">
-                    <div className="header-main">
-                        <div className="header-left">
-                            <div className="logo">
-                                <a href="index.html" className="header-logo-2">
-                                    <img src="/assets/img/logo/black-logo.svg" alt="logo-img" />
+                    <div className="header-main" style={{ position: 'relative', height: '70px', display: 'flex', alignItems: 'center' }}>
+                        
+                        {/* Slanted Background */}
+                        <div style={{
+                            backgroundColor: 'var(--color-blue)',
+                            clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)',
+                            width: '320px',
+                            height: '100%',
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                            zIndex: 0
+                        }}></div>
+
+                        <div className="header-left" style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', alignItems: 'center', width: '100%' }}>
+                            <div className="logo" style={{ width: '280px', paddingLeft: '40px' }}>
+                                <a href="/" className="header-logo-2">
+                                    <img src="/assets/img/logo/white-logo.svg" alt="logo-img" style={{ maxWidth: '160px' }} />
                                 </a>
                             </div>
-                            <div className="mean__menu-wrapper">
+                            <div className="mean__menu-wrapper" style={{ marginLeft: '20px' }}>
                                 <div className="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
                                             <li className="active">
-                                                <a href="/">
-                                                    Home 
-                                                </a>
+                                                <a href="/">Home</a>
                                             </li>
                                             <li>
                                                 <a href="/about">About Us</a>
                                             </li>
                                             <li className="has-dropdown">
-                                                <a href="/service">
-                                                    Services
-                                                </a>
+                                                <a href="/service">Services</a>
                                                 <ul className="submenu">
                                                     <li className="has-dropdown">
-                                                        <a href="#">
-                                                            Citizenship by Investment
-                                                            <i className="fas fa-angle-right"></i>
-                                                        </a>
+                                                        <a href="#">Citizenship by Investment <i className="fas fa-angle-right"></i></a>
                                                         <ul className="submenu">
                                                             <li><a href="#">Option 1</a></li>
                                                             <li><a href="#">Option 2</a></li>
-                                                            <li><a href="#">Option 3</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="has-dropdown">
-                                                        <a href="#">
-                                                            Residency by Investment
-                                                            <i className="fas fa-angle-right"></i>
-                                                        </a>
+                                                        <a href="#">Residency by Investment <i className="fas fa-angle-right"></i></a>
                                                         <ul className="submenu">
                                                             <li><a href="#">Option 1</a></li>
                                                             <li><a href="#">Option 2</a></li>
-                                                            <li><a href="#">Option 3</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li className="has-dropdown">
-                                                        <a href="#">
-                                                            Canada
-                                                            <i className="fas fa-angle-right"></i>
-                                                        </a>
-                                                        <ul className="submenu">
-                                                            <li><a href="#">Option 1</a></li>
-                                                            <li><a href="#">Option 2</a></li>
-                                                            <li><a href="#">Option 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="has-dropdown">
-                                                        <a href="#">
-                                                            United Kingdom
-                                                            <i className="fas fa-angle-right"></i>
-                                                        </a>
-                                                        <ul className="submenu">
-                                                            <li><a href="#">Option 1</a></li>
-                                                            <li><a href="#">Option 2</a></li>
-                                                            <li><a href="#">Option 3</a></li>
-                                                        </ul>
-                                                    </li>
+                                                    <li><a href="#">Canada</a></li>
+                                                    <li><a href="#">United Kingdom</a></li>
                                                 </ul>
                                             </li>
-
                                             <li>
-                                                <a href="/blog">
-                                                    Blog
-                                                </a>
+                                                <a href="/blog">Blog</a>
                                             </li>
                                             <li>
                                                 <a href="/contact">Contact Us</a>
@@ -116,21 +94,32 @@ export default function Header() {
                                 </div>
                             </div> 
                         </div>
-                        <div className="header-right d-flex align-items-center mt-0">
-                            <div className="header-call-item">
 
+                        <div className="header-right d-flex align-items-center mt-0" style={{ position: 'relative', zIndex: 1, gap: '30px' }}>
+                            
+                            {/* Contact Info Block */}
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flexShrink: 0 }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <i className="fa-solid fa-location-dot" style={{ color: 'var(--theme)' }}></i>
+                                    <span style={{ fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>Al Mawsou'ah 4 Street, Al Ain, UAE</span>
+                                </div>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <i className="fa-solid fa-phone" style={{ color: 'var(--theme)' }}></i>
+                                    <span style={{ fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>+91 1245784512</span>
+                                </div>
+                            </div>
+
+                            <div className="header-call-item">
                                 <a href="contact.html" className="theme-btn">
-                                    Apply now
+                                    Appointment
                                     <i className="fa-solid fa-arrow-right"></i>
                                 </a>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </header> 
-
         </>
     );
 }

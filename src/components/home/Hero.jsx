@@ -30,7 +30,7 @@ export default function Hero() {
     return (
         <>
         {/* Hero Section Start  */}
-        <section className="hero-section hero-1 fix bg-cover" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/home-1/hero/hero-bg-2.JPG")`, minHeight: '850px', display: 'flex', alignItems: 'center', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
+        <section className="hero-section hero-1 top-[12px] fix bg-cover" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/home-1/hero/hero-bg-2.JPG")`, minHeight: '850px', display: 'flex', alignItems: 'center', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
             <div className="left-shape">
                 {/* <img src="/assets/img/home-1/hero/sape-2.png" alt="img" /> */}
             </div>

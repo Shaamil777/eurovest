@@ -7,13 +7,15 @@ import OffcanvasMenu from '@/components/global/OffcanvasMenu';
 import SearchModal from '@/components/global/SearchModal';
 import Footer from '@/components/global/Footer';
 import FooterBottom from '@/components/global/FooterBottom';
-import BackToTop from '@/components/global/BackToTop';
 import MouseCursor from '@/components/global/MouseCursor';
 import GsapInit from '@/components/global/GsapInit';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+      </head>
       <body>
         <GsapInit />
         <MouseCursor />
@@ -31,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         <Footer />
         <FooterBottom />
-        <BackToTop />
+
       </body>
     </html>
   );

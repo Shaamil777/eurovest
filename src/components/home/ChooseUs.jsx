@@ -5,7 +5,7 @@ const ChooseUs = () => {
   const cards = [
     {
       id: '01',
-      icon: "fa-solid fa-user-tie",
+      icon: "fa-solid fa-passport",
       title: "Expert Visa Guidance",
       description: "Experienced immigration consultants providing accurate visa advice and personalized solutions.",
       color: "#3b82f6", 
@@ -13,7 +13,7 @@ const ChooseUs = () => {
     },
     {
       id: '02',
-      icon: "fa-solid fa-hand-holding-heart",
+      icon: "fa-solid fa-user-shield",
       title: "Trusted Immigration Experts",
       description: "Professional immigration support tailored to your visa and relocation goals.",
       color: "#ef4444", 
@@ -21,7 +21,7 @@ const ChooseUs = () => {
     },
     {
       id: '03',
-      icon: "fa-solid fa-stopwatch",
+      icon: "fa-solid fa-file-circle-check",
       title: "Transparent Visa Process",
       description: "Clear communication, accurate documentation, and hassle-free visa processing.",
       color: "#22c55e", 
@@ -29,7 +29,7 @@ const ChooseUs = () => {
     },
     {
       id: '04',
-      icon: "fa-solid fa-globe",
+      icon: "fa-solid fa-plane-departure",
       title: "Global Immigration Network",
       description: "Worldwide immigration services backed by trusted international partnerships.",
       color: "#a855f7", 
@@ -59,9 +59,9 @@ const ChooseUs = () => {
               <div className="premium-choose-card w-100 h-100 d-flex flex-column">
                 <div className="card-inner h-100 flex-grow-1">
                   
-                  <div className="icon-wrapper" style={{ '--glow-color': card.shadow, '--icon-color': card.color }}>
-                    <div className="icon-circle mx-auto">
-                      <i className={card.icon}></i>
+                  <div className="icon-wrapper">
+                    <div className="icon-circle mx-auto" style={{ boxShadow: `0 10px 25px ${card.shadow}` }}>
+                      <i className={card.icon} style={{ color: card.color }}></i>
                     </div>
                   </div>
 
@@ -149,18 +149,19 @@ const ChooseUs = () => {
             align-items: center;
             justify-content: center;
             font-size: 26px;
-            color: var(--icon-color);
-            box-shadow: 0 10px 25px var(--glow-color);
             transition: all 0.4s ease;
             position: relative;
             z-index: 2;
           }
 
           .premium-choose-card:hover .icon-circle {
-            background: var(--icon-color);
-            color: #ffffff;
+            background: rgb(6, 27, 57) !important;
             transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 15px 35px var(--glow-color);
+            box-shadow: 0 15px 35px rgba(6, 27, 57, 0.2) !important;
+          }
+
+          .premium-choose-card:hover .icon-circle i {
+            color: #ffffff !important;
           }
 
           .card-title {
