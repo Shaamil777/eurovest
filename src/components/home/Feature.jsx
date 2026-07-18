@@ -123,9 +123,9 @@ export default function Feature() {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.6 }}
                             viewport={{ once: true }}
-                            className="map-container relative"
+                            className="map-container relative left-0 md:left-[33%]"
                         >
-                            <img src="/assets/img/home-1/feature/worldmap.png" alt="World Map" className="w-100" style={{ opacity: 0.8 }} />
+                            <img src="/assets/img/home-1/feature/worldmap.png" alt="World Map" className="w-100 scale-100 md:scale-[1.8]" style={{ opacity: 1 }} />
                         </motion.div>
                     </div>
                     
