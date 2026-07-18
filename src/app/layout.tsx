@@ -9,6 +9,8 @@ import Footer from '@/components/global/Footer';
 import FooterBottom from '@/components/global/FooterBottom';
 import MouseCursor from '@/components/global/MouseCursor';
 import GsapInit from '@/components/global/GsapInit';
+import Providers from '@/components/global/Providers';
+import PageReveal from '@/components/global/PageReveal';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -17,23 +19,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
       </head>
       <body>
-        <GsapInit />
-        <MouseCursor />
-        <Preloader />
-        <OffcanvasMenu />
-        <SearchModal />
-        
-        <div style={{ position: 'sticky', top: 0, zIndex: 99999 }}>
-            {/* <HeaderTop /> */}
-            <Header />
-        </div>
-        
-        {/* This is where your page.tsx content goes */}
-        {children} 
-        
-        <Footer />
-        <FooterBottom />
-
+        <Providers>
+          <GsapInit />
+          <MouseCursor />
+          <Preloader />
+          
+          <PageReveal>
+            <OffcanvasMenu />
+            <SearchModal />
+            
+            <div style={{ position: 'sticky', top: 0, zIndex: 99999 }}>
+                {/* <HeaderTop /> */}
+                <Header />
+            </div>
+            
+            {/* This is where your page.tsx content goes */}
+            {children} 
+            
+            <Footer />
+            <FooterBottom />
+          </PageReveal>
+        </Providers>
       </body>
     </html>
   );
