@@ -7,7 +7,7 @@ export default function ServiceList() {
         <section className="service-section section-padding fix section-bg-1">
             <div className="container">
                 <div className="section-title text-center">
-                    <span className="sub-title-2">What We Offer</span>
+                    <span className="sub-title" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block', marginBottom: '15px' }}>What We Offer</span>
                     <h2 className="">
                         Our Immigration Services
                     </h2>

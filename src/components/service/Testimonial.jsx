@@ -35,7 +35,7 @@ export default function Testimonial() {
             <div className="container">
                 <div className="section-title-area">
                     <div className="section-title mb-0">
-                        <span className="sub-title-2">What Our Clients Say</span>
+                        <span className="sub-title" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block', marginBottom: '15px' }}>What Our Clients Say</span>
                         <h2 className="">
                             Immigration Success Stories
                         </h2>
