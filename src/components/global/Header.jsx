@@ -1,8 +1,10 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 // import Link from 'next/link';
 
 export default function Header() {
+    const pathname = usePathname();
     const [isSticky, setIsSticky] = useState(false);
 
     useEffect(() => {
@@ -56,13 +58,13 @@ export default function Header() {
                                 <div className="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li className="active">
+                                            <li className={pathname === '/' ? 'active' : ''}>
                                                 <a href="/">Home</a>
                                             </li>
-                                            <li>
+                                            <li className={pathname?.startsWith('/about') ? 'active' : ''}>
                                                 <a href="/about">About Us</a>
                                             </li>
-                                            <li className="has-dropdown">
+                                            <li className={`has-dropdown ${pathname?.startsWith('/service') ? 'active' : ''}`}>
                                                 <a href="/service">Services</a>
                                                 <ul className="submenu">
                                                     <li className="has-dropdown">
@@ -83,10 +85,10 @@ export default function Header() {
                                                     <li><a href="#">United Kingdom</a></li>
                                                 </ul>
                                             </li>
-                                            <li>
+                                            <li className={pathname?.startsWith('/blog') ? 'active' : ''}>
                                                 <a href="/blog">Blog</a>
                                             </li>
-                                            <li>
+                                            <li className={pathname?.startsWith('/contact') ? 'active' : ''}>
                                                 <a href="/contact">Contact Us</a>
                                             </li>
                                         </ul>
@@ -101,11 +103,11 @@ export default function Header() {
                             <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flexShrink: 0 }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <i className="fa-solid fa-location-dot" style={{ color: 'var(--theme)' }}></i>
-                                    <span style={{ fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>Al Mawsou'ah 4 Street, Al Ain, UAE</span>
+                                    <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>Al Mawsou'ah 4 Street, Al Ain, UAE</span>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <i className="fa-solid fa-phone" style={{ color: 'var(--theme)' }}></i>
-                                    <span style={{ fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>+91 1245784512</span>
+                                    <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>+91 1245784512</span>
                                 </div>
                             </div>
 
