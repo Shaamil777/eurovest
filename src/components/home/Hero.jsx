@@ -3,18 +3,20 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const heroSlides = [
-    {
-        id: 1,
-        subtitle: "Global Education Simplified",
-        title: "From Application to Visa – We’ve Got You Covered",
-        description: "We guide you through every step of the education visa process, from initial application to final approval, ensuring a smooth, hassle-free journey.",
-    },
-    {
-        id: 2,
-        subtitle: "Your Dream Destination Awaits",
-        title: "Unlock Your Future with Top Universities Worldwide",
-        description: "Let us help you find the right path to success, offering expert advice and full support for your international education journey.",
-    }
+  {
+    id: 1,
+    subtitle: "Trusted Immigration Experts",
+    title: "Unlock Your Future with Immigration & Visa Solutions",
+    description:
+      "Expert immigration services, work permits, visitor visas, residency visas, and business investment solutions with personalized guidance for a successful journey abroad.",
+  },
+  {
+    id: 2,
+    subtitle: "Your Global Journey Starts Here",
+    title: "Move Abroad with Confidence and Expert Visa Support",
+    description:
+      "From visa applications and work permits to residency and business investment, we provide complete immigration consulting tailored to your global goals.",
+  },
 ];
 
 export default function Hero() {
@@ -74,11 +76,11 @@ export default function Hero() {
                                 <p>{heroSlides[activeIndex].description}</p>
                                 <div className="hero-button">
                                     <a href="contact.html" className="theme-btn">
-                                        Apply now
+                                        Get Free Consultation
                                         <i className="fa-solid fa-arrow-right"></i>
                                     </a>
                                     <a href="contact.html" className="theme-btn style-2">
-                                        Book Free Consultation
+                                        Explore Services
                                         <i className="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>

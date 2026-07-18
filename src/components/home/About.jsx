@@ -174,7 +174,7 @@ export default function About() {
                                     href="about.html" 
                                     className="theme-btn"
                                 >
-                                    Get Started
+                                    Learn More
                                     <i className="fa-solid fa-arrow-right"></i>
                                 </motion.a>
                             </div>
