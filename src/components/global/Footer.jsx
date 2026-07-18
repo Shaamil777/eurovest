@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
     return (
-        <footer style={{ backgroundColor: '#111111', color: '#ffffff', paddingTop: '80px', fontFamily: '"Inter", sans-serif' }}>
+        <footer style={{ backgroundColor: 'var(--color-blue)', color: '#ffffff', paddingTop: '80px', fontFamily: '"Inter", sans-serif' }}>
             <div className="container">
                 {/* Top Section */}
                 <div className="row g-4 mb-5" style={{ paddingBottom: '60px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>

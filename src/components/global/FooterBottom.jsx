@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FooterBottom() {
     return (
-        <div style={{ backgroundColor: '#111111', color: '#666666', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ backgroundColor: 'var(--color-blue)', color: '#666666', position: 'relative', overflow: 'hidden' }}>
             <div className="container" style={{ position: 'relative', zIndex: 2, paddingBottom: '40px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '30px' }}>
                     <p style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', margin: 0 }}>
