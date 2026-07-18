@@ -7,6 +7,14 @@ export default function Header() {
     const pathname = usePathname();
     const [isSticky, setIsSticky] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [expandedMenu, setExpandedMenu] = useState({});
+
+    const toggleSubmenu = (menu) => {
+        setExpandedMenu(prev => ({
+            ...prev,
+            [menu]: !prev[menu]
+        }));
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -71,19 +79,37 @@ export default function Header() {
                                                     <li className="has-dropdown">
                                                         <a href="#">Citizenship by Investment <i className="fas fa-angle-right"></i></a>
                                                         <ul className="submenu">
-                                                            <li><a href="#">Option 1</a></li>
-                                                            <li><a href="#">Option 2</a></li>
+                                                            <li><a href="#">Dominica Citizenship</a></li>
+                                                            <li><a href="#">Saint Kitts & Nevis Citizenship</a></li>
+                                                            <li><a href="#">Vanuatu Citizenship</a></li>
+                                                            <li><a href="#">Saint Lucia citizenship</a></li>
+                                                            <li><a href="#">Nauru Citizenship</a></li>
+                                                            <li><a href="#">Grenada Citizenship</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="has-dropdown">
                                                         <a href="#">Residency by Investment <i className="fas fa-angle-right"></i></a>
                                                         <ul className="submenu">
-                                                            <li><a href="#">Option 1</a></li>
-                                                            <li><a href="#">Option 2</a></li>
+                                                            <li><a href="#">Spain</a></li>
+                                                            <li><a href="#">Greece</a></li>
+                                                            <li><a href="#">Portugal</a></li>
+                                                            <li><a href="#">USA</a></li>
+                                                            <li><a href="#">Australia</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="#">Canada</a></li>
-                                                    <li><a href="#">United Kingdom</a></li>
+                                                    <li className="has-dropdown">
+                                                        <a href="#">Canada <i className="fas fa-angle-right"></i></a>
+                                                        <ul className="submenu">
+                                                            <li><a href="#">LMIA Programs</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li className="has-dropdown">
+                                                        <a href="#">United Kingdom <i className="fas fa-angle-right"></i></a>
+                                                        <ul className="submenu">
+                                                            <li><a href="#">UK Skilled Worker Visa</a></li>
+                                                            <li><a href="#">UK Creative Worker Visa</a></li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
                                             </li>
                                             <li className={pathname?.startsWith('/blog') ? 'active' : ''}>
@@ -139,14 +165,90 @@ export default function Header() {
                     boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
                     zIndex: 999,
                     padding: '20px',
-                    borderTop: '1px solid #f0f0f0'
+                    borderTop: '1px solid #f0f0f0',
+                    maxHeight: 'calc(100vh - 70px)',
+                    overflowY: 'auto'
                 }}>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                        <li><a href="/" style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-blue)', textDecoration: 'none', display: 'block', padding: '8px 0', borderBottom: '1px solid #f5f5f5' }}>Home</a></li>
-                        <li><a href="/about" style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-blue)', textDecoration: 'none', display: 'block', padding: '8px 0', borderBottom: '1px solid #f5f5f5' }}>About Us</a></li>
-                        <li><a href="/service" style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-blue)', textDecoration: 'none', display: 'block', padding: '8px 0', borderBottom: '1px solid #f5f5f5' }}>Services</a></li>
-                        <li><a href="/blog" style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-blue)', textDecoration: 'none', display: 'block', padding: '8px 0', borderBottom: '1px solid #f5f5f5' }}>Blog</a></li>
-                        <li><a href="/contact" style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-blue)', textDecoration: 'none', display: 'block', padding: '8px 0' }}>Contact Us</a></li>
+                        <li><a href="/" className="mobile-menu-link">Home</a></li>
+                        <li><a href="/about" className="mobile-menu-link">About Us</a></li>
+                        
+                        {/* Services Collapsible */}
+                        <li>
+                            <div className="mobile-menu-link" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', borderBottom: expandedMenu.services ? 'none' : '1px solid #f5f5f5' }} onClick={() => toggleSubmenu('services')}>
+                                <span>Services</span>
+                                <i className={`fas fa-angle-${expandedMenu.services ? 'up' : 'down'}`}></i>
+                            </div>
+                            
+                            {/* Services Sub-options */}
+                            {expandedMenu.services && (
+                                <ul style={{ listStyle: 'none', padding: '10px 0 15px 15px', margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', borderBottom: '1px solid #f5f5f5' }}>
+                                    
+                                    <li>
+                                        <div className="mobile-submenu-link" onClick={() => toggleSubmenu('citizenship')}>
+                                            <span>Citizenship by Investment</span>
+                                            <i className={`fas fa-angle-${expandedMenu.citizenship ? 'up' : 'down'}`}></i>
+                                        </div>
+                                        {expandedMenu.citizenship && (
+                                            <ul className="mobile-inner-submenu">
+                                                <li><a href="#">Dominica Citizenship</a></li>
+                                                <li><a href="#">Saint Kitts & Nevis Citizenship</a></li>
+                                                <li><a href="#">Vanuatu Citizenship</a></li>
+                                                <li><a href="#">Saint Lucia citizenship</a></li>
+                                                <li><a href="#">Nauru Citizenship</a></li>
+                                                <li><a href="#">Grenada Citizenship</a></li>
+                                            </ul>
+                                        )}
+                                    </li>
+
+                                    <li>
+                                        <div className="mobile-submenu-link" onClick={() => toggleSubmenu('residency')}>
+                                            <span>Residency by Investment</span>
+                                            <i className={`fas fa-angle-${expandedMenu.residency ? 'up' : 'down'}`}></i>
+                                        </div>
+                                        {expandedMenu.residency && (
+                                            <ul className="mobile-inner-submenu">
+                                                <li><a href="#">Spain</a></li>
+                                                <li><a href="#">Greece</a></li>
+                                                <li><a href="#">Portugal</a></li>
+                                                <li><a href="#">USA</a></li>
+                                                <li><a href="#">Australia</a></li>
+                                            </ul>
+                                        )}
+                                    </li>
+
+                                    <li>
+                                        <div className="mobile-submenu-link" onClick={() => toggleSubmenu('canada')}>
+                                            <span>Canada</span>
+                                            <i className={`fas fa-angle-${expandedMenu.canada ? 'up' : 'down'}`}></i>
+                                        </div>
+                                        {expandedMenu.canada && (
+                                            <ul className="mobile-inner-submenu">
+                                                <li><a href="#">Option 1</a></li>
+                                                <li><a href="#">Option 2</a></li>
+                                            </ul>
+                                        )}
+                                    </li>
+
+                                    <li>
+                                        <div className="mobile-submenu-link" onClick={() => toggleSubmenu('uk')}>
+                                            <span>United Kingdom</span>
+                                            <i className={`fas fa-angle-${expandedMenu.uk ? 'up' : 'down'}`}></i>
+                                        </div>
+                                        {expandedMenu.uk && (
+                                            <ul className="mobile-inner-submenu">
+                                                <li><a href="#">UK Skilled Worker Visa</a></li>
+                                                <li><a href="#">UK Creative Worker Visa</a></li>
+                                            </ul>
+                                        )}
+                                    </li>
+
+                                </ul>
+                            )}
+                        </li>
+
+                        <li><a href="/blog" className="mobile-menu-link">Blog</a></li>
+                        <li><a href="/contact" className="mobile-menu-link" style={{ borderBottom: 'none' }}>Contact Us</a></li>
                         <li style={{ marginTop: '10px' }}>
                             <a href="/contact" className="theme-btn" style={{ width: '100%', textAlign: 'center', justifyContent: 'center' }}>
                                 Appointment <i className="fa-solid fa-arrow-right" style={{ marginLeft: '10px' }}></i>
@@ -161,6 +263,144 @@ export default function Header() {
             .mobile-menu-btn {
                 display: none;
             }
+
+            .mobile-menu-link {
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--color-blue);
+                text-decoration: none;
+                display: block;
+                padding: 8px 0;
+                border-bottom: 1px solid #f5f5f5;
+            }
+
+            .mobile-submenu-link {
+                font-size: 15px;
+                font-weight: 500;
+                color: #4a5568;
+                text-decoration: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 6px 0;
+                cursor: pointer;
+            }
+
+            .mobile-inner-submenu {
+                list-style: none;
+                padding: 5px 0 5px 15px;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                border-left: 2px solid #f0f0f0;
+                margin-left: 5px;
+            }
+
+            .mobile-inner-submenu li a {
+                font-size: 14px;
+                color: #718096;
+                text-decoration: none;
+                display: block;
+                padding: 4px 0;
+            }
+
+            /* Modern Dropdown Styles */
+            .main-menu nav > ul > li {
+                position: relative;
+            }
+
+            .main-menu nav > ul > li .submenu {
+                position: absolute;
+                top: 120%;
+                left: 0;
+                min-width: 270px;
+                background: #ffffff;
+                box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.08);
+                border-radius: 12px;
+                padding: 12px 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(15px);
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                z-index: 99;
+                border: 1px solid rgba(0, 0, 0, 0.06);
+            }
+
+            .main-menu nav > ul > li:hover > .submenu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                top: 100%;
+            }
+
+            .main-menu nav ul li .submenu li {
+                position: relative;
+                display: block;
+                padding: 0 12px;
+                margin-bottom: 4px;
+            }
+            .main-menu nav ul li .submenu li:last-child {
+                margin-bottom: 0;
+            }
+
+            .main-menu nav ul li .submenu li a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 16px;
+                color: #4a5568;
+                font-weight: 500;
+                font-size: 15px;
+                border-radius: 8px;
+                transition: all 0.25s ease;
+                text-decoration: none;
+                font-family: 'Inter', sans-serif;
+            }
+
+            .main-menu nav ul li .submenu li a:hover {
+                background-color: rgba(0, 102, 255, 0.08);
+                color: var(--color-blue);
+                padding-left: 22px;
+            }
+
+            /* Nested Submenu Positioning */
+            .main-menu nav ul li .submenu li.has-dropdown > .submenu {
+                top: -12px;
+                left: 100%;
+                margin-left: 20px;
+                transform: translateX(15px);
+                box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.06);
+            }
+            
+            .main-menu nav ul li .submenu li.has-dropdown:hover > .submenu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+                margin-left: 0;
+            }
+
+            /* Icon Styling */
+            .main-menu nav ul li a i.fa-angle-right {
+                font-size: 13px;
+                transition: transform 0.3s ease;
+                opacity: 0.7;
+            }
+
+            .main-menu nav ul li.has-dropdown:hover > a > i.fa-angle-right {
+                transform: rotate(90deg);
+                opacity: 1;
+            }
+
+            /* Override global line hover effects */
+            .header-main .main-menu nav ul li .submenu li a::before,
+            .header-main .main-menu nav ul li .submenu li a::after,
+            .header-main .main-menu ul li .submenu li a::before,
+            .header-main .main-menu ul li .submenu li a::after {
+                display: none !important;
+                content: none !important;
+            }
+
             @media (max-width: 991px) {
                 .desktop-menu {
                     display: none !important;
