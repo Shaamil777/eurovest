@@ -46,7 +46,7 @@ export default function Faq() {
                                 <div className="section-title mb-0">
                                     <span className="sub-title wow fadeInUp">Visa FAQs</span>
                                     <h2 className="split-text-right split-text-in-right">
-                                        Got Questions? We’ve Got answers
+                                        Got Questions? We’ve Got <span>Answers</span>
                                     </h2>
                                 </div>
                                 <p className="text mt-3 mb-4">

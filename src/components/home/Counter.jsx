@@ -13,7 +13,7 @@ export default function Counter() {
                 <div className="section-title text-center">
                     <span className="sub-title bg-2 wow fadeInUp" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Our Success</span>
                     <h2 className="text-white split-text-right split-text-in-right">
-                       Our Achievements in Numbers
+                       Our Achievements in <span>Numbers</span>
                     </h2>
                 </div>
             </div>
@@ -21,7 +21,7 @@ export default function Counter() {
                  <div className="container">
                     <div className="counter-main-item">
                         <div className="counter-item style-2">
-                            <h2><span className="odometer" data-count="1">05</span>k+</h2>
+                            <h2><span className="odometer" data-count="1">10</span>k+</h2>
                             <h5>Successful Clients</h5>
                             <p>
                                 Successfully assisted 5,000+ clients with immigration services, work permits, and visa applications worldwide.

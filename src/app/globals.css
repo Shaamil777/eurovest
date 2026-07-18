@@ -33,13 +33,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Fix forced text capitalization across all sections */
-p, h1, h2, h3, h4, h5, h6, a, li {
+/* Fix forced text capitalization across all sections globally */
+*, p, h1, h2, h3, h4, h5, h6, a, li, span, div {
   text-transform: none !important;
 }
 
 /* Ensure buttons and specific decorative labels retain their styled casing */
-.theme-btn, .btn, .learn-more {
+.theme-btn, .btn, .learn-more, .sub-title, .footer-bottom-link {
   text-transform: uppercase !important;
 }
 

@@ -8,28 +8,28 @@ const testimonialData = [
         text: "Professional and reliable service. They explained each step clearly, prepared my documents, and supported me during the interview. My visa approval came faster than expected.",
         name: "Sohel Tanvir",
         location: "Canada",
-        image: "/assets/img/home-1/testimonial/client.png"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
     },
     {
         id: 2,
         text: "The consultancy guided me from start to finish, making my study abroad journey smooth and stress-free. Thanks to their expert support, I secured my visa successfully.",
         name: "Ayesha Rahman",
         location: "UK. United Kingdom",
-        image: "/assets/img/home-1/testimonial/client-2.png"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
     },
     {
         id: 3,
         text: "Amazing experience! Their team was incredibly helpful in selecting the right university and handling all the complicated paperwork for my student visa.",
         name: "Rahul Sharma",
         location: "Australia",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
     },
     {
         id: 4,
         text: "I couldn't have done it without them. From interview preparation to final visa stamping, they were there at every step.",
         name: "Sarah Jenkins",
         location: "USA",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
     }
 ];
 
@@ -53,7 +53,11 @@ export default function Testimonial() {
 
     const visibleItems = isMobile 
         ? [testimonialData[currentIndex]] 
-        : [testimonialData[currentIndex], testimonialData[(currentIndex + 1) % testimonialData.length]];
+        : [
+            testimonialData[currentIndex], 
+            testimonialData[(currentIndex + 1) % testimonialData.length],
+            testimonialData[(currentIndex + 2) % testimonialData.length]
+        ];
 
     return (
         <>
@@ -68,15 +72,7 @@ export default function Testimonial() {
                     </div>
                     <div className="testimonial-wrapper">
                         <div className="row g-4">
-                            <div className="col-lg-4">
-                                <div className="testimonia-image tp-clip-anim p-relative h-100">
-                                    <img src="/assets/img/home-1/testimonial/01.jpg" alt="img" className="tp-anim-img w-100 h-100" style={{ objectFit: 'cover' }} data-animate="true" />
-                                    <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" className="video-btn video-popup">
-                                        <i className="fa-solid fa-play"></i></a>
-                                    <h5>Real stories</h5>
-                                </div>
-                            </div>
-                            <div className="col-lg-8">
+                            <div className="col-lg-12">
                                 <div className="row h-100" style={{ overflow: 'hidden' }}>
                                     <AnimatePresence mode="popLayout">
                                         {visibleItems.map((item) => (
@@ -86,7 +82,7 @@ export default function Testimonial() {
                                                 animate={{ opacity: 1, x: 0 }}
                                                 exit={{ opacity: 0, x: -50 }}
                                                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                                                className="col-md-6 col-12 mb-4"
+                                                className="col-lg-4 col-md-6 col-12 mb-4"
                                             >
                                                 <div className="testimonial-box h-100">
                                                     <div>

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const servicesData = [
     {
         id: '01',
-        title: 'Work permit',
+        title: 'Work Permit',
         description: 'Expert work permit and work visa assistance for a smooth overseas employment journey.',
         image: '/assets/img/home-1/service/WP.webp',
         isActive: false,
@@ -14,7 +14,7 @@ const servicesData = [
     },
     {
         id: '02',
-        title: 'Visitor and residency visa',
+        title: 'Visitor and Residency Visa',
         description: 'Reliable support for visitor visas, residency visas, and permanent residency (PR) applications.',
         image: '/assets/img/home-1/service/Visa.webp',
         isActive: true,
@@ -22,7 +22,7 @@ const servicesData = [
     },
     {
         id: '03',
-        title: 'Immigration consulting',
+        title: 'Immigration Consulting',
         description: 'Professional immigration consulting with personalized visa guidance and application support.',
         image: '/assets/img/home-1/service/IC.webp',
         isActive: false,
@@ -30,7 +30,7 @@ const servicesData = [
     },
     {
         id: '04',
-        title: 'Business investment',
+        title: 'Business Investment',
         description: 'Explore business investment, Residency by Investment, and Citizenship by Investment opportunities.',
         image: '/assets/img/home-1/service/BI.webp',
         isActive: false,
@@ -38,7 +38,7 @@ const servicesData = [
     },
     {
         id: '05',
-        title: 'Tour packages',
+        title: 'Tour Packages',
         description: 'Customized international tour packages with complete tourist visa and travel assistance.',
         image: '/assets/img/home-1/service/TP.webp',
         isActive: false,

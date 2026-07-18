@@ -36,17 +36,17 @@ export default function About() {
             <div className="container">
                 <div className="about-wrapper">
                     <div className="row g-4">
-                        <div className="col-lg-6">
-                            <div className="about-image">
+                        <div className="col-lg-6 pe-lg-4">
+                            <div className="about-image" style={{ position: 'relative', zIndex: 1, paddingRight: '8%', paddingBottom: '8%' }}>
                                 <motion.img 
                                     initial={{ opacity: 0, clipPath: "inset(0 100% 0 0)" }}
                                     whileInView={{ opacity: 1, clipPath: "inset(0 0 0 0)" }}
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                     viewport={{ once: true }}
-                                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&h=700&q=80" 
+                                    src="/assets/img/home-1/about/about1.JPG" 
                                     alt="img" 
                                     className="img-custom-anim-left" 
-                                    style={{ objectFit: 'cover', borderRadius: '15px', width: '100%', height: 'auto' }} 
+                                    style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', minHeight: '450px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', position: 'relative', zIndex: 2 }} 
                                 />
                                 <motion.div 
                                     initial={{ opacity: 0, clipPath: "inset(0 0 0 100%)" }}
@@ -54,8 +54,9 @@ export default function About() {
                                     transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                     className="about-image-2"
+                                    style={{ position: 'absolute', bottom: '-70px', right: '-150px', width: '80%', zIndex: 3 }}
                                 >
-                                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&h=400&q=80" alt="img" className="img-custom-anim-right" style={{ objectFit: 'cover', borderRadius: '15px' }} />
+                                    <img src="/assets/img/home-1/about/about2.webp" alt="img" className="img-custom-anim-right" style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', boxShadow: '0 15px 40px rgba(6,27,57,0.15)' }} />
                                 </motion.div>
                                 <motion.div 
                                     initial={{ opacity: 0 }}
