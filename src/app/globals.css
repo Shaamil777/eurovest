@@ -167,6 +167,130 @@ body {
   color: var(--color-gold) !important;
 }
 
-/* .main-menu ul > li:hover > a::after, .main-menu ul > li.active > a::after {
+.main-menu ul > li:hover > a::after, .main-menu ul > li.active > a::after {
   width: 100% !important;
-} */
+}
+
+/* ========================================================
+   Mobile Optimization Overrides (Mobile Only)
+   (Desktop layout remains untouched)
+   ======================================================== */
+@media (max-width: 991px) {
+  /* Fix horizontal overflow and visibility in Hero Section for Mobile */
+  .hero-section {
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-top: 120px !important; /* Space for mobile header */
+  }
+  .hero-section .container-fluid {
+    order: 1 !important;
+  }
+  .hero-shape {
+    display: block !important;
+    position: relative !important;
+    order: 2 !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+    text-align: center !important;
+  }
+  .hero-shape img {
+    transform: none !important;
+    max-width: 130% !important;
+    width: 130% !important;
+    margin-left: -30% !important;
+  }
+  
+  /* Hide images in About Section on mobile */
+  .about-image {
+    display: none !important;
+  }
+  
+  /* Reset About text margin on mobile since images are hidden */
+  .about-content {
+    margin-top: 0 !important;
+  }
+  
+  /* Fix button layouts to stack cleanly */
+  .hero-button {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+  .hero-button .theme-btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  /* Hide excessive decorative shapes that clutter mobile */
+  .left-shape, .top-shape, .right-shape, .plane-shape, .bg-shape {
+    display: none !important;
+  }
+  
+  /* Prevent Header overlap by hiding the extra contact details */
+  .header-right > div:first-child {
+    display: none !important;
+  }
+  
+  /* Reduce gap between individual services */
+  .service-wrapper {
+    margin-bottom: 10px !important;
+  }
+
+  /* Make the Service list items look beautiful on mobile */
+  .service-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+    padding: 20px 15px !important;
+  }
+  .service-item .left-item {
+    width: 100% !important;
+  }
+  .service-item .right-item {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .service-item .right-item p {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Center FAQ section on mobile */
+  .faq-content {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .faq-items {
+    left: 0 !important; /* Overrides the tailwind left-[15%] offset */
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Ensure a nice gap on the left and right sides of the screen */
+  .container, .container-fluid {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  /* Adjust huge text sizes for readability on phones */
+  .hero-content h1 {
+    font-size: 36px !important;
+    line-height: 1.3 !important;
+  }
+  .split-text-right {
+    font-size: 28px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Reduce massive section paddings */
+  .section-padding {
+    padding: 60px 0 !important;
+  }
+}

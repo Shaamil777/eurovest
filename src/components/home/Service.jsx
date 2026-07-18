@@ -10,7 +10,7 @@ const servicesData = [
         description: 'Expert work permit and work visa assistance for a smooth overseas employment journey.',
         image: '/assets/img/home-1/service/WP.webp',
         isActive: false,
-        delay: 0.1
+        delay: 0.2
     },
     {
         id: '02',
@@ -18,7 +18,7 @@ const servicesData = [
         description: 'Reliable support for visitor visas, residency visas, and permanent residency (PR) applications.',
         image: '/assets/img/home-1/service/Visa.webp',
         isActive: true,
-        delay: 0.2
+        delay: 0.3
     },
     {
         id: '03',
@@ -26,7 +26,7 @@ const servicesData = [
         description: 'Professional immigration consulting with personalized visa guidance and application support.',
         image: '/assets/img/home-1/service/IC.webp',
         isActive: false,
-        delay: 0.3
+        delay: 0.4
     },
     {
         id: '04',
@@ -34,7 +34,7 @@ const servicesData = [
         description: 'Explore business investment, Residency by Investment, and Citizenship by Investment opportunities.',
         image: '/assets/img/home-1/service/BI.webp',
         isActive: false,
-        delay: 0.4
+        delay: 0.5
     },
     {
         id: '05',
@@ -42,7 +42,7 @@ const servicesData = [
         description: 'Customized international tour packages with complete tourist visa and travel assistance.',
         image: '/assets/img/home-1/service/TP.webp',
         isActive: false,
-        delay: 0.5
+        delay: 0.6
     }
 ];
 
@@ -73,9 +73,9 @@ export default function Service() {
             <div className="container">
                 <div className="section-title text-center">
                     <motion.span 
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
                         viewport={{ once: true }}
                         className="sub-title"
                         style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}
@@ -83,18 +83,18 @@ export default function Service() {
                         Our Expert Services
                     </motion.span>
                     <motion.h2 
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="split-text-right split-text-in-right"
+                        className=""
                     >
                         Comprehensive <span style={{ color: 'var(--theme)' }}>Immigration & Visa </span>Services
                     </motion.h2>
                     <motion.p 
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ delay: 0.3, duration: 0.6 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 0.8 }}
                         viewport={{ once: true }}
                         className="mt-3"
                         style={{ maxWidth: '800px', margin: '0 auto', color: '#64748b' }}
@@ -107,9 +107,9 @@ export default function Service() {
             {servicesData.map((service, index) => (
                 <motion.div 
                     key={index}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: service.delay }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: service.delay }}
                     viewport={{ once: true, margin: "-50px" }}
                     className={`service-wrapper ${service.isActive ? 'active' : ''}`}
                 >

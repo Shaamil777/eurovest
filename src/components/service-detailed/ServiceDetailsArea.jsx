@@ -72,7 +72,7 @@ export default function ServiceDetailsArea() {
                                     <div className="faq-items">
                                         <h3 className="mb-3">Frequently Asked Question</h3>
                                         <div className="accordion" id="accordionExample">
-                                            <div className="accordion-item wow fadeInUp" data-wow-delay=".2s">
+                                            <div className="accordion-item wow fadeIn" data-wow-delay=".2s">
                                                 <h5 className="accordion-header" id="headingTwo">
                                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -88,7 +88,7 @@ export default function ServiceDetailsArea() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="accordion-item wow fadeInUp" data-wow-delay=".8s">
+                                            <div className="accordion-item wow fadeIn" data-wow-delay=".8s">
                                                 <h5 className="accordion-header" id="headingOne">
                                                     <button className="accordion-button" type="button" data-bs-toggle="collapse"
                                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -104,7 +104,7 @@ export default function ServiceDetailsArea() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="accordion-item wow fadeInUp" data-wow-delay=".4s">
+                                            <div className="accordion-item wow fadeIn" data-wow-delay=".4s">
                                                 <h5 className="accordion-header" id="headingthree">
                                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                         data-bs-target="#collapsethree" aria-expanded="false"
@@ -121,7 +121,7 @@ export default function ServiceDetailsArea() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="accordion-item wow fadeInUp" data-wow-delay=".6s">
+                                            <div className="accordion-item wow fadeIn" data-wow-delay=".6s">
                                                 <h5 className="accordion-header" id="headingfour">
                                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                         data-bs-target="#collapsefour" aria-expanded="false"

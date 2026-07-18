@@ -10,8 +10,8 @@ export default function DestinationOffer() {
             </div>
             <div className="container">
                 <div className="section-title">
-                    <span className="sub-title-2 theme wow fadeInUp">Countries we offer</span>
-                    <h2 className="split-text-right split-text-in-right text-white">
+                    <span className="sub-title-2 theme wow fadeIn">Countries we offer</span>
+                    <h2 className="wow fadeIn text-white">
                         Choose Your Immigration Destination
                     </h2>
                 </div>

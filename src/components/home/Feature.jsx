@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const destinations = [
     {
@@ -51,23 +52,56 @@ export default function Feature() {
                     <div className="col-lg-6 mb-5 mb-lg-0">
                         <div className="content-wrapper pe-lg-4">
                             
-                            <span className="sub-title" style={{ color: 'var(--color-blue)', backgroundColor: 'rgba(6, 27, 57, 0.05)', padding: '8px 24px', borderRadius: '30px', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: '600', marginBottom: '20px' }}>
+                            <motion.span 
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.1 }}
+                                viewport={{ once: true }}
+                                className="sub-title" 
+                                style={{ color: 'var(--color-blue)', backgroundColor: 'rgba(6, 27, 57, 0.05)', padding: '8px 24px', borderRadius: '30px', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: '600', marginBottom: '20px' }}
+                            >
                                 Explore Destinations <i className="fa-solid fa-arrow-right" style={{ color: 'var(--theme)' }}></i>
-                            </span>
+                            </motion.span>
                             
-                            <h2 className="section-title mb-4" style={{ fontSize: '48px', fontWeight: '800', lineHeight: '1.2', color: 'var(--color-blue)', textTransform: 'uppercase' }}>
+                            <motion.h2 
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2, duration: 0.8 }}
+                                viewport={{ once: true }}
+                                className="section-title mb-4" 
+                                style={{ fontSize: '48px', fontWeight: '800', lineHeight: '1.2', color: 'var(--color-blue)', textTransform: 'uppercase' }}
+                            >
                                 YOUR GATEWAY TO<br/>GLOBAL <span style={{ color: 'var(--theme)' }}>IMMIGRATION</span>
-                            </h2>
+                            </motion.h2>
                             
-                            <div style={{ width: '80px', height: '3px', backgroundColor: 'var(--theme)', marginBottom: '30px' }}></div>
+                            <motion.div 
+                                initial={{ opacity: 0, width: 0 }}
+                                whileInView={{ opacity: 1, width: '80px' }}
+                                transition={{ delay: 0.3, duration: 0.8 }}
+                                viewport={{ once: true }}
+                                style={{ height: '3px', backgroundColor: 'var(--theme)', marginBottom: '30px' }}
+                            ></motion.div>
                             
-                            <p style={{ color: '#666', fontSize: '18px', lineHeight: '1.6', marginBottom: '40px', maxWidth: '90%' }}>
+                            <motion.p 
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4, duration: 0.8 }}
+                                viewport={{ once: true }}
+                                style={{ color: '#666', fontSize: '18px', lineHeight: '1.6', marginBottom: '40px', maxWidth: '90%' }}
+                            >
                                 We provide trusted immigration solutions to the world's leading destinations. Choose your dream country and let us handle the rest of your journey.
-                            </p>
+                            </motion.p>
                             
                             <div className="destinations-grid mt-4">
                                 {destinations.map((dest, idx) => (
-                                    <div key={idx} className="dest-item d-flex align-items-center">
+                                    <motion.div 
+                                        key={idx} 
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.5 + (idx * 0.1) }}
+                                        viewport={{ once: true }}
+                                        className="dest-item d-flex align-items-center"
+                                    >
                                         <div className="flag-circle shadow-sm">
                                             <img src={`https://flagcdn.com/w160/${dest.flag}.png`} alt={`${dest.name} flag`} />
                                         </div>
@@ -75,7 +109,7 @@ export default function Feature() {
                                             <h4 style={{ margin: 0, fontSize: '19px', fontWeight: '800', color: 'var(--color-blue)', letterSpacing: '-0.5px' }}>{dest.name}</h4>
                                             <p style={{ margin: '4px 0 0', fontSize: '14px', color: '#64748b', lineHeight: '1.5' }}>{dest.desc}</p>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
                             
@@ -84,9 +118,15 @@ export default function Feature() {
                     
                     {/* Right Column: Map */}
                     <div className="col-lg-6">
-                        <div className="map-container relative">
+                        <motion.div 
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1, delay: 0.6 }}
+                            viewport={{ once: true }}
+                            className="map-container relative"
+                        >
                             <img src="/assets/img/home-1/feature/worldmap.png" alt="World Map" className="w-100" style={{ opacity: 0.8 }} />
-                    </div>
+                        </motion.div>
                     </div>
                     
                 </div>

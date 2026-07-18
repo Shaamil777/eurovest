@@ -37,33 +37,33 @@ export default function Hero() {
                 {/* <img src="/assets/img/home-1/hero/sape-2.png" alt="img" /> */}
             </div>
             <motion.div 
-                initial={{ opacity: 0, x: 100, scale: 0.95 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
                 className="hero-shape"
             >
                 <img src="/assets/img/home-1/hero/hero-img.png" alt="img" style={{ maxWidth: '1250px', width: '100%', height: 'auto', transform: 'translateX(-120px)' }} />
             </motion.div>
             <motion.div 
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
                 className="top-shape"
             >
                 <img src="/assets/img/home-1/hero/shape-3.png" alt="img" />
             </motion.div>
             <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
                 className="right-shape"
             >
                 <img src="/assets/img/home-1/hero/shape-4.png" alt="img" />
             </motion.div>
             <motion.div 
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
                 className="pagi-item"
             >
                 <div className="dot-number" style={{ display: 'flex', gap: '10px' }}>
@@ -92,19 +92,19 @@ export default function Hero() {
                                     hidden: { opacity: 0 },
                                     visible: { 
                                         opacity: 1,
-                                        transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+                                        transition: { staggerChildren: 0, delayChildren: 0 }
                                     },
                                     exit: { 
                                         opacity: 0,
-                                        transition: { duration: 0.4 }
+                                        transition: { duration: 0.8 }
                                     }
                                 }}
                                 className="hero-content"
                             >
-                                <motion.h6 variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } } }}>{heroSlides[activeIndex].subtitle}</motion.h6>
-                                <motion.h1 variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } } }}>{heroSlides[activeIndex].title}</motion.h1>
-                                <motion.p variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } } }}>{heroSlides[activeIndex].description}</motion.p>
-                                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} className="hero-button">
+                                <motion.h6 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }}>{heroSlides[activeIndex].subtitle}</motion.h6>
+                                <motion.h1 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }}>{heroSlides[activeIndex].title}</motion.h1>
+                                <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }}>{heroSlides[activeIndex].description}</motion.p>
+                                <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } }} className="hero-button">
                                     <a href="contact.html" className="theme-btn">
                                         Get Free Consultation
                                         <i className="fa-solid fa-arrow-right"></i>

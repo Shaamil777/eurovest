@@ -44,18 +44,45 @@ export default function Faq() {
                         <div className="col-lg-5">
                             <div className="faq-content">
                                 <div className="section-title mb-0">
-                                    <span className="sub-title wow fadeInUp">Visa FAQs</span>
-                                    <h2 className="split-text-right split-text-in-right">
+                                    <motion.span 
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.1 }}
+                                        viewport={{ once: true }}
+                                        className="sub-title"
+                                        style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}
+                                    >
+                                        Visa FAQs
+                                    </motion.span>
+                                    <motion.h2 
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2, duration: 0.8 }}
+                                        viewport={{ once: true }}
+                                    >
                                         Got Questions? We’ve Got <span>Answers</span>
-                                    </h2>
+                                    </motion.h2>
                                 </div>
-                                <p className="text mt-3 mb-4">
+                                <motion.p 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.3, duration: 0.8 }}
+                                    viewport={{ once: true }}
+                                    className="text mt-3 mb-4"
+                                >
                                     We understand students often have many questions about studying abroad. Our experts provide clear and accurate information to help you navigate the process.
-                                </p>
-                                 <a href="/contact" className="theme-btn">
+                                </motion.p>
+                                <motion.a 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.4, duration: 0.8 }}
+                                    viewport={{ once: true }}
+                                    href="/contact" 
+                                    className="theme-btn"
+                                >
                                     contact us
                                     <i className="fa-solid fa-arrow-right"></i>
-                                </a>
+                                </motion.a>
                             </div>
                         </div>
                         <div className="col-lg-7">
@@ -65,9 +92,9 @@ export default function Faq() {
                                     return (
                                         <motion.div 
                                             key={index}
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                                            initial={{ opacity: 0 }}
+                                            whileInView={{ opacity: 1 }}
+                                            transition={{ duration: 0.8, delay: index * 0.1 }}
                                             viewport={{ once: true }}
                                             style={{
                                                 borderBottom: '1px solid #eaeaea',
@@ -95,7 +122,7 @@ export default function Faq() {
                                                 </h5>
                                                 <motion.div 
                                                     animate={{ rotate: isActive ? 45 : 0 }}
-                                                    transition={{ duration: 0.3 }}
+                                                    transition={{ duration: 0.8 }}
                                                     style={{
                                                         color: '#6C6D6F',
                                                         display: 'flex',
@@ -117,7 +144,7 @@ export default function Faq() {
                                                         initial={{ height: 0, opacity: 0 }}
                                                         animate={{ height: 'auto', opacity: 1 }}
                                                         exit={{ height: 0, opacity: 0 }}
-                                                        transition={{ duration: 0.3 }}
+                                                        transition={{ duration: 0.8 }}
                                                     >
                                                         <div style={{ padding: '0 0 24px 0' }}>
                                                             <p style={{ margin: 0, color: '#6C6D6F', lineHeight: '1.6', fontSize: '16px' }}>

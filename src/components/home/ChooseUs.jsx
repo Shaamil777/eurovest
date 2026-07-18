@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const ChooseUs = () => {
   const cards = [
@@ -43,19 +44,26 @@ const ChooseUs = () => {
         
         {/* Header Section */}
         <div className="section-title text-center">
-            <span className="sub-title wow fadeInUp" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Why Choose Us</span>
-            <h2 className="split-text-right split-text-in-right">
+            <span className="sub-title wow fadeIn" data-wow-delay=".1s" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Why Choose Us</span>
+            <h2 className="wow fadeIn">
                 Your Trusted Partner For <br /> <span>Immigration</span>
             </h2>
-            <p className="text wow fadeInUp" data-wow-delay=".3s" style={{ maxWidth: '600px', margin: '0 auto', marginTop: '15px' }}>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0 }}
+              viewport={{ once: true }}
+              className="text" 
+              style={{ maxWidth: '600px', margin: '0 auto', marginTop: '15px' }}
+            >
               We deliver trusted immigration services, visa consulting, and personalized guidance to make your journey abroad smooth, transparent, and successful.
-            </p>
+            </motion.p>
         </div>
 
         {/* Cards Section */}
         <div className="row g-4 mt-4">
-          {cards.map((card) => (
-            <div className={`col-xl-3 col-lg-4 col-md-6 d-flex wow fadeInUp`} data-wow-delay={`0.${card.id.charAt(1)}s`} key={card.id}>
+          {cards.map((card, index) => (
+            <div className={`col-xl-3 col-lg-4 col-md-6 d-flex wow fadeIn`} data-wow-delay={`0.${index + 5}s`} key={card.id}>
               <div className="premium-choose-card w-100 h-100 d-flex flex-column">
                 <div className="card-inner h-100 flex-grow-1">
                   

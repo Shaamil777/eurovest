@@ -16,18 +16,18 @@ const containerVariants = {
 
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
 export default function About() {
     return (
         <>
          {/* About Section Start  */}
-        <section className="about-section section-padding" style={{ overflowX: 'hidden' }}>
+        <section className="about-section section-padding wow fadeIn" style={{ overflowX: 'hidden' }}>
             <motion.div 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
                 viewport={{ once: true }}
                 className="top-shape"
             >
@@ -39,9 +39,9 @@ export default function About() {
                         <div className="col-lg-6 pe-lg-4">
                             <div className="about-image" style={{ position: 'relative', zIndex: 1, paddingRight: '8%', paddingBottom: '8%' }}>
                                 <motion.img 
-                                    initial={{ opacity: 0, clipPath: "inset(0 100% 0 0)" }}
-                                    whileInView={{ opacity: 1, clipPath: "inset(0 0 0 0)" }}
-                                    transition={{ duration: 0.8, ease: "easeOut" }}
+                                    initial={{ opacity: 0, x: -30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                     src="/assets/img/home-1/about/about1.JPG" 
                                     alt="img" 
@@ -49,8 +49,8 @@ export default function About() {
                                     style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', minHeight: '450px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', position: 'relative', zIndex: 2 }} 
                                 />
                                 <motion.div 
-                                    initial={{ opacity: 0, clipPath: "inset(0 0 0 100%)" }}
-                                    whileInView={{ opacity: 1, clipPath: "inset(0 0 0 0)" }}
+                                    initial={{ opacity: 0, x: 30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                     className="about-image-2"
@@ -59,18 +59,18 @@ export default function About() {
                                     <img src="/assets/img/home-1/about/about2.webp" alt="img" className="img-custom-anim-right" style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', boxShadow: '0 15px 40px rgba(6,27,57,0.15)' }} />
                                 </motion.div>
                                 <motion.div 
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 0.5 }}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.8, delay: 0.5 }}
                                     viewport={{ once: true }}
                                     className="bg-shape"
                                 >
                                     <img src="/assets/img/home-1/about/Vector.png" alt="img" />
                                 </motion.div>
                                 <motion.div 
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 0.6 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.6 }}
                                     viewport={{ once: true }}
                                     className="plane-shape"
                                 >
@@ -79,7 +79,7 @@ export default function About() {
                                  <motion.div 
                                     initial={{ opacity: 0 }}
                                     whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 0.7 }}
+                                    transition={{ duration: 0.8, delay: 0.7 }}
                                     viewport={{ once: true }}
                                     className="top-shape"
                                 >
@@ -91,9 +91,9 @@ export default function About() {
                             <div className="about-content">
                                 <div className="section-title mb-0">
                                     <motion.span 
-                                        initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
-                                        whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
-                                        transition={{ duration: 0.6 }}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.1 }}
                                         viewport={{ once: true }}
                                         className="sub-title"
                                         style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}
@@ -101,18 +101,18 @@ export default function About() {
                                         About Our Consultancy
                                     </motion.span>
                                     <motion.h2 
-                                        initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
-                                        whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
-                                        transition={{ delay: 0.2, duration: 0.6 }}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2, duration: 0.8 }}
                                         viewport={{ once: true }}
-                                        className="split-text-right split-text-in-right"
+                                        className=""
                                     >
                                     OUR TRUSTED PARTNER FOR <span>IMMIGRATION & VISA</span> SOLUTIONS
                                     </motion.h2>
                                 </div>
                                 <motion.p 
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.3, duration: 0.8 }}
                                     viewport={{ once: true }}
                                     className="text"
@@ -165,9 +165,9 @@ export default function About() {
                                 </motion.div>
                                 <hr className="mb-4" style={{ borderTop: '1px dashed #d1d5db', opacity: 1 }} />
                                 <motion.a 
-                                    initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
-                                    whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
-                                    transition={{ delay: 0.8, duration: 0.5 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.6, duration: 0.8 }}
                                     viewport={{ once: true }}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}

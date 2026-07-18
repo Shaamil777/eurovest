@@ -9,8 +9,8 @@ export default function ChooseUs3() {
             <div className="container">
                 <div className="section-title-area">
                     <div className="section-title">
-                    <span className="sub-title-2 wow fadeInUp">Company Intro</span>
-                    <h2 className="split-text-right split-text-in-right">
+                    <span className="sub-title-2 wow fadeIn">Company Intro</span>
+                    <h2 className="wow fadeIn">
                         Building Pathways to Your Immigration Success
                     </h2>
                 </div>

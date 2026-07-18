@@ -8,15 +8,15 @@ const containerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.15,
-            delayChildren: 0.4
+            staggerChildren: 0,
+            delayChildren: 0
         }
     }
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } }
 };
 
 export default function About() {
@@ -27,7 +27,7 @@ export default function About() {
             <motion.div 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
                 className="top-shape"
             >
@@ -39,8 +39,8 @@ export default function About() {
                         <div className="col-lg-6 pe-lg-4">
                             <div className="about-image" style={{ position: 'relative', zIndex: 1, paddingRight: '8%', paddingBottom: '8%' }}>
                                 <motion.img 
-                                    initial={{ opacity: 0, clipPath: "inset(0 100% 0 0)" }}
-                                    whileInView={{ opacity: 1, clipPath: "inset(0 0 0 0)" }}
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                     src="/assets/img/home-1/about/about1.JPG" 
@@ -49,9 +49,9 @@ export default function About() {
                                     style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', minHeight: '450px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', position: 'relative', zIndex: 2 }} 
                                 />
                                 <motion.div 
-                                    initial={{ opacity: 0, clipPath: "inset(0 0 0 100%)" }}
-                                    whileInView={{ opacity: 1, clipPath: "inset(0 0 0 0)" }}
-                                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
                                     viewport={{ once: true }}
                                     className="about-image-2"
                                     style={{ position: 'absolute', bottom: '-70px', right: '-150px', width: '80%', zIndex: 3 }}
@@ -61,7 +61,7 @@ export default function About() {
                                 <motion.div 
                                     initial={{ opacity: 0 }}
                                     whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 0.5 }}
+                                    transition={{ duration: 0.8, delay: 0 }}
                                     viewport={{ once: true }}
                                     className="bg-shape"
                                 >
@@ -70,7 +70,7 @@ export default function About() {
                                 <motion.div 
                                     initial={{ opacity: 0 }}
                                     whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 0.6 }}
+                                    transition={{ duration: 0.8, delay: 0 }}
                                     viewport={{ once: true }}
                                     className="plane-shape"
                                 >
@@ -79,7 +79,7 @@ export default function About() {
                                  <motion.div 
                                     initial={{ opacity: 0 }}
                                     whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: 0.7 }}
+                                    transition={{ duration: 0.8, delay: 0 }}
                                     viewport={{ once: true }}
                                     className="top-shape"
                                 >
@@ -91,9 +91,9 @@ export default function About() {
                             <div className="about-content">
                                 <div className="section-title mb-0">
                                     <motion.span 
-                                        initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
-                                        whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
-                                        transition={{ duration: 0.6 }}
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ duration: 0.8 }}
                                         viewport={{ once: true }}
                                         className="sub-title"
                                         style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}
@@ -101,11 +101,11 @@ export default function About() {
                                         About Our Consultancy
                                     </motion.span>
                                     <motion.h2 
-                                        initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
-                                        whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
-                                        transition={{ delay: 0.2, duration: 0.6 }}
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ delay: 0, duration: 0.8 }}
                                         viewport={{ once: true }}
-                                        className="split-text-right split-text-in-right"
+                                        className="wow fadeIn"
                                     >
                                     OUR TRUSTED PARTNER FOR <span>IMMIGRATION & VISA</span> SOLUTIONS
                                     </motion.h2>
@@ -113,7 +113,7 @@ export default function About() {
                                 <motion.p 
                                     initial={{ opacity: 0 }}
                                     whileInView={{ opacity: 1 }}
-                                    transition={{ delay: 0.3, duration: 0.8 }}
+                                    transition={{ delay: 0, duration: 0.8 }}
                                     viewport={{ once: true }}
                                     className="text"
                                 >
@@ -165,9 +165,9 @@ export default function About() {
                                 </motion.div>
                                 <hr className="mb-4" style={{ borderTop: '1px dashed #d1d5db', opacity: 1 }} />
                                 <motion.a 
-                                    initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
-                                    whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
-                                    transition={{ delay: 0.8, duration: 0.5 }}
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ delay: 0, duration: 0.8 }}
                                     viewport={{ once: true }}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}

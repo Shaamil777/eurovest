@@ -65,8 +65,8 @@ export default function Testimonial() {
             <section className="testimonial-section section-padding pb-0 fix">
                 <div className="container">
                     <div className="section-title text-center">
-                        <span className="sub-title wow fadeInUp" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Client Success Stories</span>
-                        <h2 className="split-text-right split-text-in-right">
+                        <span className="sub-title wow fadeIn" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Client Success Stories</span>
+                        <h2 className="wow fadeIn">
                             CLIENT REVIEWS & <span>SUCCESS STORIES</span>
                         </h2>
                     </div>
@@ -77,12 +77,11 @@ export default function Testimonial() {
                                     <AnimatePresence mode="popLayout">
                                         {visibleItems.map((item) => (
                                             <motion.div
-                                                layout
                                                 key={item.id}
-                                                initial={{ opacity: 0, x: 100, scale: 0.9 }}
-                                                animate={{ opacity: 1, x: 0, scale: 1 }}
-                                                exit={{ opacity: 0, x: -100, scale: 0.9 }}
-                                                transition={{ duration: 0.6, type: "spring", bounce: 0.2 }}
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                                transition={{ duration: 0.8 }}
                                                 className="col-lg-4 col-md-6 col-12 mb-4"
                                             >
                                                 <div className="testimonial-box h-100">

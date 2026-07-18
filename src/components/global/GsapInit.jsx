@@ -24,23 +24,15 @@ export default function GsapInit() {
       }
 
       // Determine initial state based on classes
-      let startState = { opacity: 0, y: 50, x: 0 };
+      let startState = { opacity: 0 };
       
-      if (el.classList.contains('img-custom-anim-left')) {
-        startState = { opacity: 0, x: -50, y: 0 };
-      } else if (el.classList.contains('img-custom-anim-right')) {
-        startState = { opacity: 0, x: 50, y: 0 };
-      }
-
       // GSAP Animation using ScrollTrigger
       gsap.fromTo(el, 
         startState,
         {
           opacity: 1,
-          y: 0,
-          x: 0,
           duration: 0.8,
-          delay: delay,
+          delay: 0,
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
@@ -61,11 +53,10 @@ export default function GsapInit() {
       const animImg = el.querySelector('.tp-anim-img');
       if (animImg) {
         gsap.fromTo(animImg,
-          { opacity: 0, scale: 1.2 },
+          { opacity: 0 },
           {
             opacity: 1,
-            scale: 1,
-            duration: 1.5,
+            duration: 0.8,
             ease: "power2.out",
             scrollTrigger: {
               trigger: el,

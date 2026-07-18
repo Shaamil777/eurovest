@@ -17,8 +17,8 @@ export default function ChooseUs2() {
                         <div className="col-lg-6">
                             <div className="feature-content">
                                  <div className="section-title mb-0">
-                                    <span className="sub-title-2 wow fadeInUp">Your Travel Made Easy</span>
-                                    <h2 className="split-text-right split-text-in-right">
+                                    <span className="sub-title-2 wow fadeIn">Your Travel Made Easy</span>
+                                    <h2 className="wow fadeIn">
                                         Smooth Visa Journey Guaranteed
                                     </h2>
                                 </div>

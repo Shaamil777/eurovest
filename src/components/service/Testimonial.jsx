@@ -35,8 +35,8 @@ export default function Testimonial() {
             <div className="container">
                 <div className="section-title-area">
                     <div className="section-title mb-0">
-                        <span className="sub-title-2 wow fadeInUp">What Our Clients Say</span>
-                        <h2 className="split-text-right split-text-in-right">
+                        <span className="sub-title-2 wow fadeIn">What Our Clients Say</span>
+                        <h2 className="wow fadeIn">
                             Immigration Success Stories
                         </h2>
                     </div>
@@ -58,10 +58,10 @@ export default function Testimonial() {
                                     <AnimatePresence mode="wait">
                                         <motion.div
                                             key={currentIndex}
-                                            initial={{ opacity: 0, x: 50 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            exit={{ opacity: 0, x: -50 }}
-                                            transition={{ duration: 0.4 }}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.8 }}
                                             className="content"
                                         >
                                             <div className="star">
