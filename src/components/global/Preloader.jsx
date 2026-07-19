@@ -22,10 +22,7 @@ export default function Preloader() {
                     transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
                     style={{
                         position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100vw',
-                        height: '100vh',
+                        inset: 0,
                         backgroundColor: '#0f172a', // sleek dark blue/slate color
                         display: 'flex',
                         alignItems: 'center',
@@ -48,7 +45,7 @@ export default function Preloader() {
                             transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
                             style={{ display: 'flex', alignItems: 'center', gap: '15px' }}
                         >
-                            <img src="/assets/img/logo/logo.png" alt="EuroVest Logo" style={{ height: '60px', filter: 'brightness(0) invert(1)' }} />
+                            <img src="/assets/img/logo/logo.png" alt="EuroVest Logo" style={{ maxHeight: '60px', maxWidth: '90vw', height: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
                             {/* Fallback text if logo is missing/doesn't invert well:
                                 <h1 style={{ color: '#ffffff', fontSize: '3.5rem', fontWeight: '700', letterSpacing: '0.1em', margin: 0 }}>EUROVEST</h1>
                             */}
