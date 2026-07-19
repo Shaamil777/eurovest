@@ -172,7 +172,14 @@ export default function Feature() {
                 
                 @media (min-width: 992px) {
                     .map-container {
-                        transform: scale(2) translateX(50%);
+                        transform: scale(1.5) translateX(40%);
+                        transform-origin: center right;
+                    }
+                }
+                
+                @media (min-width: 768px) and (max-width: 1024px) {
+                    .map-container {
+                        transform: scale(1.3) translateX(22%);
                         transform-origin: center right;
                     }
                 }

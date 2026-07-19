@@ -1210,8 +1210,8 @@ span {
 }
 .about-wrapper .about-image .plane-shape {
   position: absolute;
-  left: -38px;
-  bottom: -163px;
+  left: 20px;
+  bottom: -90px;
   z-index: -1;
 }
 @media (max-width: 1399px) {
@@ -1225,8 +1225,8 @@ span {
 }
 .about-wrapper .about-image .top-shape {
   position: absolute;
-  right: -200px;
-  top: 0;
+  left: 75%;
+  top: -25px;
 }
 @media (max-width: 1399px) {
   .about-wrapper .about-image .top-shape {

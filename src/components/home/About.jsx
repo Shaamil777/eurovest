@@ -51,16 +51,6 @@ export default function About() {
                                 >
                                     <img src="/assets/img/home-1/about/Vector.png" alt="img" />
                                 </div>
-                                <div 
-                                    className="plane-shape"
-                                >
-                                    <img src="/assets/img/home-1/about/plane.png" alt="img" />
-                                </div>
-                                 <div 
-                                    className="top-shape"
-                                >
-                                    <img src="/assets/img/home-1/about/shape.png" alt="img" />
-                                </div>
                             </div>
                         </div>
                         <div className="col-lg-6">
