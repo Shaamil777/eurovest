@@ -172,6 +172,23 @@ body {
 }
 
 /* ========================================================
+   MacBook / Laptop Optimization Overrides (992px - 1400px)
+   ======================================================== */
+@media (min-width: 992px) and (max-width: 1400px) {
+  .hero-1 .hero-shape {
+    display: block !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) translateX(-10%) scale(1.37) !important;
+    z-index: 0 !important;
+    width: 50% !important;
+    max-width: none !important;
+    text-align: center !important;
+  }
+}
+
+/* ========================================================
    Mobile Optimization Overrides (Mobile Only)
    (Desktop layout remains untouched)
    ======================================================== */

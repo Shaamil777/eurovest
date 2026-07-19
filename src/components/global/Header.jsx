@@ -74,7 +74,7 @@ export default function Header() {
                                                 <a href="/about">About Us</a>
                                             </li>
                                             <li className={`has-dropdown ${pathname?.startsWith('/service') ? 'active' : ''}`}>
-                                                <a href="/service">Services</a>
+                                                <a href="#">Services</a>
                                                 <ul className="submenu">
                                                     <li className="has-dropdown">
                                                         <a href="#">Citizenship by Investment <i className="fas fa-angle-right"></i></a>
