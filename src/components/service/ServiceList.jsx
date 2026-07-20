@@ -1,5 +1,6 @@
 import React from 'react';
 import { serviceCategories } from '../../data/servicesData';
+import Image from 'next/image';
 
 export default function ServiceList() {
     const allServices = serviceCategories.flatMap(category => category.services);
@@ -25,7 +26,7 @@ export default function ServiceList() {
                                         <>
                                             <div className="service-left">
                                                 <div className="service-image">
-                                                    <img src={service.mainImage || "/assets/img/home-3/service/01.jpg"} alt={service.title} />
+                                                    <Image src={service.mainImage || "/assets/img/home-3/service/01.jpg"} alt={service.title} width={400} height={300} style={{ width: '100%', height: 'auto', objectFit: 'cover' }} />
                                                 </div>
                                                 <div className="content">
                                                     <h3>
@@ -61,7 +62,7 @@ export default function ServiceList() {
                                                     </p>
                                                 </div>
                                                 <div className="service-image">
-                                                    <img src={service.mainImage || "/assets/img/home-3/service/02.jpg"} alt={service.title} />
+                                                    <Image src={service.mainImage || "/assets/img/home-3/service/02.jpg"} alt={service.title} width={400} height={300} style={{ width: '100%', height: 'auto', objectFit: 'cover' }} />
                                                 </div>
                                             </div>
                                         </>

@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const destinations = [
     {
@@ -101,7 +102,7 @@ export default function Feature() {
                         <div 
                             className="map-container relative left-0 md:left-[10%]"
                         >
-                            <img src="/assets/img/home-1/feature/worldmap.png" alt="World Map" className="w-100 scale-100 md:scale-[1]" style={{ opacity: 1 }} />
+                            <Image src="/assets/img/home-1/feature/worldmap.png" alt="World Map" width={1000} height={500} className="w-100 scale-100 md:scale-[1]" style={{ width: '100%', height: 'auto', opacity: 1 }} />
                         </div>
                     </div>
                     
@@ -170,17 +171,28 @@ export default function Feature() {
                     width: 100%;
                 }
                 
-                @media (min-width: 992px) {
+                @media (min-width: 1200px) {
+                    /* Desktop / Large Screen size (Edit these values to adjust map on large screens) */
                     .map-container {
-                        transform: scale(1.5) translateX(40%);
+                        transform: scale(1.4) translateX(20%);
+                        transform-origin: center right;
+                    }
+                }
+
+                @media (min-width: 992px) and (max-width: 1199px) {
+                    /* MacBook / Small Desktop size (Edit these values to adjust map on MacBooks) */
+                    .map-container {
+                        transform: scale(1.2) translateX(10%);
                         transform-origin: center right;
                     }
                 }
                 
-                @media (min-width: 768px) and (max-width: 1024px) {
+                @media (min-width: 768px) and (max-width: 991px) {
+                    /* iPad / Tablet size (Edit these values to adjust map on tablets) */
                     .map-container {
-                        transform: scale(1.3) translateX(22%);
+                        transform: scale(1.05) translateX(-8%);
                         transform-origin: center right;
+                        margin-top: 30px;
                     }
                 }
                 

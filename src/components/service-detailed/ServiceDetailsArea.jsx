@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ServiceDetailsArea({ serviceData }) {
     const [activeFaq, setActiveFaq] = useState(0);
@@ -48,7 +49,7 @@ export default function ServiceDetailsArea({ serviceData }) {
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="thumb">
-                                        <img src={serviceData.image2 || "/assets/img/inner-page/service-details/details-2.jpg"} alt="img" style={{ width: '100%', borderRadius: '12px', objectFit: 'cover' }} />
+                                        <Image src={serviceData.image2 || "/assets/img/inner-page/service-details/details-2.jpg"} alt="img" width={800} height={600} style={{ width: '100%', height: 'auto', borderRadius: '12px', objectFit: 'cover' }} />
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +57,7 @@ export default function ServiceDetailsArea({ serviceData }) {
                             <div className="row g-4 align-items-center mt-4">
                                 <div className="col-lg-6">
                                     <div className="thumb">
-                                        <img src={serviceData.image3 || "/assets/img/inner-page/service-details/details-3.jpg"} alt="img" style={{ width: '100%', borderRadius: '12px', objectFit: 'cover' }} />
+                                        <Image src={serviceData.image3 || "/assets/img/inner-page/service-details/details-3.jpg"} alt="img" width={800} height={600} style={{ width: '100%', height: 'auto', borderRadius: '12px', objectFit: 'cover' }} />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">

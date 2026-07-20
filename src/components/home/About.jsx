@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -27,29 +28,31 @@ export default function About() {
             <div 
                 className="top-shape"
             >
-                <img src="/assets/img/home-1/about/globe.png" alt="img" />
+                <Image src="/assets/img/home-1/about/globe.png" alt="img" width={150} height={150} style={{ width: 'auto', height: 'auto' }} />
             </div>
             <div className="container">
                 <div className="about-wrapper">
                     <div className="row g-4">
                         <div className="col-lg-6 pe-lg-4">
                             <div className="about-image" style={{ position: 'relative', zIndex: 1, paddingRight: '8%', paddingBottom: '8%' }}>
-                                <img 
+                                <Image 
                                     src="/assets/img/home-1/about/about1.webp" 
                                     alt="img" 
+                                    width={600}
+                                    height={700}
                                     className="img-custom-anim-left" 
-                                    style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', minHeight: '450px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', position: 'relative', zIndex: 2 }} 
+                                    style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', height: 'auto', minHeight: '450px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', position: 'relative', zIndex: 2 }} 
                                 />
                                 <div 
                                     className="about-image-2"
                                     style={{ position: 'absolute', bottom: '-70px', right: '-150px', width: '80%', zIndex: 3 }}
                                 >
-                                    <img src="/assets/img/home-1/about/about2.webp" alt="img" className="img-custom-anim-right" style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', boxShadow: '0 15px 40px rgba(6,27,57,0.15)' }} />
+                                    <Image src="/assets/img/home-1/about/about2.webp" alt="img" width={400} height={300} className="img-custom-anim-right" style={{ objectFit: 'cover', borderRadius: '20px', width: '100%', height: 'auto', boxShadow: '0 15px 40px rgba(6,27,57,0.15)' }} />
                                 </div>
                                 <div 
                                     className="bg-shape"
                                 >
-                                    <img src="/assets/img/home-1/about/Vector.png" alt="img" />
+                                    <Image src="/assets/img/home-1/about/Vector.png" alt="img" width={100} height={100} style={{ width: 'auto', height: 'auto' }} />
                                 </div>
                             </div>
                         </div>

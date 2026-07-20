@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Counter() {
     return (
@@ -7,7 +8,7 @@ export default function Counter() {
         {/* Counter Section Start  */}
         <section className="counter-section section-padding pb-0 fix bg-cover" style={{ backgroundImage: `url("/assets/img/home-1/feature/bg-2.png")` }}>
             <div className="shape">
-                <img src="/assets/img/home-1/feature/shape-2.png" alt="img" />
+                <Image src="/assets/img/home-1/feature/shape-2.png" alt="img" width={200} height={200} style={{ width: 'auto', height: 'auto' }} />
             </div>
             <div className="container">
                 <div className="section-title text-center">

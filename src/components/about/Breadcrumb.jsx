@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Breadcrumb() {
     return (
@@ -7,7 +8,7 @@ export default function Breadcrumb() {
         {/*  Breadcrumb-Wrapper Section Start  */}
         <section className="breadcrumb-wrapper top-[20px] fix bg-cover" style={{ backgroundImage: `url("/assets/img/inner-page/breadcrumb.png")` }}>
             <div className="shape">
-                <img src="/assets/img/inner-page/shape.png" alt="img" />
+                <Image src="/assets/img/inner-page/shape.png" alt="img" width={200} height={200} style={{ width: 'auto', height: 'auto' }} />
             </div>
             <div className="container">
                 <div className="page-heading">

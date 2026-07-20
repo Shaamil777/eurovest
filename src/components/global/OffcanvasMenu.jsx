@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function OffcanvasMenu() {
     return (
@@ -12,7 +13,7 @@ export default function OffcanvasMenu() {
                         <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                             <div className="offcanvas__logo">
                                 <Link href="/">
-                                    <img src="/assets/img/logo/black-logo.svg" alt="logo-img" />
+                                    <Image src="/assets/img/logo/black-logo.svg" alt="logo-img" width={150} height={40} style={{ width: 'auto', height: 'auto' }} />
                                 </Link>
                             </div>
                             <div className="offcanvas__close">

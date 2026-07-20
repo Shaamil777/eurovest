@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const heroSlides = [
   {
     id: 1,
-    subtitle: "Trusted Immigration Experts",
-    title: "Unlock Your Future with Immigration & Visa Solutions",
+    subtitle: "Welcome to EuroVest",
+    title: "Your Journey to Global Success Starts Here",
     description:
       "Expert immigration services, work permits, visitor visas, residency visas, and business investment solutions with personalized guidance for a successful journey abroad.",
   },
@@ -38,13 +39,13 @@ export default function Hero() {
                 {/* <img src="/assets/img/home-1/hero/sape-2.png" alt="img" /> */}
             </div>
             <div className="hero-shape">
-                <img src="/assets/img/home-1/hero/hero-img.webp" alt="img" style={{ maxWidth: '1250px', width: '100%', height: 'auto', transform: 'translateX(-120px)' }} />
+                <Image src="/assets/img/home-1/hero/hero-img.webp" alt="img" width={1250} height={800} style={{ maxWidth: '1250px', width: '100%', height: 'auto', transform: 'translateX(-120px)' }} priority />
             </div>
             <div className="top-shape">
-                <img src="/assets/img/home-1/hero/shape-3.png" alt="img" />
+                <Image src="/assets/img/home-1/hero/shape-3.png" alt="img" width={150} height={150} style={{ width: 'auto', height: 'auto' }} />
             </div>
             <div className="right-shape">
-                <img src="/assets/img/home-1/hero/shape-4.png" alt="img" />
+                <Image src="/assets/img/home-1/hero/shape-4.png" alt="img" width={150} height={150} style={{ width: 'auto', height: 'auto' }} />
             </div>
             <div className="pagi-item">
                 <div className="dot-number" style={{ display: 'flex', gap: '10px' }}>

@@ -1,10 +1,12 @@
 import './globals.css';
 import '../styles/nextjs-bundle.css'; // The mega CSS file we made!
-import Preloader from '@/components/global/Preloader';
+import dynamic from 'next/dynamic';
 import HeaderTop from '@/components/global/HeaderTop';
 import Header from '@/components/global/Header';
-import OffcanvasMenu from '@/components/global/OffcanvasMenu';
-import SearchModal from '@/components/global/SearchModal';
+
+const Preloader = dynamic(() => import('@/components/global/Preloader'));
+const OffcanvasMenu = dynamic(() => import('@/components/global/OffcanvasMenu'));
+const SearchModal = dynamic(() => import('@/components/global/SearchModal'));
 import Footer from '@/components/global/Footer';
 import MouseCursor from '@/components/global/MouseCursor';
 import Providers from '@/components/global/Providers';

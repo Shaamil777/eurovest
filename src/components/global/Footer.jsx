@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 
 export default function Footer() {
     return (
@@ -31,7 +32,7 @@ export default function Footer() {
                         {/* Main Brand Column */}
                         <div className="col-lg-4">
                             <div>
-                                <img src="/assets/img/logo/logo.png" alt="EuroVest Logo" style={{ maxWidth: '250px' }} />
+                                <Image src="/assets/img/logo/logo.png" alt="EuroVest Logo" width={250} height={70} style={{ width: '100%', height: 'auto', maxWidth: '250px' }} />
                             </div>
                             <h3 style={{ fontSize: '32px', fontWeight: '700', marginBottom: '20px', color: '#fff', letterSpacing: '-0.5px' }}>
                                 Let's build your global future.
