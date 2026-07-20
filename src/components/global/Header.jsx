@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-// import Link from 'next/link';
+import { serviceCategories } from '../../data/servicesData';
 
 export default function Header() {
     const pathname = usePathname();
@@ -76,40 +76,16 @@ export default function Header() {
                                             <li className={`has-dropdown ${pathname?.startsWith('/service') ? 'active' : ''}`}>
                                                 <a href="#">Services</a>
                                                 <ul className="submenu">
-                                                    <li className="has-dropdown">
-                                                        <a href="#">Citizenship by Investment <i className="fas fa-angle-right"></i></a>
-                                                        <ul className="submenu">
-                                                            <li><a href="#">Dominica Citizenship</a></li>
-                                                            <li><a href="#">Saint Kitts & Nevis Citizenship</a></li>
-                                                            <li><a href="#">Vanuatu Citizenship</a></li>
-                                                            <li><a href="#">Saint Lucia citizenship</a></li>
-                                                            <li><a href="#">Nauru Citizenship</a></li>
-                                                            <li><a href="#">Grenada Citizenship</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="has-dropdown">
-                                                        <a href="#">Residency by Investment <i className="fas fa-angle-right"></i></a>
-                                                        <ul className="submenu">
-                                                            <li><a href="#">Spain</a></li>
-                                                            <li><a href="#">Greece</a></li>
-                                                            <li><a href="#">Portugal</a></li>
-                                                            <li><a href="#">USA</a></li>
-                                                            <li><a href="#">Australia</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="has-dropdown">
-                                                        <a href="#">Canada <i className="fas fa-angle-right"></i></a>
-                                                        <ul className="submenu">
-                                                            <li><a href="#">LMIA Programs</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="has-dropdown">
-                                                        <a href="#">United Kingdom <i className="fas fa-angle-right"></i></a>
-                                                        <ul className="submenu">
-                                                            <li><a href="#">UK Skilled Worker Visa</a></li>
-                                                            <li><a href="#">UK Creative Worker Visa</a></li>
-                                                        </ul>
-                                                    </li>
+                                                    {serviceCategories.map((category, index) => (
+                                                        <li className="has-dropdown" key={index}>
+                                                            <a href="#">{category.categoryName} <i className="fas fa-angle-right"></i></a>
+                                                            <ul className="submenu">
+                                                                {category.services.map((service, sIndex) => (
+                                                                    <li key={sIndex}><a href={`/service/${service.slug}`}>{service.title}</a></li>
+                                                                ))}
+                                                            </ul>
+                                                        </li>
+                                                    ))}
                                                 </ul>
                                             </li>
                                             <li className={pathname?.startsWith('/blog') ? 'active' : ''}>
@@ -180,69 +156,23 @@ export default function Header() {
                                 <i className={`fas fa-angle-${expandedMenu.services ? 'up' : 'down'}`}></i>
                             </div>
                             
-                            {/* Services Sub-options */}
                             {expandedMenu.services && (
                                 <ul style={{ listStyle: 'none', padding: '10px 0 15px 15px', margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', borderBottom: '1px solid #f5f5f5' }}>
-                                    
-                                    <li>
-                                        <div className="mobile-submenu-link" onClick={() => toggleSubmenu('citizenship')}>
-                                            <span>Citizenship by Investment</span>
-                                            <i className={`fas fa-angle-${expandedMenu.citizenship ? 'up' : 'down'}`}></i>
-                                        </div>
-                                        {expandedMenu.citizenship && (
-                                            <ul className="mobile-inner-submenu">
-                                                <li><a href="#">Dominica Citizenship</a></li>
-                                                <li><a href="#">Saint Kitts & Nevis Citizenship</a></li>
-                                                <li><a href="#">Vanuatu Citizenship</a></li>
-                                                <li><a href="#">Saint Lucia citizenship</a></li>
-                                                <li><a href="#">Nauru Citizenship</a></li>
-                                                <li><a href="#">Grenada Citizenship</a></li>
-                                            </ul>
-                                        )}
-                                    </li>
-
-                                    <li>
-                                        <div className="mobile-submenu-link" onClick={() => toggleSubmenu('residency')}>
-                                            <span>Residency by Investment</span>
-                                            <i className={`fas fa-angle-${expandedMenu.residency ? 'up' : 'down'}`}></i>
-                                        </div>
-                                        {expandedMenu.residency && (
-                                            <ul className="mobile-inner-submenu">
-                                                <li><a href="#">Spain</a></li>
-                                                <li><a href="#">Greece</a></li>
-                                                <li><a href="#">Portugal</a></li>
-                                                <li><a href="#">USA</a></li>
-                                                <li><a href="#">Australia</a></li>
-                                            </ul>
-                                        )}
-                                    </li>
-
-                                    <li>
-                                        <div className="mobile-submenu-link" onClick={() => toggleSubmenu('canada')}>
-                                            <span>Canada</span>
-                                            <i className={`fas fa-angle-${expandedMenu.canada ? 'up' : 'down'}`}></i>
-                                        </div>
-                                        {expandedMenu.canada && (
-                                            <ul className="mobile-inner-submenu">
-                                                <li><a href="#">Option 1</a></li>
-                                                <li><a href="#">Option 2</a></li>
-                                            </ul>
-                                        )}
-                                    </li>
-
-                                    <li>
-                                        <div className="mobile-submenu-link" onClick={() => toggleSubmenu('uk')}>
-                                            <span>United Kingdom</span>
-                                            <i className={`fas fa-angle-${expandedMenu.uk ? 'up' : 'down'}`}></i>
-                                        </div>
-                                        {expandedMenu.uk && (
-                                            <ul className="mobile-inner-submenu">
-                                                <li><a href="#">UK Skilled Worker Visa</a></li>
-                                                <li><a href="#">UK Creative Worker Visa</a></li>
-                                            </ul>
-                                        )}
-                                    </li>
-
+                                    {serviceCategories.map((category, index) => (
+                                        <li key={index}>
+                                            <div className="mobile-submenu-link" onClick={() => toggleSubmenu(category.id)}>
+                                                <span>{category.categoryName}</span>
+                                                <i className={`fas fa-angle-${expandedMenu[category.id] ? 'up' : 'down'}`}></i>
+                                            </div>
+                                            {expandedMenu[category.id] && (
+                                                <ul className="mobile-inner-submenu">
+                                                    {category.services.map((service, sIndex) => (
+                                                        <li key={sIndex}><a href={`/service/${service.slug}`}>{service.title}</a></li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </li>
+                                    ))}
                                 </ul>
                             )}
                         </li>

@@ -1,6 +1,16 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function ServiceDetailsArea() {
+export default function ServiceDetailsArea({ serviceData }) {
+    const [activeFaq, setActiveFaq] = useState(0);
+
+    const toggleFaq = (index) => {
+        setActiveFaq(activeFaq === index ? null : index);
+    };
+
+    if (!serviceData) return null;
+
     return (
         <>
        {/* Service-details Section Start  */}
@@ -10,137 +20,125 @@ export default function ServiceDetailsArea() {
                 <div className="row">
                     <div className="col-xl-12">
                         <div className="service-details-post">
-                            <h2>Scholarship & Study Grant Guidance</h2>
-                            <p className="mt-2">
-                                We help students unlock opportunities to study abroad with the right financial support. Our expert advisors guide you in finding scholarships, grants, and funding options that match your academic background, chosen destination, and career goals. From preparing strong applications to meeting eligibility criteria, we ensure you maximize your chances of securing financial aid.
+                            <h2>{serviceData.title}</h2>
+                            <p className="mt-3 mb-3" style={{ fontSize: '18px', color: '#333' }}>
+                                {serviceData.shortDescription}
                             </p>
-                            <div className="details-image">
-                                <img src="assets/img/inner-page/service-details/details-1.jpg" alt="img" />
-                            </div>
-                            <h3 className="text">Service Overview</h3>
-                            <p className="mt-3 mb-3">
-                                Our Education Visa Consultancy is dedicated to guiding students in achieving their study abroad dreams. We provide complete support including university selection, application assistance, scholarship guidance, visa documentation, and interview preparation. With our expert consultants, personalized approach, and global network, we ensure a smooth transition for every student. 
+                            <p className="mb-3">
+                                {serviceData.overviewText1}
                             </p>
-                            <p className="mb-4">
-                                From start to finish, we are committed to turning your education journey into a successful international experience.
+                            <p className="mb-5">
+                                {serviceData.overviewText2}
                             </p>
-                            <div className="row g-4">
+                            
+                            <div className="row g-4 align-items-center mb-5">
                                 <div className="col-lg-6">
                                     <div className="service-left-content">
                                         <h3>Key Features</h3>
-                                        <ul className="list-item">
-                                            <li>
-                                                <i className="fa-solid fa-chevrons-right"></i>
-                                                <span>Personalized Guidance -</span>Tailored support for each student’s goals and requirements.
-                                            </li>
-                                            <li>
-                                                <i className="fa-solid fa-chevrons-right"></i>
-                                                <span>Target Audience & Persona Development -</span> Experienced team with global education and visa knowledge. 
-                                            </li>
-                                            <li>
-                                                <i className="fa-solid fa-chevrons-right"></i>
-                                                <span>Scholarship & Grant Assistance - </span>  Helping students secure financial aid opportunities.  
-                                            </li>
-                                             <li>
-                                                <i className="fa-solid fa-chevrons-right"></i>
-                                                <span>Visa Application Support -</span>   Step-by-step guidance for smooth visa processing.   
-                                            </li>
-                                            <li>
-                                                <i className="fa-solid fa-chevrons-right"></i>
-                                                <span>Interview Preparation – </span>   Coaching for successful student visa interviews.
-                                            </li>
-                                            <li>
-                                                <i className="fa-solid fa-chevrons-right"></i>
-                                                <span>Documentation Assistance – </span>   Accurate and complete paperwork for faster approvals.
-                                            </li>
+                                        <ul className="list-item mt-3">
+                                            {serviceData.features?.map((feature, index) => (
+                                                <li key={index} className="mb-3">
+                                                    <i className="fa-solid fa-chevrons-right" style={{ color: 'var(--theme-color)', marginRight: '10px' }}></i>
+                                                    <span style={{ fontWeight: 'bold' }}>{feature.title}: </span> {feature.desc}
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="thumb">
-                                        <img src="assets/img/inner-page/service-details/details-2.jpg" alt="img" />
+                                        <img src={serviceData.image2 || "/assets/img/inner-page/service-details/details-2.jpg"} alt="img" style={{ width: '100%', borderRadius: '12px', objectFit: 'cover' }} />
                                     </div>
                                 </div>
                             </div>
-                            <div className="row mt-4 mt-xl-0 g-4">
+
+                            <div className="row g-4 align-items-center mt-4">
                                 <div className="col-lg-6">
                                     <div className="thumb">
-                                        <img src="assets/img/inner-page/service-details/details-3.jpg" alt="img" />
+                                        <img src={serviceData.image3 || "/assets/img/inner-page/service-details/details-3.jpg"} alt="img" style={{ width: '100%', borderRadius: '12px', objectFit: 'cover' }} />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
-                                    <div className="faq-items">
-                                        <h3 className="mb-3">Frequently Asked Question</h3>
-                                        <div className="accordion" id="accordionExample">
-                                            <div className="accordion-item">
-                                                <h5 className="accordion-header" id="headingTwo">
-                                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        01. Do you assist with university selection?
-                                                    </button>
-                                                </h5>
-                                                <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                                    data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        <p>
-                                                        Absolutely! We identify suitable scholarships, guide application processes, and maximize your chances of receiving financial aid.
-                                                        </p>
+                                    <div className="faq-items left-[15%]" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                        <h3 className="mb-4">Frequently Asked Questions</h3>
+                                        {serviceData.faqs?.map((faq, index) => {
+                                            const isActive = activeFaq === index;
+                                            return (
+                                                <div 
+                                                    key={index}
+                                                    style={{
+                                                        borderBottom: '1px solid #eaeaea',
+                                                        overflow: 'hidden'
+                                                    }}
+                                                >
+                                                    <div 
+                                                        onClick={() => toggleFaq(index)}
+                                                        style={{
+                                                            padding: '24px 0',
+                                                            cursor: 'pointer',
+                                                            display: 'flex',
+                                                            justifyContent: 'space-between',
+                                                            alignItems: 'center',
+                                                            gap: '15px'
+                                                        }}
+                                                    >
+                                                        <h5 style={{ 
+                                                            margin: 0, 
+                                                            fontSize: '18px', 
+                                                            fontWeight: '500', 
+                                                            color: 'var(--color-blue)',
+                                                        }}>
+                                                            {faq.q}
+                                                        </h5>
+                                                        <motion.div 
+                                                            animate={{ rotate: isActive ? 45 : 0 }}
+                                                            transition={{ duration: 0.8 }}
+                                                            style={{
+                                                                color: '#6C6D6F',
+                                                                display: 'flex',
+                                                                justifyContent: 'center',
+                                                                alignItems: 'center',
+                                                                flexShrink: 0,
+                                                                fontSize: '24px',
+                                                                width: '30px',
+                                                                height: '30px'
+                                                            }}
+                                                        >
+                                                            <i className="fa-solid fa-plus"></i>
+                                                        </motion.div>
                                                     </div>
+                                                    
+                                                    <AnimatePresence>
+                                                        {isActive && (
+                                                            <motion.div
+                                                                initial={{ height: 0, opacity: 0 }}
+                                                                animate={{ height: 'auto', opacity: 1 }}
+                                                                exit={{ height: 0, opacity: 0 }}
+                                                                transition={{ duration: 0.8 }}
+                                                            >
+                                                                <div style={{ padding: '0 0 24px 0' }}>
+                                                                    <p style={{ margin: 0, color: '#6C6D6F', lineHeight: '1.6', fontSize: '16px' }}>
+                                                                        {faq.a}
+                                                                    </p>
+                                                                </div>
+                                                            </motion.div>
+                                                        )}
+                                                    </AnimatePresence>
                                                 </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h5 className="accordion-header" id="headingOne">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        02. Can you help with scholarship applications?
-                                                    </button>
-                                                </h5>
-                                                <div id="collapseOne" className="accordion-collapse collapse show"
-                                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        <p>
-                                                            Absolutely! We identify suitable scholarships, guide application processes, and maximize your chances of receiving financial aid.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h5 className="accordion-header" id="headingthree">
-                                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapsethree" aria-expanded="false"
-                                                        aria-controls="collapsethree">
-                                                   03. How long does the visa process take?
-                                                    </button>
-                                                </h5>
-                                                <div id="collapsethree" className="accordion-collapse collapse"
-                                                    aria-labelledby="headingthree" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        <p>
-                                                        Absolutely! We identify suitable scholarships, guide application processes, and maximize your chances of receiving financial aid.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h5 className="accordion-header" id="headingfour">
-                                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapsefour" aria-expanded="false"
-                                                        aria-controls="collapsefour">
-                                                04. Is post-arrival support available?
-                                                    </button>
-                                                </h5>
-                                                <div id="collapsefour" className="accordion-collapse collapse" aria-labelledby="headingfour"
-                                                    data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        <p>
-                                                        Absolutely! We identify suitable scholarships, guide application processes, and maximize your chances of receiving financial aid.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            );
+                                        })}
                                     </div>
                                 </div>
+                            </div>
+                            
+                            <div className="cta-section mt-5" style={{ backgroundColor: 'var(--theme-color)', padding: '50px 30px', borderRadius: '12px', textAlign: 'center', color: '#fff' }}>
+                                <h3 style={{ color: '#fff', marginBottom: '15px' }}>Ready to Take the Next Step?</h3>
+                                <p style={{ marginBottom: '25px', color: '#e0e0e0', fontSize: '16px' }}>
+                                    Contact our expert consultants today to discuss your {serviceData.title} goals.
+                                </p>
+                                <a href="/contact" className="theme-btn" style={{ backgroundColor: '#fff', color: 'var(--theme-color)' }}>
+                                    Contact Us Now <i className="fa-solid fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

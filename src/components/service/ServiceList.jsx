@@ -1,6 +1,9 @@
 import React from 'react';
+import { serviceCategories } from '../../data/servicesData';
 
 export default function ServiceList() {
+    const allServices = serviceCategories.flatMap(category => category.services);
+
     return (
         <>
        {/* Service Section Start  */}
@@ -14,90 +17,58 @@ export default function ServiceList() {
                 </div>
                 <div className="row">
                     <div className="col-xl-12">
-                        <div className="service-main-item-3 fade-up-anim">
-                            <div className="service-left">
-                                <div className="service-image">
-                                    <img src="assets/img/home-3/service/01.jpg" alt="img" />
+                        {allServices.map((service, index) => {
+                            const isEven = index % 2 !== 0;
+                            return (
+                                <div className={`service-main-item-3 ${isEven ? 'style-2' : ''} fade-up-anim`} key={service.slug}>
+                                    {!isEven ? (
+                                        <>
+                                            <div className="service-left">
+                                                <div className="service-image">
+                                                    <img src={service.mainImage || "/assets/img/home-3/service/01.jpg"} alt={service.title} />
+                                                </div>
+                                                <div className="content">
+                                                    <h3>
+                                                        <a href={`/service/${service.slug}`}>{service.title}</a>
+                                                    </h3>
+                                                    <p>
+                                                        {service.shortDescription}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="service-button">
+                                                <a href={`/service/${service.slug}`} className="theme-btn">
+                                                    read more
+                                                    <i className="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div className="service-button">
+                                                <a href={`/service/${service.slug}`} className="theme-btn">
+                                                    read more
+                                                    <i className="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                            <div className="service-left">
+                                                <div className="content">
+                                                    <h3>
+                                                        <a href={`/service/${service.slug}`}>{service.title}</a>
+                                                    </h3>
+                                                    <p>
+                                                        {service.shortDescription}
+                                                    </p>
+                                                </div>
+                                                <div className="service-image">
+                                                    <img src={service.mainImage || "/assets/img/home-3/service/02.jpg"} alt={service.title} />
+                                                </div>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
-                                <div className="content">
-                                    <h3>
-                                        <a href="service-details.html">Immigration Appeal & Legal Support</a>
-                                    </h3>
-                                    <p>
-                                        Our experts provide professional guidance for immigration appeals and legal matters, helping clients overcome visa rejections with personalized strategies and strong case representation.”
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="service-button">
-                                <a href="service-details.html" className="theme-btn">
-                                    read more
-                                    <i className="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div className="service-main-item-3 style-2 fade-up-anim">
-                            <div className="service-button">
-                                <a href="service-details.html" className="theme-btn">
-                                    read more
-                                    <i className="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <div className="service-left">
-                                <div className="content">
-                                    <h3>
-                                        <a href="service-details.html">Scholarship & Study Grant Guidance</a>
-                                    </h3>
-                                    <p>
-                                        We help students identify suitable scholarships and study grants, assist with applications, and provide expert guidance to maximize chances of securing financial support abroad.
-                                    </p>
-                                </div>
-                                <div className="service-image">
-                                    <img src="assets/img/home-3/service/02.jpg" alt="img" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="service-main-item-3 fade-up-anim">
-                            <div className="service-left">
-                                <div className="service-image">
-                                    <img src="assets/img/home-3/service/03.jpg" alt="img" />
-                                </div>
-                                <div className="content">
-                                    <h3>
-                                        <a href="service-details.html">Permanent Residency (PR) Services</a>
-                                    </h3>
-                                    <p>
-                                        Our PR services guide clients through every step of the residency process, including documentation, eligibility assessment, and application support, ensuring a smooth and successful approval.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="service-button">
-                                <a href="service-details.html" className="theme-btn">
-                                    read more
-                                    <i className="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div className="service-main-item-3 style-2 fade-up-anim">
-                            <div className="service-button">
-                                <a href="service-details.html" className="theme-btn">
-                                    read more
-                                    <i className="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <div className="service-left">
-                                <div className="content">
-                                    <h3>
-                                        <a href="service-details.html">Citizenship & Naturalization Guidance</a>
-                                    </h3>
-                                    <p>
-                                        We provide expert guidance for citizenship and naturalization processes, assisting clients with documentation, eligibility, and legal procedures to achieve a smooth and successful application.
-                                    </p>
-                                </div>
-                                <div className="service-image">
-                                    <img src="assets/img/home-3/service/04.jpg" alt="img" />
-                                </div>
-                            </div>
-                        </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
