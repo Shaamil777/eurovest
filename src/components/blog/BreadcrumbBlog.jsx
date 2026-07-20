@@ -1,5 +1,5 @@
 import React from 'react';
-// import Link from 'next/link';
+import Link from 'next/link';
 
 export default function BreadcrumbBlog() {
     return (
@@ -14,7 +14,7 @@ export default function BreadcrumbBlog() {
                     <h1 className="breadcrumb-title">Our BLOG</h1>
                     <ul className="breadcrumb-list">
                         <li>
-                            <a href="index.html">Home</a>
+                            <Link href="/">Home</Link>
                         </li>
                         <li>
                             <i className="fa-solid fa-chevron-right"></i>

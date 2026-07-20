@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-// import Link from 'next/link'; // Uncomment if using next/link for <a> tags
+import Link from 'next/link';
 
 const faqs = [
     {
@@ -60,13 +60,12 @@ export default function Faq() {
                                 >
                                     We understand students often have many questions about studying abroad. Our experts provide clear and accurate information to help you navigate the process.
                                 </p>
-                                <a 
-                                    href="/contact" 
+                                <Link href="/contact" 
                                     className="theme-btn"
                                 >
                                     contact us
                                     <i className="fa-solid fa-arrow-right"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-7">

@@ -1,5 +1,5 @@
 import React from 'react';
-// import Link from 'next/link'; // Uncomment if using next/link for <a> tags
+import Link from 'next/link';
 
 const newsData = [
     {
@@ -49,10 +49,10 @@ export default function News() {
                           <span> IMMIGRATION NEWS </span>& VISA GUIDES
                         </h2>
                     </div>
-                    <a href="news.html" className="theme-btn">
+                    <Link href="/blog" className="theme-btn">
                         view all articies
                         <i className="fa-solid fa-arrow-right"></i>
-                    </a>
+                    </Link>
                 </div>
                 <div className="row">
                     {newsData.map((item) => (
@@ -72,16 +72,16 @@ export default function News() {
                                         <span>{item.date}</span>
                                     </div>
                                     <h3>
-                                        <a href="news-details.html">
+                                        <Link href="/blog">
                                             {item.title}
-                                        </a>
+                                        </Link>
                                     </h3>
                                     <div className="news-bottom">
                                         <div className="info-item">
                                             <img src={noProfileImg} alt="img" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
                                             <span>By {item.author}</span>
                                         </div>
-                                        <a href="news-details.html" className="link-btn">View Articles<i className="fa-solid fa-arrow-right"></i></a>
+                                        <Link href="/blog" className="link-btn">View Articles<i className="fa-solid fa-arrow-right"></i></Link>
                                     </div>
                                 </div>
                             </div>

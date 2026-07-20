@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function BreadcrumbServiceDetails({ title = "Service Details" }) {
     return (
@@ -13,7 +14,7 @@ export default function BreadcrumbServiceDetails({ title = "Service Details" }) 
                     <h1 className="breadcrumb-title">{title}</h1>
                     <ul className="breadcrumb-list">
                         <li>
-                            <a href="/">Home</a>
+                            <Link href="/">Home</Link>
                         </li>
                         <li>
                             <i className="fa-solid fa-chevron-right"></i>

@@ -1,5 +1,5 @@
 import React from 'react';
-// import Link from 'next/link';
+import Link from 'next/link';
 
 export default function OffcanvasMenu() {
     return (
@@ -11,9 +11,9 @@ export default function OffcanvasMenu() {
                     <div className="offcanvas__content">
                         <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                             <div className="offcanvas__logo">
-                                <a href="index.html">
+                                <Link href="/">
                                     <img src="/assets/img/logo/black-logo.svg" alt="logo-img" />
-                                </a>
+                                </Link>
                             </div>
                             <div className="offcanvas__close">
                                 <button>

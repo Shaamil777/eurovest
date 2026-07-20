@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 const heroSlides = [
   {
@@ -67,14 +68,14 @@ export default function Hero() {
                                 <h1>{heroSlides[activeIndex].title}</h1>
                                 <p>{heroSlides[activeIndex].description}</p>
                                 <div className="hero-button">
-                                    <a href="contact.html" className="theme-btn">
+                                    <Link href="/contact" className="theme-btn">
                                         Get Free Consultation
                                         <i className="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                    <a href="contact.html" className="theme-btn style-2">
+                                    </Link>
+                                    <Link href="/contact" className="theme-btn style-2">
                                         Explore Services
                                         <i className="fa-solid fa-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                     </div>

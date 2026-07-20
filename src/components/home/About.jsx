@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-// import Link from 'next/link'; // Uncomment if using next/link for <a> tags
+import Link from 'next/link';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -117,7 +117,7 @@ export default function About() {
                                 <motion.a 
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    href="about.html" 
+                                    href="/about" 
                                     className="theme-btn"
                                 >
                                     Learn More

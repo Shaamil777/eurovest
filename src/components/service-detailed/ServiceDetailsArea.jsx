@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 export default function ServiceDetailsArea({ serviceData }) {
     const [activeFaq, setActiveFaq] = useState(0);
@@ -38,7 +39,7 @@ export default function ServiceDetailsArea({ serviceData }) {
                                         <ul className="list-item mt-3">
                                             {serviceData.features?.map((feature, index) => (
                                                 <li key={index} className="mb-3">
-                                                    <i className="fa-solid fa-chevrons-right" style={{ color: 'var(--theme-color)', marginRight: '10px' }}></i>
+                                                    <i className="fa-solid fa-angles-right" style={{ color: 'var(--theme, #3b82f6)', marginRight: '10px' }}></i>
                                                     <span style={{ fontWeight: 'bold' }}>{feature.title}: </span> {feature.desc}
                                                 </li>
                                             ))}
@@ -136,9 +137,9 @@ export default function ServiceDetailsArea({ serviceData }) {
                                 <p style={{ marginBottom: '25px', color: '#e0e0e0', fontSize: '16px' }}>
                                     Contact our expert consultants today to discuss your {serviceData.title} goals.
                                 </p>
-                                <a href="/contact" className="theme-btn" style={{ backgroundColor: '#fff', color: 'var(--theme-color)' }}>
+                                <Link href="/contact" className="theme-btn" style={{ backgroundColor: '#fff', color: 'var(--theme-color)' }}>
                                     Contact Us Now <i className="fa-solid fa-arrow-right"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

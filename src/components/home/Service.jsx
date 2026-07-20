@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-// import Link from 'next/link'; // Uncomment if using next/link for <a> tags
+import Link from 'next/link';
 
 const servicesData = [
     {
@@ -103,14 +103,14 @@ export default function Service() {
                             <div className="left-item">
                                 <h5 className="number">{service.id}</h5>
                                 <h3 style={{ textTransform: 'none' }}>
-                                    <a href="/contact" style={{ textTransform: 'none' }}>{service.title}</a>
+                                    <Link href="/contact" style={{ textTransform: 'none' }}>{service.title}</Link>
                                 </h3>
                             </div>
                             <div className="right-item">
                                 <p style={{ textTransform: 'none' }}>
                                     {service.description}
                                 </p>
-                                <a href="/contact" className="service-btn">Enquire Now <i className="fa-solid fa-arrow-right"></i></a>
+                                <Link href="/contact" className="service-btn">Enquire Now <i className="fa-solid fa-arrow-right"></i></Link>
                             </div>
                         </div>
                     </div>

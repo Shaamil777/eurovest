@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
-// import Link from 'next/link';
+import Link from 'next/link';
 
 export default function MouseCursor() {
     const cursorOuterRef = useRef(null);

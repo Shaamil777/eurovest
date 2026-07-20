@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-// import Link from 'next/link';
+import Link from 'next/link';
 
 export default function ChooseUs2() {
     return (
@@ -69,10 +69,10 @@ export default function ChooseUs2() {
 
                 <div className="row justify-content-center mt-4">
                     <div className="col-12 text-center">
-                        <a href="contact.html" className="theme-btn">
+                        <Link href="/contact" className="theme-btn">
                             Contact Our Experts
                             <i className="fa-solid fa-arrow-right"></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

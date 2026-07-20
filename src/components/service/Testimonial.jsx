@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 const testimonials = [
     {
@@ -40,10 +41,10 @@ export default function Testimonial() {
                             Immigration Success Stories
                         </h2>
                     </div>
-                    <a href="contact.html" className="theme-btn">
+                    <Link href="/contact" className="theme-btn">
                         View All Review
                         <i className="fa-solid fa-arrow-right"></i>
-                    </a>
+                    </Link>
                 </div>
                 <div className="testimonial-wrapper-3">
                     <div className="row g-4 align-items-center">

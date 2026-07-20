@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { serviceCategories } from '../../data/servicesData';
 
@@ -74,19 +75,19 @@ export default function Header() {
 
                         <div className="header-left" style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', alignItems: 'center', flexGrow: 1 }}>
                             <div className="logo" style={{ width: '280px', paddingLeft: '40px' }}>
-                                <a href="/" className="header-logo-2">
+                                <Link href="/" className="header-logo-2">
                                     <img src="/assets/img/logo/logo.png" alt="logo-img" style={{ maxWidth: '225px', paddingRight:'15px'}} />
-                                </a>
+                                </Link>
                             </div>
                             <div className="mean__menu-wrapper desktop-menu" style={{ marginLeft: '20px' }}>
                                 <div className="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
                                             <li className={pathname === '/' ? 'active' : ''}>
-                                                <a href="/">Home</a>
+                                                <Link href="/">Home</Link>
                                             </li>
                                             <li className={pathname?.startsWith('/about') ? 'active' : ''}>
-                                                <a href="/about">About Us</a>
+                                                <Link href="/about">About Us</Link>
                                             </li>
                                             <li className={`has-dropdown ${pathname?.startsWith('/service') ? 'active' : ''}`}>
                                                 <a href="#">Services</a>
@@ -96,7 +97,7 @@ export default function Header() {
                                                             <a href="#">{category.categoryName} <i className="fas fa-angle-right"></i></a>
                                                             <ul className="submenu">
                                                                 {category.services.map((service, sIndex) => (
-                                                                    <li key={sIndex}><a href={`/service/${service.slug}`}>{service.title}</a></li>
+                                                                    <li key={sIndex}><Link href={`/service/${service.slug}`}>{service.title}</Link></li>
                                                                 ))}
                                                             </ul>
                                                         </li>
@@ -104,10 +105,10 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li className={pathname?.startsWith('/blog') ? 'active' : ''}>
-                                                <a href="/blog">Blog</a>
+                                                <Link href="/blog">Blog</Link>
                                             </li>
                                             <li className={pathname?.startsWith('/contact') ? 'active' : ''}>
-                                                <a href="/contact">Contact Us</a>
+                                                <Link href="/contact">Contact Us</Link>
                                             </li>
                                         </ul>
                                     </nav>
@@ -135,10 +136,10 @@ export default function Header() {
                             </div>
 
                             <div className="header-call-item">
-                                <a href="contact.html" className="theme-btn">
+                                <Link href="/contact" className="theme-btn">
                                     Appointment
                                     <i className="fa-solid fa-arrow-right"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -161,8 +162,8 @@ export default function Header() {
                     overflowY: 'auto'
                 }}>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                        <li><a href="/" className="mobile-menu-link">Home</a></li>
-                        <li><a href="/about" className="mobile-menu-link">About Us</a></li>
+                        <li><Link href="/" className="mobile-menu-link">Home</Link></li>
+                        <li><Link href="/about" className="mobile-menu-link">About Us</Link></li>
                         
                         {/* Services Collapsible */}
                         <li>
@@ -182,7 +183,7 @@ export default function Header() {
                                             {expandedMenu[category.id] && (
                                                 <ul className="mobile-inner-submenu">
                                                     {category.services.map((service, sIndex) => (
-                                                        <li key={sIndex}><a href={`/service/${service.slug}`}>{service.title}</a></li>
+                                                        <li key={sIndex}><Link href={`/service/${service.slug}`}>{service.title}</Link></li>
                                                     ))}
                                                 </ul>
                                             )}
@@ -192,12 +193,12 @@ export default function Header() {
                             )}
                         </li>
 
-                        <li><a href="/blog" className="mobile-menu-link">Blog</a></li>
-                        <li><a href="/contact" className="mobile-menu-link" style={{ borderBottom: 'none' }}>Contact Us</a></li>
+                        <li><Link href="/blog" className="mobile-menu-link">Blog</Link></li>
+                        <li><Link href="/contact" className="mobile-menu-link" style={{ borderBottom: 'none' }}>Contact Us</Link></li>
                         <li style={{ marginTop: '10px' }}>
-                            <a href="/contact" className="theme-btn" style={{ width: '100%', textAlign: 'center', justifyContent: 'center' }}>
+                            <Link href="/contact" className="theme-btn" style={{ width: '100%', textAlign: 'center', justifyContent: 'center' }}>
                                 Appointment <i className="fa-solid fa-arrow-right" style={{ marginLeft: '10px' }}></i>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

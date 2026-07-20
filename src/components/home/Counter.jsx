@@ -1,5 +1,5 @@
 import React from 'react';
-// import Link from 'next/link'; // Uncomment if using next/link for <a> tags
+import Link from 'next/link';
 
 export default function Counter() {
     return (

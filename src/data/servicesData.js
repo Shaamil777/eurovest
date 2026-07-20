@@ -12,7 +12,7 @@ export const serviceCategories = [
         overviewText1: "Our Citizenship by Investment Consultancy is dedicated to guiding individuals and families in acquiring a second citizenship in Dominica.",
         overviewText2: "From start to finish, we are committed to turning your investment into a successful global citizenship experience.",
         image2: "/assets/img/inner-page/service-details/dominicia.webp",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image3: "/assets/img/inner-page/service-details/dominicia2.webp",
         features: [
             { title: "Personalized Guidance", desc: "Tailored support for each applicant’s goals and requirements." },
             { title: "Fast Processing", desc: "Experienced team ensures rapid application processing." },
@@ -38,7 +38,7 @@ export const serviceCategories = [
         overviewText1: "As the oldest and most established citizenship by investment program, St. Kitts & Nevis offers a premier passport.",
         overviewText2: "We provide comprehensive advisory to ensure your application is seamless.",
         image2: "/assets/img/inner-page/service-details/saint-kittis.webp",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image3: "/assets/img/inner-page/service-details/saint-kittis2.webp",
         features: [
             { title: "Established Program", desc: "The oldest citizenship program in the world, running since 1984." },
             { title: "Global Mobility", desc: "Visa-free access to over 150 countries worldwide, including EU and UK." },
@@ -63,7 +63,7 @@ export const serviceCategories = [
         overviewText1: "Vanuatu offers one of the fastest citizenship by investment programs globally.",
         overviewText2: "Our experts assist you at every step for quick approval.",
         image2: "/assets/img/inner-page/service-details/vanuata.webp",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image3: "/assets/img/inner-page/service-details/vanuata2.webp",
         features: [
             { title: "Rapid Processing", desc: "Citizenship can be acquired in as little as 1 to 2 months." },
             { title: "No Income Tax", desc: "Zero corporate or personal income tax for residents." },
@@ -88,7 +88,7 @@ export const serviceCategories = [
         overviewText1: "St. Lucia’s program is relatively new but highly regarded, offering several investment routes.",
         overviewText2: "We help you select the most suitable investment option.",
         image2: "/assets/img/inner-page/service-details/saint-lucia.webp",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image3: "/assets/img/inner-page/service-details/saint-lucia2.webp",
         features: [
             { title: "Flexible Options", desc: "Choose from donation, real estate, or government bonds." },
             { title: "Government Bonds", desc: "The only Caribbean program offering a refundable bond option." },
@@ -113,7 +113,7 @@ export const serviceCategories = [
         overviewText1: "Discover the specific requirements and benefits of Nauru citizenship.",
         overviewText2: "Our tailored services guide you through their specific legal frameworks.",
         image2: "/assets/img/inner-page/service-details/nauru.webp",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image3: "/assets/img/inner-page/service-details/nauru2.webp",
         features: [
             { title: "Expert Advisory", desc: "Detailed knowledge of Nauru's specific regulations." },
             { title: "Unique Passport", desc: "Gain access to a unique jurisdiction." },
@@ -138,7 +138,7 @@ export const serviceCategories = [
         overviewText1: "Grenada provides an excellent passport with the unique advantage of the E-2 investor visa treaty with the USA.",
         overviewText2: "We manage your application to maximize these strategic benefits.",
         image2: "/assets/img/inner-page/service-details/granada.webp",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image3: "/assets/img/inner-page/service-details/granada2.webp",
         features: [
             { title: "E-2 Visa Treaty", desc: "Citizens are eligible to apply for the US E-2 Investor Visa." },
             { title: "Visa-Free China", desc: "One of the few passports with visa-free access to China." },
