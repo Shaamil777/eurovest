@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { serviceCategories } from '../../data/servicesData';
 
 export default function Header() {
     const pathname = usePathname();
-    const [isSticky, setIsSticky] = useState(false);
+    const headerRef = useRef(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [expandedMenu, setExpandedMenu] = useState({});
 
@@ -17,11 +17,24 @@ export default function Header() {
     };
 
     useEffect(() => {
+        let lastScrollY = window.scrollY;
+
         const handleScroll = () => {
-            if (window.scrollY > 150) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
+            if (headerRef.current) {
+                const currentScrollY = window.scrollY;
+                
+                // Hide header when scrolling down past 150px
+                if (currentScrollY > lastScrollY && currentScrollY > 150) {
+                    headerRef.current.style.transform = 'translateY(-100%)';
+                    headerRef.current.style.boxShadow = 'none';
+                } 
+                // Show header when scrolling up
+                else if (currentScrollY < lastScrollY) {
+                    headerRef.current.style.transform = 'translateY(0)';
+                    headerRef.current.style.boxShadow = currentScrollY > 150 ? '0px 4px 10px rgba(0, 0, 0, 0.05)' : 'none';
+                }
+                
+                lastScrollY = currentScrollY;
             }
         };
 
@@ -33,12 +46,14 @@ export default function Header() {
         <>
         {/*  Header Section Start  */}
          <header 
+            ref={headerRef}
             id="header-sticky" 
             className="header-1"
             style={{
                 background: '#ffffff',
-                boxShadow: isSticky ? '0px 4px 10px rgba(0, 0, 0, 0.05)' : 'none',
-                transition: 'box-shadow 0.3s ease-in-out'
+                boxShadow: 'none',
+                transform: 'translateY(0)',
+                transition: 'transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease-in-out'
             }}
          >
             <div className="container-fluid header-container" style={{ paddingLeft: 0 }}>

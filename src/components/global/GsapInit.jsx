@@ -3,14 +3,26 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLenis } from 'lenis/react';
 
 export default function GsapInit() {
   const pathname = usePathname();
+  const lenis = useLenis(ScrollTrigger.update);
+
   useEffect(() => {
     // Only run on the client side
     if (typeof window === 'undefined') return;
     
     gsap.registerPlugin(ScrollTrigger);
+
+    let updateGsap;
+    if (lenis) {
+      updateGsap = (time) => {
+        lenis.raf(time * 1000);
+      };
+      gsap.ticker.add(updateGsap);
+      gsap.ticker.lagSmoothing(0);
+    }
 
     const wowElements = gsap.utils.toArray('.wow');
 
@@ -32,7 +44,7 @@ export default function GsapInit() {
         {
           opacity: 1,
           duration: 0.8,
-          delay: 0,
+          delay: delay,
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
@@ -70,9 +82,12 @@ export default function GsapInit() {
     
     // Cleanup on unmount
     return () => {
+      if (lenis && updateGsap) {
+        gsap.ticker.remove(updateGsap);
+      }
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
-  }, [pathname]);
+  }, [pathname, lenis]);
 
   return null;
 }
