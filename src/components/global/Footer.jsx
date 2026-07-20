@@ -7,8 +7,8 @@ export default function Footer() {
                 {/* Top Section */}
                 <div className="row g-4 mb-5" style={{ paddingBottom: '60px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <div className="col-lg-6">
-                        <div style={{ marginBottom: '20px' }}>
-                            <img src="/assets/img/logo/white-logo.svg" alt="EuroVest Logo" style={{ maxWidth: '150px' }} />
+                        <div className=''>
+                            <img src="/assets/img/logo/logo.png" alt="EuroVest Logo" style={{ maxWidth: '250px' }} />
                         </div>
                         <p style={{ fontSize: '20px', color: '#aaaaaa', maxWidth: '400px', lineHeight: '1.4' }}>
                             Expert immigration services, blending deep tech with local context for shared prosperity globally.

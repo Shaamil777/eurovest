@@ -60,7 +60,7 @@ export default function Header() {
                         <div className="header-left" style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', alignItems: 'center', flexGrow: 1 }}>
                             <div className="logo" style={{ width: '280px', paddingLeft: '40px' }}>
                                 <a href="/" className="header-logo-2">
-                                    <img src="/assets/img/logo/white-logo.svg" alt="logo-img" style={{ maxWidth: '160px' }} />
+                                    <img src="/assets/img/logo/logo.png" alt="logo-img" style={{ maxWidth: '225px', paddingRight:'15px'}} />
                                 </a>
                             </div>
                             <div className="mean__menu-wrapper desktop-menu" style={{ marginLeft: '20px' }}>
