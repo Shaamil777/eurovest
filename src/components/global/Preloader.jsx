@@ -45,7 +45,7 @@ export default function Preloader() {
                             transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
                             style={{ display: 'flex', alignItems: 'center', gap: '15px' }}
                         >
-                            <img src="/assets/img/logo/logo.png" alt="EuroVest Logo" style={{ maxHeight: '60px', maxWidth: '90vw', height: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+                            <img src="/assets/img/logo/logo.png" alt="EuroVest Logo" style={{ maxHeight: '100px', maxWidth: '100vw', height: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
                             {/* Fallback text if logo is missing/doesn't invert well:
                                 <h1 style={{ color: '#ffffff', fontSize: '3.5rem', fontWeight: '700', letterSpacing: '0.1em', margin: 0 }}>EUROVEST</h1>
                             */}

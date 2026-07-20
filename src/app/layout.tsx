@@ -6,7 +6,6 @@ import Header from '@/components/global/Header';
 import OffcanvasMenu from '@/components/global/OffcanvasMenu';
 import SearchModal from '@/components/global/SearchModal';
 import Footer from '@/components/global/Footer';
-import FooterBottom from '@/components/global/FooterBottom';
 import MouseCursor from '@/components/global/MouseCursor';
 import GsapInit from '@/components/global/GsapInit';
 import Providers from '@/components/global/Providers';
@@ -37,7 +36,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children} 
             
             <Footer />
-            <FooterBottom />
           </PageReveal>
         </Providers>
       </body>
