@@ -3,7 +3,10 @@ import React from 'react';
 
 export default function About2() {
     return (
-        <section className="about-section-simple section-padding pb-0" style={{ backgroundColor: '#ffffff' }}>
+        <section
+            className="about-section-simple section-padding pb-0"
+            style={{ backgroundColor: '#ffffff' }}
+        >
             <style>{`
                 .about-image {
                     object-fit: cover;
@@ -14,37 +17,68 @@ export default function About2() {
                     }
                 }
             `}</style>
+
             <div className="container">
                 <div className="row g-5">
-                    {/* Left Side: Photo */}
+                    {/* Left Side: Image */}
                     <div className="col-lg-6 d-flex mb-5 mb-lg-0 justify-content-center">
-                        <img 
-                            src="/assets/img/inner-page/intro.webp" 
-                            alt="About Us" 
-                            className="rounded-[20px] shadow-lg w-100 about-image" 
+                        <img
+                            src="/assets/img/inner-page/intro.webp"
+                            alt="EuroVest Consultancy - Immigration & Visa Services"
+                            className="rounded-[20px] shadow-lg w-100 about-image"
                         />
                     </div>
-                    
-                    {/* Right Side: Title and Description */}
+
+                    {/* Right Side: Content */}
                     <div className="col-lg-6 d-flex flex-column justify-content-center text-center text-lg-start">
                         <div className="about-content ps-lg-5">
+
                             <div className="section-title mb-4">
-                                <span 
+                                <span
                                     className="sub-title"
-                                    style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block', marginBottom: '15px' }}
+                                    style={{
+                                        color: "white",
+                                        backgroundColor: "rgb(6, 27, 57)",
+                                        padding: "5px 20px",
+                                        borderRadius: "30px",
+                                        display: "inline-block",
+                                        marginBottom: "15px",
+                                    }}
                                 >
-                                    About Our Consultancy
+                                    About EuroVest Consultancy
                                 </span>
+
                                 <h2>
-                                    Your Trusted Partner for <span>Immigration & Visa</span> Solutions
+                                    Your Trusted Partner for <span>Immigration & Global Mobility</span>
                                 </h2>
                             </div>
-                            <p className="text mb-4 mx-auto mx-lg-0" style={{ maxWidth: '600px' }}>
-                                We provide trusted immigration services, visa consulting, and personalized guidance to help individuals, families, and businesses achieve their global goals. Our experienced immigration consultants simplify every step of the visa application process with accuracy and confidence.
+
+                            <p
+                                className="text mb-4 mx-auto mx-lg-0"
+                                style={{ maxWidth: "600px" }}
+                            >
+                                EuroVest Consultancy is a trusted immigration consultancy dedicated to
+                                helping individuals, families, entrepreneurs, and professionals achieve
+                                their international goals through reliable visa and immigration
+                                solutions. Whether you are planning to work, visit, invest, or settle
+                                abroad, our experienced immigration consultants provide expert
+                                guidance, accurate documentation support, and personalized advice
+                                throughout every stage of your visa application journey.
                             </p>
-                            <p className="text mx-auto mx-lg-0" style={{ maxWidth: '600px' }}>
-                                From work permits, visitor visas, and residency visas to business investment opportunities, we deliver tailored immigration solutions designed to maximize your visa approval success while ensuring a smooth and stress-free experience.
+
+                            <p
+                                className="text mx-auto mx-lg-0"
+                                style={{ maxWidth: "600px" }}
+                            >
+                                We specialize in work visas, visitor visas, residency by investment,
+                                citizenship by investment, business immigration, and permanent
+                                residency pathways. By staying updated with the latest immigration
+                                policies and international visa regulations, we deliver transparent,
+                                compliant, and client-focused solutions that maximize your chances of
+                                visa approval while ensuring a smooth, secure, and stress-free
+                                immigration experience.
                             </p>
+
                         </div>
                     </div>
                 </div>
@@ -52,4 +86,3 @@ export default function About2() {
         </section>
     );
 }
-
