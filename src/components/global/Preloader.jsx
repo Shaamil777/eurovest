@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePreloader } from '@/context/PreloaderContext';
 
 export default function Preloader() {
     const [loading, setLoading] = useState(true);
     const [progress, setProgress] = useState(0);
+    const { setIsPreloaderDone } = usePreloader();
 
     useEffect(() => {
         let isLoaded = document.readyState === 'complete';
@@ -35,7 +37,10 @@ export default function Preloader() {
                 if (isLoaded) {
                     currentProgress = 100;
                     setProgress(currentProgress);
-                    setTimeout(() => setLoading(false), 200);
+                    setTimeout(() => {
+                        setLoading(false);
+                        setIsPreloaderDone(true);
+                    }, 200);
                     return;
                 } else {
                     currentProgress = 99; // Hold at 99% until window is fully loaded

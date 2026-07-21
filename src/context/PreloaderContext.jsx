@@ -6,12 +6,8 @@ const PreloaderContext = createContext();
 export const PreloaderProvider = ({ children }) => {
     const [isPreloaderDone, setIsPreloaderDone] = useState(false);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsPreloaderDone(true);
-        }, 2200); // 2.2s aligns with the preloader animation timeline
-        return () => clearTimeout(timer);
-    }, []);
+    // State is now controlled by Preloader.jsx to perfectly sync with the exit animation
+    // No more hardcoded timers here.
 
     return (
         <PreloaderContext.Provider value={{ isPreloaderDone, setIsPreloaderDone }}>
