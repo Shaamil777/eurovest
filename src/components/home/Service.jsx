@@ -3,6 +3,26 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+        opacity: 1, 
+        y: 0, 
+        transition: { duration: 0.5, ease: "easeOut" } 
+    }
+};
+
 const servicesData = [
     {
         id: '01',
@@ -92,11 +112,18 @@ export default function Service() {
                 </div>
             </div>
             
-            {servicesData.map((service, index) => (
-                <div 
-                    key={index}
-                    className={`service-wrapper ${service.isActive ? 'active' : ''}`}
-                >
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+            >
+                {servicesData.map((service, index) => (
+                    <motion.div 
+                        variants={itemVariants}
+                        key={index}
+                        className={`service-wrapper ${service.isActive ? 'active' : ''}`}
+                    >
                     <div className="container">
                         <div className="service-item" onMouseMove={handleMouseMove}>
                              <div className="image-hover d-none d-md-block bg-cover" style={{ backgroundImage: `url("${service.image}")` }}></div>
@@ -114,8 +141,9 @@ export default function Service() {
                             </div>
                         </div>
                     </div>
-                </div>
-            ))}
+                    </motion.div>
+                ))}
+            </motion.div>
         </div>
 
         </>

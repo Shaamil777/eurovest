@@ -3,6 +3,26 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+        opacity: 1, 
+        y: 0, 
+        transition: { duration: 0.5, ease: "easeOut" } 
+    }
+};
+
 const faqs = [
     {
         question: "How long does the visa application process take?",
@@ -44,22 +64,34 @@ export default function Faq() {
                         <div className="col-lg-5">
                             <div className="faq-content">
                                 <div className="section-title mb-0">
-                                    <span 
+                                    <motion.span 
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.5 }}
                                         className="sub-title"
                                         style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}
                                     >
                                         Visa FAQs
-                                    </span>
-                                    <h2 
+                                    </motion.span>
+                                    <motion.h2 
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.5, delay: 0.1 }}
                                     >
                                         Got Questions? We’ve Got <span>Answers</span>
-                                    </h2>
+                                    </motion.h2>
                                 </div>
-                                <p 
+                                <motion.p 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: 0.2 }}
                                     className="text mt-3 mb-4"
                                 >
                                     We understand students often have many questions about studying abroad. Our experts provide clear and accurate information to help you navigate the process.
-                                </p>
+                                </motion.p>
                                 <Link href="/contact" 
                                     className="theme-btn"
                                 >
@@ -69,11 +101,19 @@ export default function Faq() {
                             </div>
                         </div>
                         <div className="col-lg-7">
-                            <div className="faq-items left-[15%]" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                            <motion.div 
+                                variants={containerVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-50px" }}
+                                className="faq-items left-[15%]" 
+                                style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}
+                            >
                                 {faqs.map((faq, index) => {
                                     const isActive = activeIndex === index;
                                     return (
-                                        <div 
+                                        <motion.div 
+                                            variants={itemVariants}
                                             key={index}
                                             style={{
                                                 borderBottom: '1px solid #eaeaea',
@@ -133,10 +173,10 @@ export default function Faq() {
                                                     </motion.div>
                                                 )}
                                             </AnimatePresence>
-                                        </div>
+                                        </motion.div>
                                     );
                                 })}
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

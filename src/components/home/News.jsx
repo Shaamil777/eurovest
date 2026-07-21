@@ -1,5 +1,27 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+        opacity: 1, 
+        y: 0, 
+        transition: { duration: 0.5, ease: "easeOut" } 
+    }
+};
 
 const newsData = [
     {
@@ -44,19 +66,39 @@ export default function News() {
             <div className="container">
                 <div className="section-title-area">
                     <div className="section-title">
-                        <span className="sub-title" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Visa Tips & Guides</span>
-                        <h2 className="">
+                        <motion.span 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="sub-title" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Visa Tips & Guides</motion.span>
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                        >
                           <span> IMMIGRATION NEWS </span>& VISA GUIDES
-                        </h2>
+                        </motion.h2>
                     </div>
                     <Link href="/blog" className="theme-btn">
                         view all articies
                         <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                 </div>
-                <div className="row">
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="row"
+                >
                     {newsData.map((item) => (
-                        <div key={item.id} className="col-xl-4 col-lg-6 col-md-6">
+                        <motion.div 
+                            variants={itemVariants}
+                            key={item.id} 
+                            className="col-xl-4 col-lg-6 col-md-6"
+                        >
                             <div className="news-card-item">
                                 <div className="news-image">
                                     <img src={item.image} alt="img" />
@@ -85,9 +127,9 @@ export default function News() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
 

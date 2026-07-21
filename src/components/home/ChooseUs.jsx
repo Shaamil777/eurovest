@@ -2,6 +2,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+        opacity: 1, 
+        y: 0, 
+        transition: { duration: 0.5, ease: "easeOut" } 
+    }
+};
+
 const ChooseUs = () => {
   const cards = [
     {
@@ -44,22 +64,44 @@ const ChooseUs = () => {
         
         {/* Header Section */}
         <div className="section-title text-center">
-            <span className="sub-title" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Why Choose Us</span>
-            <h2 className="">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="sub-title" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Why Choose Us</motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="">
                 Your Trusted Partner For <br /> <span>Immigration</span>
-            </h2>
-            <p 
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="text" 
               style={{ maxWidth: '600px', margin: '0 auto', marginTop: '15px' }}
             >
               We deliver trusted immigration services, visa consulting, and personalized guidance to make your journey abroad smooth, transparent, and successful.
-            </p>
+            </motion.p>
         </div>
 
         {/* Cards Section */}
-        <div className="row g-4 mt-4">
+        <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="row g-4 mt-4"
+        >
           {cards.map((card, index) => (
-            <div className={`col-xl-3 col-lg-4 col-md-6 d-flex`} key={card.id}>
+            <motion.div 
+              variants={itemVariants}
+              className={`col-xl-3 col-lg-4 col-md-6 d-flex`} key={card.id}>
               <div className="premium-choose-card w-100 h-100 d-flex flex-column">
                 <div className="card-inner h-100 flex-grow-1">
                   
@@ -81,9 +123,9 @@ const ChooseUs = () => {
                   <div className="watermark-number">{card.id}</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
         <style jsx="true">{`
           .premium-choose-card {

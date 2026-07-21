@@ -45,71 +45,71 @@ const destinations = [
 export default function Feature() {
     return (
         <>
-        <section className="feature-destinations-section section-padding" style={{ backgroundColor: '#ffffff', overflow: 'hidden' }}>
-            <div className="container">
-                <div className="row align-items-center">
-                    
-                    {/* Left Column: Content */}
-                    <div className="col-lg-6 mb-5 mb-lg-0">
-                        <div className="content-wrapper pe-lg-4">
-                            
-                            <span 
-                                className="sub-title" 
-                                style={{ color: 'var(--color-blue)', backgroundColor: 'rgba(6, 27, 57, 0.05)', padding: '8px 24px', borderRadius: '30px', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: '600', marginBottom: '20px' }}
-                            >
-                                Explore Destinations <i className="fa-solid fa-arrow-right" style={{ color: 'var(--theme)' }}></i>
-                            </span>
-                            
-                            <h2 
-                                className="section-title mb-4" 
-                                style={{ fontSize: '48px', fontWeight: '800', lineHeight: '1.2', color: 'var(--color-blue)', textTransform: 'uppercase' }}
-                            >
-                                YOUR GATEWAY TO<br/>GLOBAL <span style={{ color: 'var(--theme)' }}>IMMIGRATION</span>
-                            </h2>
-                            
-                            <div 
-                                style={{ height: '3px', backgroundColor: 'var(--theme)', marginBottom: '30px', width: '80px' }}
-                            ></div>
-                            
-                            <p 
-                                style={{ color: '#666', fontSize: '18px', lineHeight: '1.6', marginBottom: '40px', maxWidth: '90%' }}
-                            >
-                                We provide trusted immigration solutions to the world&apos;s leading destinations. Choose your dream country and let us handle the rest of your journey.
-                            </p>
-                            
-                            <div className="destinations-grid mt-4">
-                                {destinations.map((dest, idx) => (
-                                    <div 
-                                        key={idx} 
-                                        className="dest-item d-flex align-items-center"
-                                    >
-                                        <div className="flag-circle shadow-sm">
-                                            <img src={`https://flagcdn.com/w160/${dest.flag}.png`} alt={`${dest.name} flag`} />
+            <section className="feature-destinations-section section-padding" style={{ backgroundColor: '#ffffff', overflow: 'hidden' }}>
+                <div className="container">
+                    <div className="row align-items-center">
+
+                        {/* Left Column: Content */}
+                        <div className="col-lg-6 mb-5 mb-lg-0">
+                            <div className="content-wrapper pe-lg-4">
+
+                                <span
+                                    className="sub-title"
+                                    style={{ color: 'var(--color-blue)', backgroundColor: 'rgba(6, 27, 57, 0.05)', padding: '8px 24px', borderRadius: '30px', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: '600', marginBottom: '20px' }}
+                                >
+                                    Explore Destinations <i className="fa-solid fa-arrow-right" style={{ color: 'var(--theme)' }}></i>
+                                </span>
+
+                                <h2
+                                    className="section-title mb-4"
+                                    style={{ fontSize: '48px', fontWeight: '800', lineHeight: '1.2', color: 'var(--color-blue)', textTransform: 'uppercase' }}
+                                >
+                                    YOUR GATEWAY TO<br />GLOBAL <span style={{ color: 'var(--theme)' }}>IMMIGRATION</span>
+                                </h2>
+
+                                <div
+                                    style={{ height: '3px', backgroundColor: 'var(--theme)', marginBottom: '30px', width: '80px' }}
+                                ></div>
+
+                                <p
+                                    style={{ color: '#666', fontSize: '18px', lineHeight: '1.6', marginBottom: '40px', maxWidth: '90%' }}
+                                >
+                                    We provide trusted immigration solutions to the world&apos;s leading destinations. Choose your dream country and let us handle the rest of your journey.
+                                </p>
+
+                                <div className="destinations-grid mt-4">
+                                    {destinations.map((dest, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="dest-item d-flex align-items-center"
+                                        >
+                                            <div className="flag-circle shadow-sm">
+                                                <img src={`https://flagcdn.com/w160/${dest.flag}.png`} alt={`${dest.name} flag`} />
+                                            </div>
+                                            <div className="dest-info flex-grow-1 ms-4">
+                                                <h4 style={{ margin: 0, fontSize: '19px', fontWeight: '800', color: 'var(--color-blue)', letterSpacing: '-0.5px' }}>{dest.name}</h4>
+                                                <p style={{ margin: '4px 0 0', fontSize: '14px', color: '#64748b', lineHeight: '1.5' }}>{dest.desc}</p>
+                                            </div>
                                         </div>
-                                        <div className="dest-info flex-grow-1 ms-4">
-                                            <h4 style={{ margin: 0, fontSize: '19px', fontWeight: '800', color: 'var(--color-blue)', letterSpacing: '-0.5px' }}>{dest.name}</h4>
-                                            <p style={{ margin: '4px 0 0', fontSize: '14px', color: '#64748b', lineHeight: '1.5' }}>{dest.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
+
                             </div>
-                            
                         </div>
-                    </div>
-                    
-                    {/* Right Column: Map */}
-                    <div className="col-lg-6">
-                        <div 
-                            className="map-container relative left-0 md:left-[10%]"
-                        >
-                            <Image src="/assets/img/home-1/feature/worldmap.png" alt="World Map" width={1000} height={500} className="w-100 scale-100 md:scale-[1]" style={{ width: '100%', height: 'auto', opacity: 1 }} />
+
+                        {/* Right Column: Map */}
+                        <div className="col-lg-6">
+                            <div
+                                className="map-container relative left-0 md:left-[10%]"
+                            >
+                                <Image src="/assets/img/home-1/feature/worldmap.png" alt="World Map" width={1000} height={500} className="w-100 scale-100 md:scale-[1]" style={{ width: '100%', height: 'auto', opacity: 1 }} />
+                            </div>
                         </div>
+
                     </div>
-                    
                 </div>
-            </div>
-            
-            <style jsx="true">{`
+
+                <style jsx="true">{`
                 .destinations-grid {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -268,7 +268,7 @@ export default function Feature() {
                     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
                 }
             `}</style>
-        </section>
+            </section>
         </>
     );
 }

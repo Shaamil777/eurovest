@@ -65,12 +65,28 @@ export default function Testimonial() {
             <section className="testimonial-section section-padding pb-0 fix">
                 <div className="container">
                     <div className="section-title text-center">
-                        <span className="sub-title" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Client Success Stories</span>
-                        <h2 className="">
+                        <motion.span 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="sub-title" style={{ color: 'white', backgroundColor: 'rgb(6, 27, 57)', padding: '5px 20px', borderRadius: '30px', display: 'inline-block' }}>Client Success Stories</motion.span>
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="">
                             CLIENT REVIEWS & <span>SUCCESS STORIES</span>
-                        </h2>
+                        </motion.h2>
                     </div>
-                    <div className="testimonial-wrapper">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="testimonial-wrapper"
+                    >
                         <div className="row g-4">
                             <div className="col-lg-12">
                                 <div className="row h-100" style={{ overflow: 'hidden' }}>
@@ -78,10 +94,10 @@ export default function Testimonial() {
                                         {visibleItems.map((item) => (
                                             <motion.div
                                                 key={item.id}
-                                                initial={{ opacity: 0 }}
-                                                animate={{ opacity: 1 }}
-                                                exit={{ opacity: 0 }}
-                                                transition={{ duration: 0.8 }}
+                                                initial={{ opacity: 0, x: 50 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                exit={{ opacity: 0, x: -50 }}
+                                                transition={{ duration: 0.6, ease: "easeInOut" }}
                                                 className="col-lg-4 col-md-6 col-12 mb-4"
                                             >
                                                 <div className="testimonial-box h-100">
@@ -111,7 +127,7 @@ export default function Testimonial() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </>
