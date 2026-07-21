@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 export default function Footer() {
     return (
-        <div style={{ padding: '0 20px 20px 20px', backgroundColor: '#ffffff', marginTop: '40px' }}>
-            <footer style={{ 
+        <div className="footer-wrapper" style={{ padding: '0 20px 20px 20px', backgroundColor: '#ffffff', marginTop: '40px' }}>
+            <footer className="footer-main" style={{ 
                 backgroundColor: '#0f172a', // Very dark, modern slate blue
                 color: '#f1f5f9', 
                 fontFamily: '"Inter", sans-serif',
@@ -41,7 +41,7 @@ export default function Footer() {
                                 Expert immigration services blending deep technology with local context for shared prosperity globally.
                             </p>
                             
-                            <form style={{ display: 'flex', gap: '8px', maxWidth: '420px' }} onSubmit={(e) => e.preventDefault()}>
+                            <form className="footer-form" style={{ display: 'flex', gap: '8px', maxWidth: '420px' }} onSubmit={(e) => e.preventDefault()}>
                                 <input 
                                     type="email" 
                                     placeholder="Enter email for updates" 
@@ -80,10 +80,10 @@ export default function Footer() {
 
                         {/* Navigation Columns */}
                         <div className="col-lg-7">
-                            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', flexWrap: 'wrap', gap: '30px' }}>
+                            <div className="footer-nav-container" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', flexWrap: 'wrap', gap: '30px' }}>
                                 
                                 {/* Platform */}
-                                <div style={{ flex: '1 1 150px' }}>
+                                <div className="footer-nav-col" style={{ flex: '1 1 150px' }}>
                                     <h6 style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '25px', color: '#64748b' }}>Platform</h6>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '15px' }}>
                                         {['Home', 'About Us', 'Our Services', 'Why EuroVest', 'Contact'].map((link, i) => (
@@ -103,7 +103,7 @@ export default function Footer() {
                                 </div>
 
                                 {/* Resources */}
-                                <div style={{ flex: '1 1 150px' }}>
+                                <div className="footer-nav-col" style={{ flex: '1 1 150px' }}>
                                     <h6 style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '25px', color: '#64748b' }}>Resources</h6>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '15px' }}>
                                         {['Blog & News', 'Help Center', 'Immigration FAQ', 'Support', 'Careers'].map((link, i) => (
@@ -123,7 +123,7 @@ export default function Footer() {
                                 </div>
 
                                 {/* Connect */}
-                                <div style={{ flex: '1 1 200px' }}>
+                                <div className="footer-nav-col" style={{ flex: '1 1 200px' }}>
                                     <h6 style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '25px', color: '#64748b' }}>Connect</h6>
                                     <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                                         <a href="mailto:contact@eurovest.com" style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '15px', display: 'flex', alignItems: 'center', gap: '12px', transition: 'color 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = '#3b82f6'} onMouseLeave={(e) => e.currentTarget.style.color = '#e2e8f0'}>
@@ -161,7 +161,7 @@ export default function Footer() {
                     </div>
 
                     {/* Integrated Bottom Bar */}
-                    <div style={{
+                    <div className="footer-bottom-bar" style={{
                         marginTop: '60px',
                         paddingTop: '30px',
                         borderTop: '1px solid rgba(255,255,255,0.08)',

@@ -316,6 +316,34 @@ body {
   .section-padding {
     padding: 60px 0 !important;
   }
+  
+  /* Mobile footer optimization */
+  .footer-wrapper {
+    padding: 0 10px 10px 10px !important;
+  }
+  .footer-main {
+    padding: 40px 20px 20px 20px !important;
+    border-radius: 20px !important;
+  }
+  .footer-form {
+    flex-direction: column !important;
+  }
+  .footer-nav-container {
+    gap: 20px !important;
+  }
+  .footer-nav-col {
+    flex: 1 1 100% !important;
+  }
+  .footer-bottom-bar {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 15px !important;
+    margin-top: 40px !important;
+  }
+  .footer-bottom-bar ul {
+    justify-content: center !important;
+  }
 }
 
 /* ========================================================
