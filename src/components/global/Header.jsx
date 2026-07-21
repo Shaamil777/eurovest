@@ -132,10 +132,10 @@ export default function Header() {
                             </div>
 
                             <div className="header-call-item">
-                                <Link href="/contact" className="theme-btn">
-                                    Appointment
-                                    <i className="fa-solid fa-arrow-right"></i>
-                                </Link>
+                                <a href="https://wa.me/911245784512" target="_blank" rel="noopener noreferrer" className="theme-btn">
+                                    Contact Us
+                                    <i className="fa-brands fa-whatsapp"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

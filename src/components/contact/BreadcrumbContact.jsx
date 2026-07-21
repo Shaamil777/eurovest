@@ -12,7 +12,7 @@ export default function BreadcrumbContact() {
             </div>
             <div className="container">
                 <div className="page-heading">
-                    <h1 className="breadcrumb-title">CONTACT uS</h1>
+                    <h1 className="breadcrumb-title">CONTACT US</h1>
                     <ul className="breadcrumb-list">
                         <li>
                             <Link href="/">Home</Link>
