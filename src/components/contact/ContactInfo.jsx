@@ -15,7 +15,10 @@ export default function ContactInfo() {
                         <div className="content">
                             <p>Location</p>
                             <h6>
-                                43 Sardinella, 3nd Land Walk, <br /> Orchard view, London, UK
+                                Saeed Nayel Alnuaimi Building, <br />
+1st Floor, Office 22, <br />
+Al Maswsou'ah 4 Street, <br />
+Sanaiya, Al Ain, UAE
                             </h6>
                         </div>
                     </div>
@@ -28,8 +31,9 @@ export default function ContactInfo() {
                         <div className="content">
                             <p>Email Address</p>
                             <h6>
-                                <a href="mailto:supportinfo@gmail.com">supportinfo@gmail.com</a> <br />
-                                 <a href="mailto:arluxhotelinfo.com">arluxhotelinfo.com</a>
+                                <a href="mailto:info@eurovest-dummy.com">info@eurovest-dummy.com</a>
+                                <br />
+                                <a href="mailto:info@eurovest-dummy.com">info@eurovest-dummy.com</a>
                             </h6>
                         </div>
                     </div>
@@ -40,10 +44,11 @@ export default function ContactInfo() {
                            <i className="fa-solid fa-phone"></i>
                         </div>
                         <div className="content">
-                            <p>Email Address</p>
+                            <p>Phone Number</p>
                             <h6>
-                                 <a href="tel:Phone+88012342700">Phone +880 123 427 00</a> <br />
-                                  <a href="tel:+00093880912">+000 938 809 12</a>
+                                 <a href="tel:+1234567890">+123 456 7890</a>
+                                 <br />
+                                 <a href="tel:+1234567890">+123 456 7890</a>
                             </h6>
                         </div>
                     </div>

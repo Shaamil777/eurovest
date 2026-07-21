@@ -31,16 +31,10 @@ export default function ContactForm() {
                                             <input type="text" name="name" id="name22" placeholder="Phone Number" />
                                         </div>
                                     </div>
-                                    <div className="col-lg-6">
+                                    <div className="col-lg-12">
                                         <div className="form-clt">
                                             <span>Your Address</span>
                                             <input type="text" name="name" id="name24" placeholder="Address Now" />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="form-clt">
-                                            <span>Your Date</span>
-                                            <input type="text" name="name" id="name25" placeholder="Date" />
                                         </div>
                                     </div>
                                     <div className="col-lg-12">
