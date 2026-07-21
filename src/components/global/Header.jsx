@@ -123,7 +123,7 @@ export default function Header() {
                             <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flexShrink: 0 }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <i className="fa-solid fa-location-dot" style={{ color: 'var(--theme)' }}></i>
-                                    <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>Al Mawsou'ah 4 Street, Al Ain, UAE</span>
+                                    <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>Al Mawsou&apos;ah 4 Street, Al Ain, UAE</span>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <i className="fa-solid fa-phone" style={{ color: 'var(--theme)' }}></i>

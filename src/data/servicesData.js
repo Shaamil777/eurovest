@@ -168,8 +168,8 @@ export const serviceCategories = [
         overviewTitle: "Service Overview",
         overviewText1: "The Spain Golden Visa allows non-EU investors to obtain residency through significant investment, often in real estate.",
         overviewText2: "Our team helps you find the right property and handles the legal residency process.",
-        image2: "/assets/img/inner-page/service-details/details-2.jpg",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image2: "/assets/img/inner-page/service-details/spain1.webp",
+        image3: "/assets/img/inner-page/service-details/spain2.webp",
         features: [
             { title: "European Access", desc: "Visa-free travel across the Schengen zone." },
             { title: "Real Estate Investment", desc: "Invest in a strong European property market." },
@@ -193,8 +193,8 @@ export const serviceCategories = [
         overviewTitle: "Service Overview",
         overviewText1: "Greece offers one of the most affordable Golden Visa programs in Europe.",
         overviewText2: "We assist with property selection, legal compliance, and residency card issuance.",
-        image2: "/assets/img/inner-page/service-details/details-2.jpg",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image2: "/assets/img/inner-page/service-details/greece1.webp",
+        image3: "/assets/img/inner-page/service-details/greece2.webp",
         features: [
             { title: "Affordable Threshold", desc: "Competitive investment requirements compared to other EU states." },
             { title: "Schengen Access", desc: "Travel freely within Europe's Schengen Area." },
@@ -218,8 +218,8 @@ export const serviceCategories = [
         overviewTitle: "Service Overview",
         overviewText1: "Portugal's Golden Visa is highly popular due to its clear path to citizenship after 5 years.",
         overviewText2: "We guide you through the eligible investment funds or other qualifying routes.",
-        image2: "/assets/img/inner-page/service-details/details-2.jpg",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image2: "/assets/img/inner-page/service-details/portugal1.webp",
+        image3: "/assets/img/inner-page/service-details/portugal2.webp",
         features: [
             { title: "Path to Citizenship", desc: "Eligible for citizenship after 5 years with minimal physical presence." },
             { title: "Low Stay Requirement", desc: "Only 7 days a year required in Portugal." },
@@ -243,8 +243,8 @@ export const serviceCategories = [
         overviewTitle: "Service Overview",
         overviewText1: "The EB-5 program grants a US Green Card for investing in a US commercial enterprise that creates jobs.",
         overviewText2: "We partner with reputable regional centers to facilitate your investment and immigration journey.",
-        image2: "/assets/img/inner-page/service-details/details-2.jpg",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image2: "/assets/img/inner-page/service-details/usa1.webp",
+        image3: "/assets/img/inner-page/service-details/usa2.webp",
         features: [
             { title: "US Green Card", desc: "Direct path to permanent residency in the United States for your family." },
             { title: "Job Creation", desc: "Investments must create at least 10 full-time US jobs." },
@@ -268,8 +268,8 @@ export const serviceCategories = [
         overviewTitle: "Service Overview",
         overviewText1: "Australia offers robust visa options for significant investors and business owners.",
         overviewText2: "Our consultants provide end-to-end support for the complex Australian immigration system.",
-        image2: "/assets/img/inner-page/service-details/details-2.jpg",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image2: "/assets/img/inner-page/service-details/aus1.webp",
+        image3: "/assets/img/inner-page/service-details/aus2.webp",
         features: [
             { title: "High Standard of Living", desc: "Access to excellent healthcare, education, and lifestyle." },
             { title: "Business Innovation", desc: "Visas designed for successful business owners and investors." },
@@ -292,15 +292,15 @@ export const serviceCategories = [
     id: "canada",
     services: [
       {
-        slug: "canada-startup-visa",
-        title: "Canada Start-Up Visa",
+        slug: "LMIA-Programs",
+        title: "LMIA Programs",
         shortDescription: "Immigrate to Canada by building an innovative business.",
         mainImage: "/assets/img/inner-page/service-details/details-1.jpg",
         overviewTitle: "Service Overview",
         overviewText1: "The Canada Start-Up Visa targets immigrant entrepreneurs with the skills to build innovative businesses.",
         overviewText2: "We help you secure a letter of support from a designated organization and manage the PR application.",
-        image2: "/assets/img/inner-page/service-details/details-2.jpg",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image2: "/assets/img/inner-page/service-details/lmia1.webp",
+        image3: "/assets/img/inner-page/service-details/lmia2.webp",
         features: [
             { title: "Permanent Residency", desc: "Direct route to Canadian PR for up to 5 founders." },
             { title: "Innovation Focused", desc: "For scalable and globally competitive businesses." },
@@ -314,31 +314,6 @@ export const serviceCategories = [
             { q: "03. Do I need an English test?", a: "Yes, a minimum of CLB 5 in English or French is required." },
             { q: "04. How many founders can apply?", a: "Up to 5 co-founders can apply under one start-up." },
             { q: "05. How long does PR take?", a: "Processing times vary but generally take between 12 to 36 months." }
-        ]
-      },
-      {
-        slug: "canada-provincial-nominee",
-        title: "Canada Provincial Nominee Program (PNP)",
-        shortDescription: "Settle in a specific Canadian province as a business immigrant.",
-        mainImage: "/assets/img/inner-page/service-details/details-1.jpg",
-        overviewTitle: "Service Overview",
-        overviewText1: "Various Canadian provinces offer pathways for entrepreneurs willing to start or buy a business in their region.",
-        overviewText2: "We identify the best provincial program for your profile and business idea.",
-        image2: "/assets/img/inner-page/service-details/details-2.jpg",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
-        features: [
-            { title: "Regional Opportunities", desc: "Tailored to specific economic needs of provinces." },
-            { title: "Lower Investment", desc: "Some provinces require significantly less investment than federal programs." },
-            { title: "Two-Step Process", desc: "Usually starts with a work permit, leading to PR after the business is established." },
-            { title: "Active Management", desc: "Requires you to actively manage the business on a daily basis." },
-            { title: "Community Support", desc: "Many provinces offer strong support for newcomer entrepreneurs." }
-        ],
-        faqs: [
-            { q: "01. Which province is best?", a: "It depends on your business sector, investment capacity, and personal preferences." },
-            { q: "02. What is the average investment?", a: "It ranges from $150,000 CAD to $600,000 CAD depending on the province." },
-            { q: "03. Do I need to visit the province?", a: "Most programs highly recommend or require an exploratory visit." },
-            { q: "04. Is a business plan required?", a: "Yes, a comprehensive and viable business plan is essential." },
-            { q: "05. Do I get PR immediately?", a: "No, you usually get a work permit first, and PR follows once you meet the performance agreement." }
         ]
       }
     ]
@@ -355,8 +330,8 @@ export const serviceCategories = [
         overviewTitle: "Service Overview",
         overviewText1: "The Skilled Worker visa allows you to come to or stay in the UK to do an eligible job with an approved employer.",
         overviewText2: "We assist both employers and employees with sponsorship and visa applications.",
-        image2: "/assets/img/inner-page/service-details/details-2.jpg",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image2: "/assets/img/inner-page/service-details/skilled1.webp",
+        image3: "/assets/img/inner-page/service-details/skilled2.webp",
         features: [
             { title: "Pathway to Settlement", desc: "Can lead to Indefinite Leave to Remain (ILR) after 5 years." },
             { title: "Sponsorship Required", desc: "Requires a valid Certificate of Sponsorship from a UK employer." },
@@ -380,8 +355,8 @@ export const serviceCategories = [
         overviewTitle: "Service Overview",
         overviewText1: "This visa is for individuals coming to the UK to work in the creative sector, for example as an actor, dancer, musician or film crew member.",
         overviewText2: "We ensure you meet all eligibility criteria and have the correct sponsorship.",
-        image2: "/assets/img/inner-page/service-details/details-2.jpg",
-        image3: "/assets/img/inner-page/service-details/details-3.jpg",
+        image2: "/assets/img/inner-page/service-details/creative1.webp",
+        image3: "/assets/img/inner-page/service-details/creative2.webp",
         features: [
             { title: "Temporary Work", desc: "Allows up to 12 months, with possible extensions." },
             { title: "Creative Sector Only", desc: "Strictly for artists, entertainers, and fashion models." },

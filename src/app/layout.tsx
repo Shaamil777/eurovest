@@ -1,7 +1,6 @@
 import './globals.css';
 import '../styles/nextjs-bundle.css'; // The mega CSS file we made!
 import dynamic from 'next/dynamic';
-import HeaderTop from '@/components/global/HeaderTop';
 import Header from '@/components/global/Header';
 
 const Preloader = dynamic(() => import('@/components/global/Preloader'));
@@ -30,7 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <SearchModal />
               
               <div style={{ position: 'sticky', top: 0, zIndex: 99999 }}>
-                  {/* <HeaderTop /> */}
                   <Header />
               </div>
               

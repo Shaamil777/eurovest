@@ -35,7 +35,7 @@ export default function Footer() {
                                 <Image src="/assets/img/logo/logo.png" alt="EuroVest Logo" width={250} height={70} style={{ width: '100%', height: 'auto', maxWidth: '250px' }} />
                             </div>
                             <h3 style={{ fontSize: '32px', fontWeight: '700', marginBottom: '20px', color: '#fff', letterSpacing: '-0.5px' }}>
-                                Let's build your global future.
+                                Let&apos;s build your global future.
                             </h3>
                             <p style={{ fontSize: '15px', color: '#94a3b8', lineHeight: '1.6', marginBottom: '35px', maxWidth: '380px' }}>
                                 Expert immigration services blending deep technology with local context for shared prosperity globally.

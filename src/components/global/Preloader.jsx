@@ -7,8 +7,19 @@ export default function Preloader() {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
+        let isLoaded = document.readyState === 'complete';
+        
+        const handleLoad = () => {
+            isLoaded = true;
+        };
+
+        if (!isLoaded) {
+            window.addEventListener('load', handleLoad);
+        }
+
         let start = null;
-        const duration = 1600; // Counter takes 1.6s
+        let animationFrameId;
+        const duration = 1600; // Counter animation time
 
         const step = (timestamp) => {
             if (!start) start = timestamp;
@@ -18,20 +29,29 @@ export default function Preloader() {
             const t = Math.min(elapsed / duration, 1);
             const easeOutQuart = 1 - Math.pow(1 - t, 4);
             
-            const currentProgress = Math.floor(easeOutQuart * 100);
-            setProgress(currentProgress);
-
-            if (elapsed < duration) {
-                window.requestAnimationFrame(step);
+            let currentProgress = Math.floor(easeOutQuart * 100);
+            
+            if (elapsed >= duration) {
+                if (isLoaded) {
+                    currentProgress = 100;
+                    setProgress(currentProgress);
+                    setTimeout(() => setLoading(false), 200);
+                    return;
+                } else {
+                    currentProgress = 99; // Hold at 99% until window is fully loaded
+                }
             }
+            
+            setProgress(currentProgress);
+            animationFrameId = window.requestAnimationFrame(step);
         };
-        window.requestAnimationFrame(step);
+        
+        animationFrameId = window.requestAnimationFrame(step);
 
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 2200);
-
-        return () => clearTimeout(timer);
+        return () => {
+            window.removeEventListener('load', handleLoad);
+            if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
+        };
     }, []);
 
     return (

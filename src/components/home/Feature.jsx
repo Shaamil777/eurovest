@@ -74,7 +74,7 @@ export default function Feature() {
                             <p 
                                 style={{ color: '#666', fontSize: '18px', lineHeight: '1.6', marginBottom: '40px', maxWidth: '90%' }}
                             >
-                                We provide trusted immigration solutions to the world's leading destinations. Choose your dream country and let us handle the rest of your journey.
+                                We provide trusted immigration solutions to the world&apos;s leading destinations. Choose your dream country and let us handle the rest of your journey.
                             </p>
                             
                             <div className="destinations-grid mt-4">

@@ -8,7 +8,7 @@ export default function ContactForm() {
             <div className="container">
                 <div className="contact-from-wrapper">
                     <h5 className="text-center">Send Us Message</h5>
-                    <p className="text-center mt-3 mb-5">"Have questions about visas or immigration? Send us a message today and our expert team will respond quickly."</p>
+                    <p className="text-center mt-3 mb-5">&quot;Have questions about visas or immigration? Send us a message today and our expert team will respond quickly.&quot;</p>
                     <div className="row g-4">
                         <div className="col-xl-12">
                              <form action="contact.php" id="contact-form1" method="POST" className="contact-form-items">
