@@ -120,12 +120,12 @@ export default function Header() {
                         <div className="header-right d-flex align-items-center mt-0 desktop-header-right" style={{ position: 'relative', zIndex: 1, gap: '30px' }}>
                             
                             {/* Contact Info Block */}
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flexShrink: 0 }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <div className="contact-info-block" style={{ display: 'flex', alignItems: 'center', gap: '15px', flexShrink: 0 }}>
+                                <div className="contact-address" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <i className="fa-solid fa-location-dot" style={{ color: 'var(--theme)' }}></i>
                                     <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>Al Mawsou&apos;ah 4 Street, Al Ain, UAE</span>
                                 </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                <div className="contact-phone" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <i className="fa-solid fa-phone" style={{ color: 'var(--theme)' }}></i>
                                     <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'var(--color-blue)', fontWeight: '600', whiteSpace: 'nowrap' }}>+91 1245784512</span>
                                 </div>
@@ -286,6 +286,51 @@ export default function Header() {
             .header-main .main-menu ul li .submenu li a::after {
                 display: none !important;
                 content: none !important;
+            }
+
+            @media (max-width: 1550px) {
+                .slanted-bg {
+                    width: 260px !important;
+                }
+                .logo {
+                    width: 220px !important;
+                    padding-left: 20px !important;
+                }
+                .mean__menu-wrapper {
+                    margin-left: 0px !important;
+                }
+                .desktop-header-right {
+                    gap: 15px !important;
+                }
+                .contact-info-block {
+                    gap: 10px !important;
+                }
+            }
+
+            @media (max-width: 1200px) {
+                .slanted-bg {
+                    width: 240px !important;
+                }
+                .logo {
+                    width: 200px !important;
+                    padding-left: 15px !important;
+                }
+                .contact-address {
+                    display: none !important;
+                }
+                .desktop-header-right {
+                    gap: 10px !important;
+                }
+                .header-call-item .theme-btn {
+                    padding: 10px 15px !important;
+                    font-size: 13px !important;
+                }
+            }
+
+            @media (max-width: 1050px) {
+                .contact-info-block {
+                    display: none !important;
+                }
             }
 
             @media (max-width: 991px) {

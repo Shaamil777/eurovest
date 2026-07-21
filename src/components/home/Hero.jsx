@@ -15,7 +15,7 @@ const heroSlides = [
   {
     id: 2,
     subtitle: "Your Global Journey Starts Here",
-    title: "Move Abroad with Confidence and Expert Visa Support",
+    title: "Move Abroad with Expert Visa Support",
     description:
       "From visa applications and work permits to residency and business investment, we provide complete immigration consulting tailored to your global goals.",
   },
