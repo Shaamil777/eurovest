@@ -11,9 +11,9 @@ export async function generateMetadata() {
     robots: seo?.metaRobots || 'index, follow'
   };
 }
-import Breadcrumb from '../../components/blog/BreadcrumbBlog';
-import NewsGrid from '../../components/blog/NewsGrid';
-import NewsStandard from '../../components/blog/NewsStandard';
+import Breadcrumb from '../../../components/blog/BreadcrumbBlog';
+import NewsGrid from '../../../components/blog/NewsGrid';
+import NewsStandard from '../../../components/blog/NewsStandard';
 
 
 export default function Blog() {

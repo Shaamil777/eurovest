@@ -1,5 +1,5 @@
 import React from 'react';
-import { getBlogBySlug } from '../../../data/blogsData';
+import { getBlogBySlug } from '../../../../data/blogsData';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -86,7 +86,7 @@ export default async function BlogDetails({ params }) {
                                         </div>
                                         <div className="author-content">
                                             <h4>{blog.author}</h4>
-                                            <p>Financial Analyst and Expert at Eurovest.</p>
+                                            {blog.authorPosition && <p>{blog.authorPosition}</p>}
                                         </div>
                                     </div>
                                 </div>

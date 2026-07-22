@@ -1,5 +1,5 @@
-import './globals.css';
-import '../styles/nextjs-bundle.css'; // The mega CSS file we made!
+import '../globals.css';
+import '../../styles/nextjs-bundle.css'; // The mega CSS file we made!
 import dynamic from 'next/dynamic';
 import Header from '@/components/global/Header';
 

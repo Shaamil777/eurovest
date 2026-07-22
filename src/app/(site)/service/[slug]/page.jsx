@@ -1,8 +1,8 @@
-import BreadcrumbServiceDetails from "../../../components/service-detailed/BreadcrumbServiceDetails";
-import ServiceDetailsArea from "../../../components/service-detailed/ServiceDetailsArea";
-import { getServiceBySlug } from "../../../data/servicesData";
+import BreadcrumbServiceDetails from "../../../../components/service-detailed/BreadcrumbServiceDetails";
+import ServiceDetailsArea from "../../../../components/service-detailed/ServiceDetailsArea";
+import { getServiceBySlug } from "../../../../data/servicesData";
 import { notFound } from "next/navigation";
-import { getServiceSeo } from "../../../data/seoData";
+import { getServiceSeo } from "../../../../data/seoData";
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;

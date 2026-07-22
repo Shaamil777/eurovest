@@ -27,6 +27,12 @@ export const postType = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'authorPosition',
+      title: 'Author Position',
+      type: 'string',
+      description: 'The position or role of the author (e.g. Financial Analyst)',
+    }),
+    defineField({
       name: 'category',
       title: 'Category',
       type: 'string',
