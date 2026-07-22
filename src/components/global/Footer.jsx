@@ -41,41 +41,28 @@ export default function Footer() {
                                 Expert immigration services blending deep technology with local context for shared prosperity globally.
                             </p>
                             
-                            <form className="footer-form" style={{ display: 'flex', gap: '8px', maxWidth: '420px' }} onSubmit={(e) => e.preventDefault()}>
-                                <input 
-                                    type="email" 
-                                    placeholder="Enter email for updates" 
-                                    style={{
-                                        flexGrow: 1,
-                                        padding: '14px 20px',
-                                        borderRadius: '12px',
-                                        border: '1px solid rgba(255,255,255,0.1)',
-                                        background: 'rgba(255,255,255,0.03)',
-                                        color: '#fff',
-                                        outline: 'none',
-                                        fontSize: '14px',
-                                        transition: 'all 0.3s ease'
-                                    }}
-                                    onFocus={(e) => { e.target.style.borderColor = '#3b82f6'; e.target.style.background = 'rgba(255,255,255,0.06)'; }}
-                                    onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.background = 'rgba(255,255,255,0.03)'; }}
-                                />
-                                <button type="submit" style={{
-                                    padding: '0 26px',
-                                    background: '#3b82f6',
-                                    border: 'none',
+                            <div style={{ marginTop: '20px' }}>
+                                <a href="https://wa.me/911245784512" target="_blank" rel="noopener noreferrer" style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '10px',
+                                    padding: '14px 28px',
+                                    background: '#25D366',
                                     borderRadius: '12px',
                                     color: '#fff',
                                     fontWeight: '600',
-                                    cursor: 'pointer',
-                                    fontSize: '14px',
-                                    transition: 'transform 0.3s ease, background 0.3s ease'
+                                    textDecoration: 'none',
+                                    fontSize: '15px',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 4px 15px rgba(37, 211, 102, 0.3)'
                                 }}
-                                onMouseEnter={(e) => { e.currentTarget.style.background = '#2563eb'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                                onMouseLeave={(e) => { e.currentTarget.style.background = '#3b82f6'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                                onMouseEnter={(e) => { e.currentTarget.style.background = '#20b958'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.background = '#25D366'; e.currentTarget.style.transform = 'translateY(0)'; }}
                                 >
-                                    Subscribe
-                                </button>
-                            </form>
+                                    <i className="fa-brands fa-whatsapp" style={{ fontSize: '20px' }}></i>
+                                    Chat with us on WhatsApp
+                                </a>
+                            </div>
                         </div>
 
                         {/* Navigation Columns */}

@@ -106,7 +106,7 @@ export default function Faq() {
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true, margin: "-50px" }}
-                                className="faq-items left-[15%]" 
+                                className="faq-items left-[7%]" 
                                 style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}
                             >
                                 {faqs.map((faq, index) => {
@@ -136,6 +136,8 @@ export default function Faq() {
                                                     fontSize: '18px', 
                                                     fontWeight: '500', 
                                                     color: 'var(--color-blue)',
+                                                    flex: 1,
+                                                    paddingRight: '10px'
                                                 }}>
                                                     {faq.question}
                                                 </h5>

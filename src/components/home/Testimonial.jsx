@@ -5,30 +5,58 @@ import { motion, AnimatePresence } from 'framer-motion';
 const testimonialData = [
     {
         id: 1,
-        text: "Professional and reliable service. They explained each step clearly, prepared my documents, and supported me during the interview. My visa approval came faster than expected.",
-        name: "Sohel Tanvir",
-        location: "Canada",
+        text: "I was looking for nursing opportunities abroad and their team helped me secure the UK Skilled Worker Visa effortlessly. They handled all my documentation and employer sponsorship perfectly.",
+        name: "Preethi S.",
+        location: "Kerala, India",
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
     },
     {
         id: 2,
-        text: "The consultancy guided me from start to finish, making my study abroad journey smooth and stress-free. Thanks to their expert support, I secured my visa successfully.",
-        name: "Ayesha Rahman",
-        location: "UK. United Kingdom",
+        text: "As a psychotherapist, I wanted to relocate to Canada. Eurovest guided me through the LMIA program, making what seemed like an impossible journey extremely smooth and stress-free.",
+        name: "Akhil Krishna",
+        location: "Mumbai, India",
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
     },
     {
         id: 3,
-        text: "Amazing experience! Their team was incredibly helpful in selecting the right university and handling all the complicated paperwork for my student visa.",
-        name: "Rahul Sharma",
-        location: "Australia",
+        text: "I was interested in a second passport for global mobility. Their experts managed my Dominica Citizenship by Investment application perfectly. Truly a trustworthy and reliable service.",
+        name: "Nihal",
+        location: "Bangalore, India",
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
     },
     {
         id: 4,
-        text: "I couldn't have done it without them. From interview preparation to final visa stamping, they were there at every step.",
-        name: "Sarah Jenkins",
-        location: "USA",
+        text: "We wanted to establish residency in Europe. The team provided end-to-end support for the Spain Golden Visa. Highly professional consultancy with deep knowledge of immigration laws.",
+        name: "Aswin",
+        location: "Delhi, India",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
+    },
+    {
+        id: 5,
+        text: "The process for Greece Residency by Investment was incredibly fast. As a medical professional, my time is limited, but they handled all the property investment legalities and paperwork for me.",
+        name: "Dr. Anjali Menon",
+        location: "Chennai, India",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
+    },
+    {
+        id: 6,
+        text: "I was looking for a flexible European residency option, and their guidance on the Portugal D7 visa was spot on. Highly recommend their transparent and responsive consultancy.",
+        name: "Rohan Verma",
+        location: "Pune, India",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
+    },
+    {
+        id: 7,
+        text: "As an expat running a business, I needed quick access to visa-free travel. The Vanuatu Citizenship program they suggested was processed in record time. Excellent service!",
+        name: "Sarah Mitchell",
+        location: "Dubai, UAE",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
+    },
+    {
+        id: 8,
+        text: "Relocating to Australia for business was a complex move, but their team navigated the business visa requirements flawlessly. They were there at every step, making it stress-free.",
+        name: "John Davies",
+        location: "London, UK",
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E"
     }
 ];
