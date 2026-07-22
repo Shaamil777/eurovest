@@ -3,7 +3,6 @@ import '../../styles/nextjs-bundle.css'; // The mega CSS file we made!
 import dynamic from 'next/dynamic';
 import Header from '@/components/global/Header';
 
-const Preloader = dynamic(() => import('@/components/global/Preloader'));
 const OffcanvasMenu = dynamic(() => import('@/components/global/OffcanvasMenu'));
 const SearchModal = dynamic(() => import('@/components/global/SearchModal'));
 import Footer from '@/components/global/Footer';
@@ -22,7 +21,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SmoothScroll>
           <Providers>
             <MouseCursor />
-            <Preloader />
             
             <PageReveal>
               <OffcanvasMenu />

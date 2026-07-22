@@ -70,7 +70,7 @@ export default function Hero() {
                 style={{ y: heroImageY }}
                 className="hero-shape"
             >
-                <Image src="/assets/img/home-1/hero/hero-img.webp" alt="img" width={1250} height={800} style={{ maxWidth: '1250px', width: '100%', height: 'auto', transform: 'translateX(-120px)' }} priority />
+                <Image src="/assets/img/home-1/hero/hero-2.webp" alt="img" width={1250} height={800} style={{ maxWidth: '1250px', width: '100%', height: 'auto', transform: 'translateX(-120px)' }} priority />
             </motion.div>
             
             <motion.div className="top-shape" style={{ y: shapeTopY }}>
