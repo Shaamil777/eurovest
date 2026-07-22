@@ -26,7 +26,7 @@ import { getBlogs } from '@/data/blogsData';
 
 export default async function Home() {
   const allBlogs = await getBlogs();
-  const newsData = allBlogs.slice(0, 3).map((item, index) => ({
+  const newsData = allBlogs.slice(0, 3).map((item: any, index: number) => ({
       ...item,
       delay: `.${3 + index * 2}s`
   }));
