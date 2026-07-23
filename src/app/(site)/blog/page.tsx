@@ -13,7 +13,6 @@ export async function generateMetadata() {
 }
 import Breadcrumb from '../../../components/blog/BreadcrumbBlog';
 import NewsGrid from '../../../components/blog/NewsGrid';
-import NewsStandard from '../../../components/blog/NewsStandard';
 
 
 export default function Blog() {
@@ -21,7 +20,6 @@ export default function Blog() {
         <>
         <Breadcrumb />
         <NewsGrid />
-        <NewsStandard />
         </>
     );
 }

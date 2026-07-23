@@ -248,7 +248,7 @@ const fallbackBlogs = [
         authorPosition: "Senior Immigration Consultant",
         authorImage: "assets/img/home-1/news/client.png",
         category: "Education",
-        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        image: "https://images.unsplash.com/photo-1473951574080-01fe45ec8643?q=80&w=1204&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         content: [
             {
                 _type: 'block',

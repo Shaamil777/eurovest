@@ -41,4 +41,22 @@ export const tourPackagesData = {
       flagUrl: "https://flagcdn.com/w320/in.png",
     },
   ],
+  benefits: [
+    {
+      title: "Customized Itineraries",
+      description: "Tailored travel plans that suit your preferences, budget, and travel style perfectly.",
+    },
+    {
+      title: "Hassle-Free Booking",
+      description: "From flights and visas to accommodations, we handle all the logistics for you.",
+    },
+    {
+      title: "Expert Local Guides",
+      description: "Experience destinations like a local with our knowledgeable and friendly guides.",
+    },
+    {
+      title: "24/7 Premium Support",
+      description: "Round-the-clock assistance throughout your journey for complete peace of mind.",
+    },
+  ],
 };

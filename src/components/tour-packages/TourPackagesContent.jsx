@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { tourPackagesData } from "../../data/tourPackagesData";
 
 export default function TourPackagesContent() {
-  const { title, description, extendedDescription, countries } =
+  const { title, description, extendedDescription, countries, benefits } =
     tourPackagesData;
 
   return (
@@ -164,6 +164,105 @@ export default function TourPackagesContent() {
             ))}
           </div>
 
+          {/* Why Choose Us Section */}
+          <div style={{ marginTop: "80px", marginBottom: "40px" }}>
+            <div style={{ textAlign: "center", marginBottom: "50px" }}>
+              <span
+                style={{
+                  display: "inline-block",
+                  marginBottom: "15px",
+                  letterSpacing: "1.5px",
+                  fontSize: "13px",
+                  color: "var(--color-primary)",
+                  textTransform: "uppercase",
+                  fontWeight: "600",
+                }}
+              >
+                Why Choose Us
+              </span>
+              <h3
+                style={{
+                  color: "var(--color-blue)",
+                  fontSize: "clamp(24px, 3.5vw, 36px)",
+                  fontWeight: "700",
+                  marginBottom: "15px",
+                }}
+              >
+                Benefits of Our Tour Packages
+              </h3>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                gap: "30px",
+                maxWidth: "1100px",
+                margin: "0 auto",
+              }}
+            >
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  style={{
+                    background: "#fff",
+                    padding: "35px 30px",
+                    borderRadius: "16px",
+                    boxShadow: "0 5px 20px rgba(0,0,0,0.05)",
+                    border: "1px solid rgba(0,0,0,0.03)",
+                    transition: "transform 0.3s ease",
+                  }}
+                  className="benefit-card"
+                >
+                  <div
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      background: "rgba(181, 133, 36, 0.1)",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    <i
+                      className="fa-solid fa-check"
+                      style={{
+                        color: "var(--color-primary)",
+                        fontSize: "20px",
+                      }}
+                    ></i>
+                  </div>
+                  <h4
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      color: "var(--color-blue)",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    {benefit.title}
+                  </h4>
+                  <p
+                    style={{
+                      color: "var(--color-grey-text)",
+                      lineHeight: "1.6",
+                      fontSize: "15px",
+                      margin: 0,
+                    }}
+                  >
+                    {benefit.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
           {/* CTA Section */}
           <div
             style={{
@@ -249,6 +348,9 @@ export default function TourPackagesContent() {
           transform: translateY(-6px);
           box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
           border-color: rgba(181, 133, 36, 0.3);
+        }
+        .benefit-card:hover {
+          transform: translateY(-5px);
         }
       `}</style>
     </>
