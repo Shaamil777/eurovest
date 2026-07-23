@@ -89,7 +89,7 @@ export default function Service() {
     return (
         <>
          {/* Service Section Start  */}
-        <div className="service-section section-padding fix">
+        <div id="services-section" className="service-section section-padding fix">
             <div className="container">
                 <div className="section-title text-center">
                     <span 

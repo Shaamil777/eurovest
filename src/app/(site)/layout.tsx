@@ -10,6 +10,7 @@ import MouseCursor from '@/components/global/MouseCursor';
 import Providers from '@/components/global/Providers';
 import PageReveal from '@/components/global/PageReveal';
 import SmoothScroll from '@/components/global/SmoothScroll';
+import WhatsAppButton from '@/components/global/WhatsAppButton';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {children} 
               
               <Footer />
+              <WhatsAppButton />
             </PageReveal>
           </Providers>
         </SmoothScroll>

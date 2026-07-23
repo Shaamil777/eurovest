@@ -122,10 +122,17 @@ export default function Hero() {
                                         Get Free Consultation
                                         <i className="fa-solid fa-arrow-right"></i>
                                     </Link>
-                                    <Link href="/contact" className="theme-btn style-2">
+                                    <a 
+                                        href="#services-section" 
+                                        className="theme-btn style-2"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                                        }}
+                                    >
                                         Explore Services
                                         <i className="fa-solid fa-arrow-right"></i>
-                                    </Link>
+                                    </a>
                                 </motion.div>
                             </div>
                     </div>

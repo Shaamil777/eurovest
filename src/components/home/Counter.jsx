@@ -60,10 +60,10 @@ export default function Counter() {
                         className="counter-main-item"
                     >
                         <motion.div variants={itemVariants} className="counter-item style-2">
-                            <h2><span className="odometer" data-count="1">10</span>k+</h2>
+                            <h2><span className="odometer" data-count="1">1000</span>+</h2>
                             <h5>Successful Clients</h5>
                             <p>
-                                Successfully assisted 5,000+ clients with immigration services, work permits, and visa applications worldwide.
+                                Successfully assisted 300 clients with immigration services, work permits, and visa applications worldwide.
                             </p>
                         </motion.div>
                         <motion.div variants={itemVariants} className="counter-item style-2">

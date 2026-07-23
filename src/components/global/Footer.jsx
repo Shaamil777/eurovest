@@ -77,8 +77,8 @@ export default function Footer() {
                                         {[
                                             { name: 'Home', href: '/' },
                                             { name: 'About Us', href: '/about' },
-                                            { name: 'Our Services', href: '/service' },
-                                            { name: 'Why EuroVest', href: '/service' },
+                                            { name: 'Our Services', href: '/#services-section' },
+                                            { name: 'Why EuroVest', href: '/#choose-us-section' },
                                             { name: 'Contact', href: '/contact' }
                                         ].map((link, i) => (
                                             <li key={i}>

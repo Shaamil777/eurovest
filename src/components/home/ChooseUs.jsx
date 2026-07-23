@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -59,7 +60,7 @@ const ChooseUs = () => {
   ];
 
   return (
-    <section className="choose-us-section section-padding bg-white">
+    <section id="choose-us-section" className="choose-us-section section-padding bg-white">
       <div className="container">
         
         {/* Header Section */}
@@ -115,9 +116,9 @@ const ChooseUs = () => {
                   <p className="card-desc">{card.description}</p>
                   
                   <div className="card-footer mt-auto">
-                    <span className="learn-more">
+                    <Link href="/about" className="learn-more">
                       Learn More <i className="fa-solid fa-arrow-right"></i>
-                    </span>
+                    </Link>
                   </div>
 
                   <div className="watermark-number">{card.id}</div>
