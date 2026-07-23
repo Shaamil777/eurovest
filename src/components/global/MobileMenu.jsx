@@ -57,6 +57,11 @@ export default function MobileMenu({ isOpen, setIsOpen }) {
                                     )}
                                 </li>
                             ))}
+                            <li>
+                                <Link href="/tour-packages" className="mobile-submenu-link" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
+                                    <span>Tour Packages</span>
+                                </Link>
+                            </li>
                         </ul>
                     )}
                 </li>

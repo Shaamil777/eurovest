@@ -93,11 +93,20 @@ export default function Header() {
                                                             <a href="#">{category.categoryName} <i className="fas fa-angle-right"></i></a>
                                                             <ul className="submenu">
                                                                 {category.services.map((service, sIndex) => (
-                                                                    <li key={sIndex}><Link href={`/service/${service.slug}`}>{service.title}</Link></li>
+                                                                    <li key={sIndex}>
+                                                                        <Link href={`/service/${service.slug}`} legacyBehavior>
+                                                                            <a>{service.title}</a>
+                                                                        </Link>
+                                                                    </li>
                                                                 ))}
                                                             </ul>
                                                         </li>
                                                     ))}
+                                                    <li>
+                                                        <Link href="/tour-packages" legacyBehavior>
+                                                            <a>Tour Packages</a>
+                                                        </Link>
+                                                    </li>
                                                 </ul>
                                             </li>
                                             <li className={pathname?.startsWith('/blog') ? 'active' : ''}>
