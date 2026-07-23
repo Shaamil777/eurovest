@@ -9,17 +9,7 @@ export default function TourPackagesContent() {
   const { title, description, extendedDescription, countries, benefits } =
     tourPackagesData;
 
-  const [selectedCountry, setSelectedCountry] = useState(null);
-
-  // Close modal when pressing escape key
-  useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === "Escape") setSelectedCountry(null);
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
-
+  const [openCountryCode, setOpenCountryCode] = useState(null);
   return (
     <>
       <section
@@ -101,55 +91,46 @@ export default function TourPackagesContent() {
             </p>
           </div>
 
-          {/* Country Flags Grid */}
-          <div
-            className="countries-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-              gap: "24px",
-              maxWidth: "900px",
-              margin: "0 auto",
-            }}
-          >
+                    {/* Country Destinations Sections */}
+          <div className="countries-list" style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
             {countries.map((country, index) => (
               <motion.div
                 key={country.code}
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.08,
-                  ease: "easeOut",
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5 }}
+                style={{
+                  background: "#ffffff",
+                  borderRadius: "20px",
+                  padding: "40px",
+                  border: "1px solid rgba(0, 0, 0, 0.05)",
+                  boxShadow: "0 8px 30px rgba(0, 0, 0, 0.04)",
                 }}
               >
-                <div
-                  style={{
-                    background: "#ffffff",
-                    borderRadius: "16px",
-                    padding: "30px 20px",
-                    textAlign: "center",
-                    border: "1px solid rgba(0, 0, 0, 0.06)",
-                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.04)",
-                    transition: "all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1)",
+                {/* Country Header */}
+                <div 
+                  onClick={() => setOpenCountryCode(openCountryCode === country.code ? null : country.code)}
+                  style={{ 
+                    display: "flex", 
+                    alignItems: "center", 
+                    gap: "20px", 
+                    marginBottom: openCountryCode === country.code ? "30px" : "0", 
+                    borderBottom: openCountryCode === country.code ? "1px solid #eee" : "none", 
+                    paddingBottom: openCountryCode === country.code ? "20px" : "0",
                     cursor: "pointer",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "14px",
+                    transition: "all 0.3s ease"
                   }}
-                  className="country-card"
-                  onClick={() => setSelectedCountry(country)}
                 >
                   <div
                     style={{
-                      width: "90px",
-                      height: "60px",
-                      borderRadius: "8px",
+                      width: "80px",
+                      height: "53px",
+                      borderRadius: "6px",
                       overflow: "hidden",
-                      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.12)",
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
                       position: "relative",
+                      flexShrink: 0
                     }}
                   >
                     <Image
@@ -160,18 +141,96 @@ export default function TourPackagesContent() {
                       unoptimized
                     />
                   </div>
-                  <span
+                  <h3
                     style={{
-                      fontSize: "15px",
-                      fontWeight: "600",
+                      fontSize: "28px",
+                      fontWeight: "700",
                       color: "var(--color-blue)",
-                      fontFamily: "'Poppins', sans-serif",
-                      lineHeight: "1.3",
+                      margin: 0,
+                      flex: 1
                     }}
                   >
                     {country.name}
-                  </span>
+                  </h3>
+                  <div style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    background: "rgba(181, 133, 36, 0.1)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "var(--color-primary)",
+                    transition: "transform 0.3s ease",
+                    transform: openCountryCode === country.code ? "rotate(180deg)" : "rotate(0deg)"
+                  }}>
+                    <i className="fa-solid fa-chevron-down"></i>
+                  </div>
                 </div>
+
+                {/* Destinations List */}
+                <AnimatePresence>
+                  {openCountryCode === country.code && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+                  {country.destinations?.map((dest, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "20px",
+                        background: "#f8f9fa",
+                        borderRadius: "16px",
+                        padding: "20px",
+                        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                      }}
+                      className="destination-card"
+                    >
+                      <div
+                        style={{
+                          position: "relative",
+                          width: "120px",
+                          height: "120px",
+                          borderRadius: "12px",
+                          overflow: "hidden",
+                          flexShrink: 0,
+                          boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
+                        }}
+                        className="destination-image-container"
+                      >
+                        <Image
+                          src={dest.image}
+                          alt={dest.name}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          unoptimized
+                        />
+                      </div>
+                      <div>
+                        <h4 style={{ margin: "0 0 10px 0", fontSize: "20px", color: "var(--color-blue)", fontWeight: "600" }}>
+                          <i className="fa-solid fa-location-dot" style={{ color: "var(--color-primary)", marginRight: "8px", fontSize: "16px" }}></i>
+                          {dest.name}
+                        </h4>
+                        <p style={{ margin: 0, fontSize: "15px", color: "var(--color-grey-text)", lineHeight: "1.6" }}>
+                          {dest.description || `Experience the unique charm, historic landmarks, and vibrant culture of ${dest.name}.`}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                  <p style={{ textAlign: "right", fontStyle: "italic", color: "var(--color-grey-text)", marginTop: "10px", marginRight: "10px" }}>
+                    and more...
+                  </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             ))}
           </div>
@@ -355,285 +414,8 @@ export default function TourPackagesContent() {
         </div>
       </section>
 
-      {/* Country Destinations Modal */}
-      <AnimatePresence>
-        {selectedCountry && (
-          <div
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 9999,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "20px",
-            }}
-          >
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: "rgba(0, 0, 0, 0.6)",
-                backdropFilter: "blur(5px)",
-              }}
-              onClick={() => setSelectedCountry(null)}
-            />
-
-            {/* Modal Content */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{
-                type: "spring",
-                damping: 25,
-                stiffness: 300,
-              }}
-              style={{
-                background: "#fff",
-                position: "relative",
-                zIndex: 1,
-                overflow: "hidden",
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                display: "flex",
-                flexDirection: "column",
-                maxHeight: "90vh",
-              }}
-              className="modal-content-container"
-            >
-              {/* Modal Header */}
-              <div
-                className="modal-header"
-                style={{
-                  borderBottom: "1px solid rgba(0,0,0,0.08)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  background: "var(--color-blue)",
-                  flexShrink: 0,
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-                  <div
-                    style={{
-                      width: "50px",
-                      height: "33px",
-                      borderRadius: "6px",
-                      overflow: "hidden",
-                      position: "relative",
-                      boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
-                    }}
-                  >
-                    <Image
-                      src={selectedCountry.flagUrl}
-                      alt={`${selectedCountry.name} flag`}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      unoptimized
-                    />
-                  </div>
-                  <h3 className="modal-header-title" style={{ color: "#fff", margin: 0, fontWeight: "600" }}>
-                    {selectedCountry.name}
-                  </h3>
-                </div>
-                <button
-                  onClick={() => setSelectedCountry(null)}
-                  style={{
-                    background: "rgba(255,255,255,0.2)",
-                    border: "none",
-                    width: "36px",
-                    height: "36px",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#fff",
-                    cursor: "pointer",
-                    transition: "background 0.2s ease",
-                  }}
-                  onMouseOver={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.3)")}
-                  onMouseOut={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.2)")}
-                >
-                  <i className="fa-solid fa-xmark" style={{ fontSize: "16px" }}></i>
-                </button>
-              </div>
-
-              {/* Modal Body */}
-              <div className="modal-body" style={{ overflowY: "auto" }}>
-                <p
-                  style={{
-                    fontSize: "16px",
-                    color: "var(--color-grey-text)",
-                    marginBottom: "25px",
-                  }}
-                >
-                  Discover the most popular destinations we offer in <strong>{selectedCountry.name}</strong>:
-                </p>
-
-                <div
-                  className="modal-grid"
-                  style={{
-                    display: "grid",
-                  }}
-                >
-                  {selectedCountry.destinations?.slice(0, 5).map((dest, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.1 + i * 0.05 }}
-                      style={{
-                        position: "relative",
-                        borderRadius: "12px",
-                        overflow: "hidden",
-                        height: "120px",
-                        boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
-                      }}
-                    >
-                      <Image
-                        src={dest.image}
-                        alt={dest.name}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        unoptimized
-                      />
-                      <div
-                        style={{
-                          position: "absolute",
-                          bottom: 0,
-                          left: 0,
-                          right: 0,
-                          padding: "30px 12px 10px",
-                          background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%)",
-                          display: "flex",
-                          alignItems: "flex-end",
-                          gap: "6px"
-                        }}
-                      >
-                        <i className="fa-solid fa-location-dot" style={{ color: "var(--color-primary)", fontSize: "12px", marginBottom: "3px" }}></i>
-                        <span style={{ fontWeight: "600", color: "#fff", fontSize: "14px", textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
-                          {dest.name}
-                        </span>
-                      </div>
-                    </motion.div>
-                  ))}
-                  
-                  {/* And more indicator */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.1 + 5 * 0.05 }}
-                    style={{
-                      borderRadius: "12px",
-                      border: "2px dashed rgba(181, 133, 36, 0.4)",
-                      background: "rgba(181, 133, 36, 0.05)",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      height: "120px",
-                      gap: "8px",
-                      transition: "all 0.3s ease",
-                    }}
-                  >
-                    <div style={{
-                      width: "32px",
-                      height: "32px",
-                      borderRadius: "50%",
-                      background: "var(--color-primary)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#fff"
-                    }}>
-                      <i className="fa-solid fa-plus" style={{ fontSize: "14px" }}></i>
-                    </div>
-                    <span style={{ fontWeight: "600", color: "var(--color-primary)", fontSize: "14px" }}>
-                      More...
-                    </span>
-                  </motion.div>
-                </div>
-
-                <div style={{ marginTop: "35px", textAlign: "center" }}>
-                  <Link
-                    href="/contact"
-                    className="theme-btn"
-                    style={{ width: "100%", justifyContent: "center" }}
-                    onClick={() => setSelectedCountry(null)}
-                  >
-                    Enquire Now <i className="fa-solid fa-arrow-right"></i>
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
+      
       <style jsx="true">{`
-        .modal-content-container {
-          width: 100%;
-          max-width: 600px;
-          border-radius: 24px;
-        }
-        .modal-header {
-          padding: 30px 40px;
-        }
-        .modal-header-title {
-          font-size: 24px;
-        }
-        .modal-body {
-          padding: 40px;
-        }
-        .modal-grid {
-          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-          gap: 15px;
-        }
-
-        @media (max-width: 768px) {
-          .modal-content-container {
-            max-width: 500px;
-            width: 95%;
-          }
-          .modal-header {
-            padding: 20px 25px;
-          }
-          .modal-body {
-            padding: 25px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .modal-content-container {
-            border-radius: 16px;
-            width: 98%;
-          }
-          .modal-header {
-            padding: 15px 20px;
-          }
-          .modal-header-title {
-            font-size: 20px;
-          }
-          .modal-body {
-            padding: 20px 15px;
-          }
-          .modal-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-          }
-        }
-
         .country-card:hover {
           transform: translateY(-6px);
           box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
@@ -641,6 +423,19 @@ export default function TourPackagesContent() {
         }
         .benefit-card:hover {
           transform: translateY(-5px);
+        }
+
+        @media (max-width: 767px) {
+          .destination-card {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 15px !important;
+            padding: 15px !important;
+          }
+          .destination-image-container {
+            width: 100% !important;
+            height: 200px !important;
+          }
         }
       `}</style>
     </>

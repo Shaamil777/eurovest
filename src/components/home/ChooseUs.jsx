@@ -116,9 +116,7 @@ const ChooseUs = () => {
                   <p className="card-desc">{card.description}</p>
                   
                   <div className="card-footer mt-auto">
-                    <Link href="/about" className="learn-more">
-                      Learn More <i className="fa-solid fa-arrow-right"></i>
-                    </Link>
+                    
                   </div>
 
                   <div className="watermark-number">{card.id}</div>

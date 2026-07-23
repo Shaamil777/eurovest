@@ -49,9 +49,9 @@ export default function MobileMenu({ isOpen, setIsOpen }) {
                                         <i className={`fas fa-angle-${expandedMenu[category.id] ? 'up' : 'down'}`}></i>
                                     </div>
                                     {expandedMenu[category.id] && (
-                                        <ul className="mobile-inner-submenu">
+                                        <ul className="mobile-inner-submenu" style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '10px', marginBottom: '10px', borderLeft: '2px solid rgba(181, 133, 36, 0.3)', marginLeft: '5px' }}>
                                             {category.services.map((service, sIndex) => (
-                                                <li key={sIndex}><Link href={`/service/${service.slug}`} onClick={() => setIsOpen(false)}>{service.title}</Link></li>
+                                                <li key={sIndex}><Link href={`/service/${service.slug}`} style={{ color: 'var(--color-grey-text)', fontSize: '15px', display: 'block' }} onClick={() => setIsOpen(false)}>{service.title}</Link></li>
                                             ))}
                                         </ul>
                                     )}
