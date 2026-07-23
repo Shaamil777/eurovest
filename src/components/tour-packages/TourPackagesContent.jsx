@@ -1,13 +1,24 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { tourPackagesData } from "../../data/tourPackagesData";
 
 export default function TourPackagesContent() {
   const { title, description, extendedDescription, countries, benefits } =
     tourPackagesData;
+
+  const [selectedCountry, setSelectedCountry] = useState(null);
+
+  // Close modal when pressing escape key
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") setSelectedCountry(null);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
 
   return (
     <>
@@ -121,7 +132,7 @@ export default function TourPackagesContent() {
                     border: "1px solid rgba(0, 0, 0, 0.06)",
                     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.04)",
                     transition: "all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1)",
-                    cursor: "default",
+                    cursor: "pointer",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -129,6 +140,7 @@ export default function TourPackagesContent() {
                     gap: "14px",
                   }}
                   className="country-card"
+                  onClick={() => setSelectedCountry(country)}
                 >
                   <div
                     style={{
@@ -342,6 +354,231 @@ export default function TourPackagesContent() {
           </div>
         </div>
       </section>
+
+      {/* Country Destinations Modal */}
+      <AnimatePresence>
+        {selectedCountry && (
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 9999,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "20px",
+            }}
+          >
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: "rgba(0, 0, 0, 0.6)",
+                backdropFilter: "blur(5px)",
+              }}
+              onClick={() => setSelectedCountry(null)}
+            />
+
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{
+                type: "spring",
+                damping: 25,
+                stiffness: 300,
+              }}
+              style={{
+                background: "#fff",
+                borderRadius: "24px",
+                width: "100%",
+                maxWidth: "600px",
+                position: "relative",
+                zIndex: 1,
+                overflow: "hidden",
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+              }}
+            >
+              {/* Modal Header */}
+              <div
+                style={{
+                  padding: "30px 40px",
+                  borderBottom: "1px solid rgba(0,0,0,0.08)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  background: "var(--color-blue)",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+                  <div
+                    style={{
+                      width: "50px",
+                      height: "33px",
+                      borderRadius: "6px",
+                      overflow: "hidden",
+                      position: "relative",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+                    }}
+                  >
+                    <Image
+                      src={selectedCountry.flagUrl}
+                      alt={`${selectedCountry.name} flag`}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      unoptimized
+                    />
+                  </div>
+                  <h3 style={{ color: "#fff", margin: 0, fontSize: "24px", fontWeight: "600" }}>
+                    {selectedCountry.name}
+                  </h3>
+                </div>
+                <button
+                  onClick={() => setSelectedCountry(null)}
+                  style={{
+                    background: "rgba(255,255,255,0.2)",
+                    border: "none",
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#fff",
+                    cursor: "pointer",
+                    transition: "background 0.2s ease",
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.3)")}
+                  onMouseOut={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.2)")}
+                >
+                  <i className="fa-solid fa-xmark" style={{ fontSize: "16px" }}></i>
+                </button>
+              </div>
+
+              {/* Modal Body */}
+              <div style={{ padding: "40px" }}>
+                <p
+                  style={{
+                    fontSize: "16px",
+                    color: "var(--color-grey-text)",
+                    marginBottom: "25px",
+                  }}
+                >
+                  Discover the most popular destinations we offer in <strong>{selectedCountry.name}</strong>:
+                </p>
+
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+                    gap: "15px",
+                  }}
+                >
+                  {selectedCountry.destinations?.slice(0, 5).map((dest, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.1 + i * 0.05 }}
+                      style={{
+                        position: "relative",
+                        borderRadius: "12px",
+                        overflow: "hidden",
+                        height: "120px",
+                        boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
+                      }}
+                    >
+                      <Image
+                        src={dest.image}
+                        alt={dest.name}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        unoptimized
+                      />
+                      <div
+                        style={{
+                          position: "absolute",
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          padding: "30px 12px 10px",
+                          background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%)",
+                          display: "flex",
+                          alignItems: "flex-end",
+                          gap: "6px"
+                        }}
+                      >
+                        <i className="fa-solid fa-location-dot" style={{ color: "var(--color-primary)", fontSize: "12px", marginBottom: "3px" }}></i>
+                        <span style={{ fontWeight: "600", color: "#fff", fontSize: "14px", textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
+                          {dest.name}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                  
+                  {/* And more indicator */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 + 5 * 0.05 }}
+                    style={{
+                      borderRadius: "12px",
+                      border: "2px dashed rgba(181, 133, 36, 0.4)",
+                      background: "rgba(181, 133, 36, 0.05)",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      height: "120px",
+                      gap: "8px",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    <div style={{
+                      width: "32px",
+                      height: "32px",
+                      borderRadius: "50%",
+                      background: "var(--color-primary)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#fff"
+                    }}>
+                      <i className="fa-solid fa-plus" style={{ fontSize: "14px" }}></i>
+                    </div>
+                    <span style={{ fontWeight: "600", color: "var(--color-primary)", fontSize: "14px" }}>
+                      More...
+                    </span>
+                  </motion.div>
+                </div>
+
+                <div style={{ marginTop: "35px", textAlign: "center" }}>
+                  <Link
+                    href="/contact"
+                    className="theme-btn"
+                    style={{ width: "100%", justifyContent: "center" }}
+                    onClick={() => setSelectedCountry(null)}
+                  >
+                    Enquire Now <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       <style jsx="true">{`
         .country-card:hover {
