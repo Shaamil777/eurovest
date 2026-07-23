@@ -1,9 +1,9 @@
 export const tourPackagesData = {
   title: "Tour Packages",
   description:
-    "Explore our exclusive tour packages designed for travelers seeking premium experiences across the globe. From cultural immersions to scenic getaways, we curate personalized tours that combine comfort, adventure, and discovery — tailored to your preferences and schedule.",
+    "Discover the world with confidence with EUROVEST GROUP. We provide reliable and affordable tour packages, holiday packages, and travel solutions for individuals, families, couples, and groups. Whether you're planning a family vacation, honeymoon package, business trip, or an international holiday, our expert team ensures a seamless travel experience from planning to return.",
   extendedDescription:
-    "Whether you're planning a family holiday, a honeymoon retreat, or a group excursion, our tour packages cover top destinations worldwide. We handle everything from visa assistance and hotel bookings to guided itineraries and local experiences, so you can focus on creating unforgettable memories.",
+    "Explore our customized international tour packages featuring top travel destinations, comfortable accommodations, guided sightseeing, and hassle-free travel arrangements. From visa assistance and hotel bookings to personalized itineraries and local experiences, EUROVEST GROUP is your trusted partner for unforgettable journeys around the world.",
   countries: [
     {
       name: "Armenia",
