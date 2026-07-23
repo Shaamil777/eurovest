@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
     return (
@@ -73,9 +74,15 @@ export default function Footer() {
                                 <div className="footer-nav-col" style={{ flex: '1 1 150px' }}>
                                     <h6 style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '25px', color: '#64748b' }}>Platform</h6>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                                        {['Home', 'About Us', 'Our Services', 'Why EuroVest', 'Contact'].map((link, i) => (
+                                        {[
+                                            { name: 'Home', href: '/' },
+                                            { name: 'About Us', href: '/about' },
+                                            { name: 'Our Services', href: '/service' },
+                                            { name: 'Why EuroVest', href: '/service' },
+                                            { name: 'Contact', href: '/contact' }
+                                        ].map((link, i) => (
                                             <li key={i}>
-                                                <a href="#" style={{
+                                                <Link href={link.href} style={{
                                                     color: '#e2e8f0',
                                                     fontSize: '15px',
                                                     textDecoration: 'none',
@@ -83,7 +90,7 @@ export default function Footer() {
                                                 }}
                                                 onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
                                                 onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-                                                >{link}</a>
+                                                >{link.name}</Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -93,9 +100,13 @@ export default function Footer() {
                                 <div className="footer-nav-col" style={{ flex: '1 1 150px' }}>
                                     <h6 style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '25px', color: '#64748b' }}>Resources</h6>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                                        {['Blog & News', 'Help Center', 'Immigration FAQ', 'Support', 'Careers'].map((link, i) => (
+                                        {[
+                                            { name: 'Blogs and News', href: '/blog' },
+                                            { name: 'Help Centre', href: '/contact' },
+                                            { name: 'Immigration FAQ', href: '/#faq' }
+                                        ].map((link, i) => (
                                             <li key={i}>
-                                                <a href="#" style={{
+                                                <Link href={link.href} style={{
                                                     color: '#e2e8f0',
                                                     fontSize: '15px',
                                                     textDecoration: 'none',
@@ -103,7 +114,7 @@ export default function Footer() {
                                                 }}
                                                 onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
                                                 onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-                                                >{link}</a>
+                                                >{link.name}</Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -163,9 +174,12 @@ export default function Footer() {
                             &copy; {new Date().getFullYear()} EuroVest. All rights reserved.
                         </p>
                         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', gap: '25px', flexWrap: 'wrap' }}>
-                            {['Terms of Service', 'Privacy Policy', 'Data Platform TOS'].map((text, i) => (
+                            {[
+                                { name: 'Terms of Service', href: '/terms-of-service' },
+                                { name: 'Privacy Policy', href: '/privacy-policy' }
+                            ].map((link, i) => (
                                 <li key={i}>
-                                    <a href="#" style={{
+                                    <Link href={link.href} style={{
                                         color: '#64748b',
                                         textDecoration: 'none',
                                         fontSize: '13px',
@@ -174,8 +188,8 @@ export default function Footer() {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#64748b'}
                                     >
-                                        {text}
-                                    </a>
+                                        {link.name}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
