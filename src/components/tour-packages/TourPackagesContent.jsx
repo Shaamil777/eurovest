@@ -402,24 +402,26 @@ export default function TourPackagesContent() {
               }}
               style={{
                 background: "#fff",
-                borderRadius: "24px",
-                width: "100%",
-                maxWidth: "600px",
                 position: "relative",
                 zIndex: 1,
                 overflow: "hidden",
                 boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                display: "flex",
+                flexDirection: "column",
+                maxHeight: "90vh",
               }}
+              className="modal-content-container"
             >
               {/* Modal Header */}
               <div
+                className="modal-header"
                 style={{
-                  padding: "30px 40px",
                   borderBottom: "1px solid rgba(0,0,0,0.08)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
                   background: "var(--color-blue)",
+                  flexShrink: 0,
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
@@ -441,7 +443,7 @@ export default function TourPackagesContent() {
                       unoptimized
                     />
                   </div>
-                  <h3 style={{ color: "#fff", margin: 0, fontSize: "24px", fontWeight: "600" }}>
+                  <h3 className="modal-header-title" style={{ color: "#fff", margin: 0, fontWeight: "600" }}>
                     {selectedCountry.name}
                   </h3>
                 </div>
@@ -468,7 +470,7 @@ export default function TourPackagesContent() {
               </div>
 
               {/* Modal Body */}
-              <div style={{ padding: "40px" }}>
+              <div className="modal-body" style={{ overflowY: "auto" }}>
                 <p
                   style={{
                     fontSize: "16px",
@@ -480,10 +482,9 @@ export default function TourPackagesContent() {
                 </p>
 
                 <div
+                  className="modal-grid"
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
-                    gap: "15px",
                   }}
                 >
                   {selectedCountry.destinations?.slice(0, 5).map((dest, i) => (
@@ -581,6 +582,58 @@ export default function TourPackagesContent() {
       </AnimatePresence>
 
       <style jsx="true">{`
+        .modal-content-container {
+          width: 100%;
+          max-width: 600px;
+          border-radius: 24px;
+        }
+        .modal-header {
+          padding: 30px 40px;
+        }
+        .modal-header-title {
+          font-size: 24px;
+        }
+        .modal-body {
+          padding: 40px;
+        }
+        .modal-grid {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+          .modal-content-container {
+            max-width: 500px;
+            width: 95%;
+          }
+          .modal-header {
+            padding: 20px 25px;
+          }
+          .modal-body {
+            padding: 25px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .modal-content-container {
+            border-radius: 16px;
+            width: 98%;
+          }
+          .modal-header {
+            padding: 15px 20px;
+          }
+          .modal-header-title {
+            font-size: 20px;
+          }
+          .modal-body {
+            padding: 20px 15px;
+          }
+          .modal-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+          }
+        }
+
         .country-card:hover {
           transform: translateY(-6px);
           box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
