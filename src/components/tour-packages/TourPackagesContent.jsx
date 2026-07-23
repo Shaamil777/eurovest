@@ -107,6 +107,7 @@ export default function TourPackagesContent() {
                   border: "1px solid rgba(0, 0, 0, 0.05)",
                   boxShadow: "0 8px 30px rgba(0, 0, 0, 0.04)",
                 }}
+                className="country-section-card"
               >
                 {/* Country Header */}
                 <div 
@@ -132,6 +133,7 @@ export default function TourPackagesContent() {
                       position: "relative",
                       flexShrink: 0
                     }}
+                    className="country-flag-container"
                   >
                     <Image
                       src={country.flagUrl}
@@ -149,6 +151,7 @@ export default function TourPackagesContent() {
                       margin: 0,
                       flex: 1
                     }}
+                    className="country-name-title"
                   >
                     {country.name}
                   </h3>
@@ -426,6 +429,9 @@ export default function TourPackagesContent() {
         }
 
         @media (max-width: 767px) {
+          .country-section-card { padding: 25px !important; }
+          .country-flag-container { width: 50px !important; height: 33px !important; }
+          .country-name-title { font-size: 20px !important; }
           .destination-card {
             flex-direction: column !important;
             align-items: flex-start !important;
