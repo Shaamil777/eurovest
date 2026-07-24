@@ -141,7 +141,7 @@ export default function Header() {
                             </div>
 
                             <div className="header-call-item">
-                                <a href="https://wa.me/911245784512" target="_blank" rel="noopener noreferrer" className="theme-btn">
+                                <a href="https://wa.me/911245784512?text=Hello%2C%20I%20am%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer" className="theme-btn">
                                     Contact Us
                                     <i className="fa-brands fa-whatsapp"></i>
                                 </a>

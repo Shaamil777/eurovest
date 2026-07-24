@@ -43,7 +43,7 @@ export default function Footer() {
                             </p>
                             
                             <div style={{ marginTop: '20px' }}>
-                                <a href="https://wa.me/911245784512" target="_blank" rel="noopener noreferrer" style={{
+                                <a href="https://wa.me/911245784512?text=Hello%2C%20I%20am%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer" style={{
                                     display: 'inline-flex',
                                     alignItems: 'center',
                                     gap: '10px',
